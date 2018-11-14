@@ -4,7 +4,7 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
-// Puszhing test - Andrzej
+// Puszhing test - David
 package org.usfirst.frc.team222.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
