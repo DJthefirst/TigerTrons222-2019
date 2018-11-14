@@ -12,6 +12,8 @@ package org.usfirst.frc.team222.robot;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+	public static Joystick driver = new Joystick(0);
+	public static Joystick codriver = new Joystick(1);
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
