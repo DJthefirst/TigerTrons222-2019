@@ -15,6 +15,19 @@ public class OI {
 	public static Joystick driver = new Joystick(0);
 	public static Joystick codriver = new Joystick(1);
 	//// CREATING BUTTONS
+// I was here Andrzej
+	public static void init() {
+		// driver 
+		
+		new JoystickButton(driver, 8).whenPressed(new CenterGyro());
+		new JoystickButton(driver, 7).whenPressed(new OverridePot());
+		new JoystickButton(driver, 9).whenPressed(new StableMode());
+		
+		
+		new JoystickButton(codriver, 1).whenPressed(new OpenGripper());
+		new JoystickButton(codriver, 4).whenPressed(new CloseGripper());
+	
+}
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
 	// You create one by telling it which joystick it's on and which button
