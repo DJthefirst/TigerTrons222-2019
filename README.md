@@ -14,8 +14,6 @@ https://www.google.com/search?q=adding+github+to+eclipse&rlz=1C1GCEU_enUS821US82
 
 
 
-
-
 Settup Github for VScode:
 install latest source release
 https://git-scm.com/
@@ -24,6 +22,3 @@ https://nodejs.org/en/
 
 tutorial
 https://www.youtube.com/watch?v=9cMWR-EGFuY&t=11s
-
-
-test
