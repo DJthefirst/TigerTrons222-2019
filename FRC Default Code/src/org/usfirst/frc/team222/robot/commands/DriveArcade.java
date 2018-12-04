@@ -32,12 +32,12 @@ public class DriveArcade extends Command {
 
     @Override 
     protected void end(){       
-        
+        Robot.m_drivetrain.arcadeDrive(0,0);
     }
 
     @Override 
     protected void interrupt()
     {
-        
+        endl();
     }
 }
