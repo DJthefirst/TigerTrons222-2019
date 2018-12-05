@@ -117,6 +117,27 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		/* sign this so forward is positive */
+		double forward = -1.0 * _joy.getY();
+		/* sign this so right is positive. */
+		double turn = +1.0 * _joy.getZ();
+		/* deadband */
+		if (Math.abs(forward) < 0.10) {
+			/* within 10% joystick, make it zero */
+			forward = 0;
+		}
+		if (Math.abs(turn) < 0.10) {
+			/* within 10% joystick, make it zero */
+			turn = 0;
+		}
+		/* print the joystick values to sign them, comment
+		 * out this line after checking the joystick directions. */
+		System.out.println("JoyY:" + forward + "  turn:" + turn );
+		/* drive the robot, when driving forward one side will be red.  
+		 * This is because DifferentialDrive assumes 
+		 * one side must be negative */
+		_drive.arcadeDrive(forward, turn);
+
 	}
 
 	/**

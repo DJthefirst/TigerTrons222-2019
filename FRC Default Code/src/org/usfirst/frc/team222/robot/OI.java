@@ -17,7 +17,6 @@ import edu.wpi.FIRST.wpilibj.Joystick;
 public class OI<Joystick> {
 
 	//// CREATING BUTTONS
-// I was here Andrzej
 Joystick driver = new Joystick(0);
 	public OI()
 	{
