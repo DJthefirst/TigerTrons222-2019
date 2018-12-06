@@ -1,5 +1,5 @@
 
-/*
+
 import org.usfirst.frc.team222.robot.RobotMap;
 
 public class DriveArcade extends Command {
@@ -21,6 +21,29 @@ public class DriveArcade extends Command {
     {
         double moveSpeed = -Robot.m_oi.driveController.getRawAxis(RobotMap.DRIVER_CONTROLLER_MOVE_AXIS);
         double rotateSpeed = Robot.m_oi.driveController.getRawAxis(RobotMap.DRIVER_CONTROLLER_MOVE_AXIS);
+
+    /*  intigrate this
+	if (Math.abs(forward) < 0.10) {
+			/* within 10% joystick, make it zero 
+			forward = 0;
+		}
+		if (Math.abs(turn) < 0.10) {
+			/* within 10% joystick, make it zero 
+			turn = 0;
+		}
+		/* print the joystick values to sign them, comment
+		 * out this line after checking the joystick directions. 
+		System.out.println("JoyY:" + forward + "  turn:" + turn );
+		/* drive the robot, when driving forward one side will be red.  
+		 * This is because DifferentialDrive assumes 
+		 * one side must be negative 
+		_drive.arcadeDrive(forward, turn);
+    */
+
+
+
+
+
         Robot.m_drivetrain.arcadeDrive(moveSpeed,rotateSpeed);
     }
 

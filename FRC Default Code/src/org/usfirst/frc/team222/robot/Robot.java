@@ -4,7 +4,6 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
-// Puszhing test - David
 package org.usfirst.frc.team222.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -24,6 +23,7 @@ import org.usfirst.frc.team222.robot.subsystems.ExampleSubsystem;
  */
 public class Robot extends TimedRobot {
 	public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
+	public static Drivetrain m_drivetrain = null;
 	public static OI m_oi;
 
 	Command m_autonomousCommand;
@@ -34,11 +34,11 @@ public class Robot extends TimedRobot {
 	 * used for any initialization code.
 	 */
 	@Override
+
 	public void robotInit() {
 
 		//drivetrain
-		public static Drivetrain m_drivetrain = new Drivetrain();
-
+		m_drivetrain = new Drivetrain();
 		m_oi = new OI();
 		m_chooser.addDefault("Default Auto", new ExampleCommand());
 		// chooser.addObject("My Auto", new MyAutoCommand());
@@ -117,29 +117,6 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		
-		//TEST CODE REMOVE
-		/* sign this so forward is positive */
-		double forward = -1.0 * _joy.getY();
-		/* sign this so right is positive. */
-		double turn = +1.0 * _joy.getZ();
-		/* deadband */
-		if (Math.abs(forward) < 0.10) {
-			/* within 10% joystick, make it zero */
-			forward = 0;
-		}
-		if (Math.abs(turn) < 0.10) {
-			/* within 10% joystick, make it zero */
-			turn = 0;
-		}
-		/* print the joystick values to sign them, comment
-		 * out this line after checking the joystick directions. */
-		System.out.println("JoyY:" + forward + "  turn:" + turn );
-		/* drive the robot, when driving forward one side will be red.  
-		 * This is because DifferentialDrive assumes 
-		 * one side must be negative */
-		_drive.arcadeDrive(forward, turn);
-
 	}
 
 	/**

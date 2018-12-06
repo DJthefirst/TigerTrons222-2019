@@ -1,19 +1,18 @@
 package org.usfirst.frc.team222.robot;
+import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.WPI_TalonSRX;  //unshure
+
+
 public class Drivetrain extends Subsystem {
 		
 DifferentialDrive differentialDrive = null ;
 
 public Drivetrain()
 {
-	WPI_TalonSRX leftFrontTalon = WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
-	WPI_TalonSRX rightFrontTalon = WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
-	WPI_TalonSRX leftBackTalon = WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
-	WPI_TalonSRX rightBackTalon = WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
-
-
-//work on this
-//WPI_TalonSRX _frontRightMotor = new WPI_TalonSRX(2);
-
+	WPI_TalonSRX leftFrontTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
+	WPI_TalonSRX rightFrontTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
+	WPI_TalonSRX leftBackTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
+	WPI_TalonSRX rightBackTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
 
 	SpeedControllerGroup leftMotors = new SpeedControllerGroup(leftFrontTalon,leftBackTalon);
 	SpeedControllerGroup rightMotors = new SpeedControllerGoup(rightFrontTalon,rightBackTalon);
