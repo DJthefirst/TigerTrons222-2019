@@ -20,7 +20,7 @@ public class OI<Joystick> {
 Joystick driver = new Joystick(0);
 	public OI()
 	{
-		public Joystick driverController = new Joystick(RobotMap.OI_DRIVER_CONTROLLER); 
+		Joystick driverController = new Joystick(RobotMap.OI_DRIVER_CONTROLLER);
 	}
 
 	public Joystick GetJoystick()
