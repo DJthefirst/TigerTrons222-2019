@@ -117,6 +117,8 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		
+		//TEST CODE REMOVE
 		/* sign this so forward is positive */
 		double forward = -1.0 * _joy.getY();
 		/* sign this so right is positive. */

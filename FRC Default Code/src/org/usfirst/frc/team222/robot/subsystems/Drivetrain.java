@@ -10,6 +10,11 @@ public Drivetrain()
 	WPI_TalonSRX leftBackTalon = WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
 	WPI_TalonSRX rightBackTalon = WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT_TALON);
 
+
+//work on this
+//WPI_TalonSRX _frontRightMotor = new WPI_TalonSRX(2);
+
+
 	SpeedControllerGroup leftMotors = new SpeedControllerGroup(leftFrontTalon,leftBackTalon);
 	SpeedControllerGroup rightMotors = new SpeedControllerGoup(rightFrontTalon,rightBackTalon);
 	differentialDrive = DifferentialDrive(leftMotors,rightMotors);
