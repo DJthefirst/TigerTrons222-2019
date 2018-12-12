@@ -25,13 +25,10 @@ public  void arcadeDrive (double moveSpeed, double rotateSpeed)
 	differentialDrive.arcadeDrive(moveSpeed,rotateSpeed);
 }
 
-
-
-
-
-
-
-
+public void initDefaultCommand() {
+	// Set the default command for a subsystem here.
+	setDefaultCommand(new DriveArcade());
+}
 
 
 
