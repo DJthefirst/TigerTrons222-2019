@@ -28,6 +28,11 @@ public class RobotMap {
 				//Joystick
 	public static final int OI_DRIVER_CONTROLLER = 0;
 
+				//may need axis 0,1
+	public static final int DRIVER_CONTROLLER_MOVE_AXIS = 0;
+
+
+
 	// public static int leftMotor = 1;
 	// public static int rightMotor = 2;
 

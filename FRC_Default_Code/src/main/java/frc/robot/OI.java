@@ -7,8 +7,11 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.Joystick;    //un used?
-
+import edu.wpi.first.wpilibj.Joystick;  
+import edu.wpi.first.wpilibj.XboxController;
+//import edu.wpi.first.wpilibj.buttons.Button;
+//import edu.wpi.first.wpilibj.buttons.JoystickButton;
+//import frc.robot.commands.DriveArcade;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -17,17 +20,23 @@ import edu.wpi.first.wpilibj.Joystick;    //un used?
  */
 public class OI<Joystick> {
 
-	//// CREATING BUTTONS
-Joystick driver = new Joystick(0);
+	public XboxController joystick = new XboxController(RobotMap.OI_DRIVER_CONTROLLER);
+	//Joystick driverController = new Joystick(RobotMap.OI_DRIVER_CONTROLLER);
+	
+	//public?
+//public Joystick driver = new Joystick(0);
+
+//// CREATING BUTTONS
 	public OI()
 	{
-		Joystick driverController = new Joystick(RobotMap.OI_DRIVER_CONTROLLER);
+		
 	}
+	
 
-	public Joystick GetJoystick()
-	{
-		return driver;
-	}
+	//public Joystick GetJoystick()
+	//{
+	//	return driver;
+	//}
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
 	// You create one by telling it which joystick it's on and which button

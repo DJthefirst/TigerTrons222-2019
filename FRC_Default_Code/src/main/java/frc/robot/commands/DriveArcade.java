@@ -1,6 +1,8 @@
 
-
+package frc.robot.commands;
 import frc.robot.RobotMap;
+import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 public class DriveArcade extends Command {
 
@@ -19,8 +21,8 @@ public class DriveArcade extends Command {
     @Override 
     protected void execute()
     {
-        double moveSpeed = -Robot.m_oi.driveController.getRawAxis(RobotMap.DRIVER_CONTROLLER_MOVE_AXIS);
-        double rotateSpeed = Robot.m_oi.driveController.getRawAxis(RobotMap.DRIVER_CONTROLLER_MOVE_AXIS);
+        double moveSpeed = -Robot.m_oi.joystick.getRawAxis(RobotMap.DRIVER_CONTROLLER_MOVE_AXIS);
+        double rotateSpeed = Robot.m_oi.joystick.getRawAxis(RobotMap.DRIVER_CONTROLLER_MOVE_AXIS);
 
     /*  intigrate this
 	if (Math.abs(forward) < 0.10) {
@@ -61,8 +63,8 @@ public class DriveArcade extends Command {
     }
 
     @Override 
-    protected void interrupt()
+    protected void interrupted()
     {
-        endl();
+        end();
     }
 }

@@ -8,7 +8,7 @@ def ROBOT_CLASS = "frc.robot.Robot"
 // Define my targets (RoboRIO) and artifacts (deployable files)
 // This is added by GradleRIO's backing project EmbeddedTools.
 deploy {
-    targets {
+    targets { 
         target("roborio", edu.wpi.first.gradlerio.frc.RoboRIO) {
             // Team number is loaded either from the .wpilib/wpilib_preferences.json
             // or from command line. If not found an exception will be thrown.
