@@ -1,6 +1,6 @@
 
 
-import org.usfirst.frc.team222.robot.RobotMap;
+import frc.robot.RobotMap;
 
 public class DriveArcade extends Command {
 

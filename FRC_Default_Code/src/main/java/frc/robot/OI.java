@@ -5,8 +5,9 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package org.usfirst.frc.team222.robot;
-import edu.wpi.FIRST.wpilibj.Joystick;
+package frc.robot;
+
+import edu.wpi.first.wpilibj.Joystick;    //un used?
 
 /**
  * This class is the glue that binds the controls on the physical operator

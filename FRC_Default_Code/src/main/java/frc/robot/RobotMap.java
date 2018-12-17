@@ -5,7 +5,7 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package org.usfirst.frc.team222.robot;
+package frc.robot;
 
 public class RobotMap {
 
