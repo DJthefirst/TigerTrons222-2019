@@ -1,0 +1,39 @@
+package frc.robot.commands;
+import edu.wpi.first.wpilibj.command.InstantCommand;
+import frc.robot.Robot;
+
+/**
+ * Add your docs here.
+ */
+public class LimeLight_SetPipeline extends InstantCommand {
+  /**
+   * Add your docs here.
+   */
+  //private double m_pipeline = 0.0;
+  private int m_pipeline = 0;
+
+  /* public myLimeLight_set_Pipeline(double pipeline) {
+    super();
+    // Use requires() here to declare subsystem dependencies
+    // eg. requires(chassis);
+    requires(Robot.mylimelight);
+    m_pipeline = pipeline;
+    setRunWhenDisabled(true);
+  } */
+
+  public LimeLight_SetPipeline(int pipeline) {
+    super();
+    // Use requires() here to declare subsystem dependencies
+    // eg. requires(chassis);
+    requires(Robot.LimeLight);
+    m_pipeline = pipeline;
+    setRunWhenDisabled(true);
+  }
+
+  // Called once when the command executes
+  @Override
+  protected void initialize() {
+        ((Object) Robot.LimeLight).getLimeLight().setPipeline(m_pipeline);
+  }
+
+}
