@@ -11,6 +11,13 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
+import frc.robot.commands.ArmDown;
+import frc.robot.commands.ArmUp;
+import frc.robot.commands.BallIn;
+import frc.robot.commands.BallOut;
+import frc.robot.commands.ShiftDown;
+import frc.robot.commands.ShiftUp;
 //import frc.robot.commands.DriveArcade;
 import frc.robot.commands.ShooterDown;
 import frc.robot.commands.ShooterUp;
@@ -44,6 +51,14 @@ public class OI<Joystick> {
 	{
 		D1.whenPressed(new ShooterUp());
 		D2.whenPressed(new ShooterDown());	
+		D3.whenPressed(new ArmUp());
+		D4.whenPressed(new ArmDown());	
+		D5.whenPressed(new ShiftUp());
+		D6.whenPressed(new ShiftDown());	
+		D7.whenPressed(new BallIn());
+		D8.whenPressed(new BallOut());	
+
+
 	}
 	
 

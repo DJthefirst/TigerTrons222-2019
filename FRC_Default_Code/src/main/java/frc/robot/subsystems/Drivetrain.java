@@ -30,8 +30,8 @@ public class Drivetrain extends Subsystem {
 
 
 
-	//DifferentialDrive differentialDrive = new DifferentialDrive(rightMasterTalon,leftMasterTalon); //needs fixing
-	DifferentialDrive differentialDrive = new DifferentialDrive(Spark1,Spark2);
+	DifferentialDrive differentialDrive = new DifferentialDrive(rightMasterTalon,leftMasterTalon); //needs fixing
+	//DifferentialDrive differentialDrive = new DifferentialDrive(Spark1,Spark2);
 
 public Drivetrain()
 {

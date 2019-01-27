@@ -46,12 +46,12 @@ public class RobotMap {
 	// public static int rangefinderModule = 1;
 	
 	//Solenoids
-	public static final int SHOOTER_PITCH_SOLENOID_DEPLOY = 6;
-	public static final int SHOOTER_PITCH_SOLENOID_RETRACT = 1;
-	public static final int ARM_PITCH_SOLENOID_DEPLOY = 6;
-	public static final int ARM_PITCH_SOLENOID_RETRACT = 1;
-	public static final int SHIFT_SOLENOID_DEPLOY = 6;
-	public static final int SHIFT_SOLENOID_RETRACT = 1;
-	public static final int BALLPISTON_SOLENOID_DEPLOY = 6;
-	public static final int BALLPISTON_SOLENOID_RETRACT = 1;
+	public static final int SHOOTER_PITCH_SOLENOID_DEPLOY = 4;
+	public static final int SHOOTER_PITCH_SOLENOID_RETRACT = 3;
+	public static final int ARM_PITCH_SOLENOID_DEPLOY = 2;
+	public static final int ARM_PITCH_SOLENOID_RETRACT = 5;
+	public static final int SHIFT_SOLENOID_DEPLOY = 7;
+	public static final int SHIFT_SOLENOID_RETRACT = 0;
+	public static final int BALLPISTON_SOLENOID_DEPLOY =1;
+	public static final int BALLPISTON_SOLENOID_RETRACT = 6;
 }
