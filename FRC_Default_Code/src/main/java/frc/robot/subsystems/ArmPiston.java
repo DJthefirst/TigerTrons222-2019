@@ -14,7 +14,7 @@ public class ArmPiston extends Subsystem {
 	DoubleSolenoid pitchSolenoid = null;
 
 	public ArmPiston() {
-		pitchSolenoid = new DoubleSolenoid(RobotMap.SHOOTER_PITCH_SOLENOID_DEPLOY, RobotMap.SHOOTER_PITCH_SOLENOID_RETRACT);
+		pitchSolenoid = new DoubleSolenoid(RobotMap.ARM_PITCH_SOLENOID_DEPLOY, RobotMap.ARM_PITCH_SOLENOID_RETRACT);
 	}
 
 	public void pitchUp() {

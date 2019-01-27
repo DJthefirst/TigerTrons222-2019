@@ -14,7 +14,7 @@ public class Shift extends Subsystem {
 	DoubleSolenoid pitchSolenoid = null;
 
 	public Shift() {
-		pitchSolenoid = new DoubleSolenoid(RobotMap.SHOOTER_PITCH_SOLENOID_DEPLOY, RobotMap.SHOOTER_PITCH_SOLENOID_RETRACT);
+		pitchSolenoid = new DoubleSolenoid(RobotMap.SHIFT_SOLENOID_DEPLOY, RobotMap.SHIFT_SOLENOID_RETRACT);
 	}
 
 	public void pitchUp() {
