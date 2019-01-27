@@ -9,9 +9,12 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;  
 import edu.wpi.first.wpilibj.XboxController;
-//import edu.wpi.first.wpilibj.buttons.Button;
-//import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 //import frc.robot.commands.DriveArcade;
+import frc.robot.commands.ShooterDown;
+import frc.robot.commands.ShooterUp;
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -21,7 +24,17 @@ import edu.wpi.first.wpilibj.XboxController;
 public class OI<Joystick> {
 
 	public XboxController joystick = new XboxController(RobotMap.OI_DRIVER_CONTROLLER);
-	//Joystick driverController = new Joystick(RobotMap.OI_DRIVER_CONTROLLER);
+
+	Button D1 = new JoystickButton(joystick, 1);
+	Button D2 = new JoystickButton(joystick, 2);
+	Button D3 = new JoystickButton(joystick, 3);
+	Button D4 = new JoystickButton(joystick, 4);
+	Button D5 = new JoystickButton(joystick, 5);
+	Button D6 = new JoystickButton(joystick, 6);
+	Button D7 = new JoystickButton(joystick, 7);
+	Button D8 = new JoystickButton(joystick, 8);
+	Button D9 = new JoystickButton(joystick, 9);
+	Button D10 = new JoystickButton(joystick, 10);
 	
 	//public?
 //public Joystick driver = new Joystick(0);
@@ -29,7 +42,8 @@ public class OI<Joystick> {
 //// CREATING BUTTONS
 	public OI()
 	{
-		
+		D1.whenPressed(new ShooterUp());
+		D2.whenPressed(new ShooterDown());	
 	}
 	
 

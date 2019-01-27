@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Shooter;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -23,6 +24,7 @@ import frc.robot.subsystems.Drivetrain;
 public class Robot extends TimedRobot {
 	//public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 	public static Drivetrain m_drivetrain = null;
+	public static Shooter m_shooter = null;
 	public static OI m_oi;
 
 	Command m_autonomousCommand;
@@ -38,6 +40,7 @@ public class Robot extends TimedRobot {
 
 		//drivetrain
 		m_drivetrain = new Drivetrain();
+		m_shooter = new Shooter();
 		m_oi = new OI();
 		//m_chooser.addDefault("Default Auto", new ExampleCommand());
 		// chooser.addObject("My Auto", new MyAutoCommand());

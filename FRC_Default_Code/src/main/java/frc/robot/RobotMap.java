@@ -25,8 +25,8 @@ public class RobotMap {
 	public static final int DRIVETRAIN_LEFT_Master_TALON = 4;
 	public static final int DRIVETRAIN_LEFT_Slave1_TALON = 5;
 	public static final int DRIVETRAIN_LEFT_Slave2_TALON = 6;
-	//public static final int DRIVETRAIN_SPARK = 0;
-
+	public static final int DRIVETRAIN_SPARK1 = 0;
+	public static final int DRIVETRAIN_SPARK2 = 1;
 				//Joystick
 	public static final int OI_DRIVER_CONTROLLER = 0;
 
@@ -44,4 +44,14 @@ public class RobotMap {
 
 	// public static int rangefinderPort = 1;
 	// public static int rangefinderModule = 1;
+	
+	//Solenoids
+	public static final int SHOOTER_PITCH_SOLENOID_DEPLOY = 6;
+	public static final int SHOOTER_PITCH_SOLENOID_RETRACT = 1;
+	public static final int ARM_PITCH_SOLENOID_DEPLOY = 6;
+	public static final int ARM_PITCH_SOLENOID_RETRACT = 1;
+	public static final int SHIFT_SOLENOID_DEPLOY = 6;
+	public static final int SHIFT_SOLENOID_RETRACT = 1;
+	public static final int BALLPISTON_SOLENOID_DEPLOY = 6;
+	public static final int BALLPISTON_SOLENOID_RETRACT = 1;
 }
