@@ -14,12 +14,12 @@ public class BallIn extends InstantCommand {
 		super();
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
-		requires(Robot.m_shooter);
+		requires(Robot.m_ballPiston);
 	}
 
 	// Called once when the command executes
 	@Override
 	protected void initialize() {
-		Robot.m_shooter.pitchDown();
+		Robot.m_ballPiston.pitchDown();
 	}
 }

@@ -14,12 +14,12 @@ public class ArmUp extends InstantCommand {
 		super();
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
-		requires(Robot.m_shooter);
+		requires(Robot.m_armPiston);
 	}
 
 	// Called once when the command executes
 	@Override
 	protected void initialize() {
-		Robot.m_shooter.pitchUp();
+		Robot.m_armPiston.pitchUp();
 	}
 }
