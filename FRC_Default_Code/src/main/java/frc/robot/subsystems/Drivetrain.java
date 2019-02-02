@@ -11,8 +11,6 @@ import frc.robot.commands.DriveArcade;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
-
-
 public class Drivetrain extends Subsystem {
 		
 	//motors 
@@ -25,13 +23,14 @@ public class Drivetrain extends Subsystem {
 	WPI_TalonSRX rightSlave1Talon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_RIGHT_Slave1_TALON);
 	WPI_TalonSRX rightSlave2Talon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_RIGHT_Slave2_TALON);
 
-	public CANSparkMax Spark1 = new CANSparkMax(RobotMap.DRIVETRAIN_SPARK1,MotorType.kBrushless);
-	public CANSparkMax Spark2 = new CANSparkMax(RobotMap.DRIVETRAIN_SPARK2,MotorType.kBrushless);
+	CANSparkMax Spark1 = new CANSparkMax(RobotMap.DRIVETRAIN_SPARK1,MotorType.kBrushless);
+	CANSparkMax Spark2 = new CANSparkMax(RobotMap.DRIVETRAIN_SPARK2,MotorType.kBrushless);
 
 
 
 	DifferentialDrive differentialDrive = new DifferentialDrive(rightMasterTalon,leftMasterTalon); //needs fixing
 	//DifferentialDrive differentialDrive = new DifferentialDrive(Spark1,Spark2);
+
 
 public Drivetrain()
 {
@@ -41,21 +40,21 @@ public Drivetrain()
 	rightSlave2Talon.follow(rightMasterTalon);
 }
 
-
-
-public void initDefaultCommand() {
-	// Set the default command for a subsystem here.
-	setDefaultCommand(new DriveArcade()); 
-}
-
-
 public  void arcadeDrive (double moveSpeed, double rotateSpeed)
 {
 	differentialDrive.arcadeDrive(moveSpeed,rotateSpeed);
 }
 
-public CANSparkMax getValueSpark1() {
-	return Spark1;
+
+public void getencoder() {
+	System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
+	System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
+	System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());
+}
+
+public void initDefaultCommand() {
+	// Set the default command for a subsystem here.
+	setDefaultCommand(new DriveArcade()); 
 }
 
 }

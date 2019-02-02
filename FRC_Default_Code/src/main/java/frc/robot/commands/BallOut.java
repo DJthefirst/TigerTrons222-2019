@@ -15,6 +15,8 @@ public class BallOut extends InstantCommand {
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
 		requires(Robot.m_ballPiston);
+
+
 	}
 
 	// Called once when the command executes

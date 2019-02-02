@@ -5,9 +5,6 @@ import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
-/**
- * Add your docs here.
- */
 public class Shift extends Subsystem {
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.

@@ -27,14 +27,18 @@ public class RobotMap {
 	public static final int DRIVETRAIN_LEFT_Slave2_TALON = 6;
 	public static final int DRIVETRAIN_SPARK1 = 0;
 	public static final int DRIVETRAIN_SPARK2 = 1;
+
+				//Encoders
+	public static final int DRIVETRAIN_ENCODER_L = 0;
+	public static final int DRIVETRAIN_ENCODER_R = 1;
+	public static final int ARM_ENCODER_A = 2;
+
 				//Joystick
 	public static final int OI_DRIVER_CONTROLLER = 0;
 
 				//may need axis 0,1
 	public static final int DRIVER_CONTROLLER_MOVE_AXIS = 5;
 	public static final int DRIVER_CONTROLLER_ROTATE_AXIS = 4;
-	
-
 
 	// public static int leftMotor = 1;
 	// public static int rightMotor = 2;

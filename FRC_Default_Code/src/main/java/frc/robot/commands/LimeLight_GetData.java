@@ -2,6 +2,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.Robot;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
@@ -11,9 +12,7 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 public class LimeLight_GetData extends Command {
 
     public LimeLight_GetData() {
-    //    requires(Robot.LimeLight);
-    
-        setRunWhenDisabled(true);
+        requires(Robot.m_limelight);
     }
 
     // Called just before this Command runs the first time
@@ -35,7 +34,9 @@ public class LimeLight_GetData extends Command {
         double x = tx.getDouble(0.0);
         double y = ty.getDouble(0.0);
         double area = ta.getDouble(0.0); 
-        System.out.println("x;"+ tx +" y;"+ ty +" area;"+ area);
+
+
+        System.out.println("x;"+ x +" y;"+ y +" area;"+ area);
 
 
         SmartDashboard.putNumber("LimelightX", x);
