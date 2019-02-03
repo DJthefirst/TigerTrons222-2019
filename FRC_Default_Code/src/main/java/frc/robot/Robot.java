@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.Autonomous;
 import frc.robot.subsystems.ArmPiston;
 import frc.robot.subsystems.BallPiston;
 import frc.robot.subsystems.Drivetrain;
@@ -54,8 +55,9 @@ public class Robot extends TimedRobot {
 		m_ballPiston = new BallPiston();
 		m_shift = new Shift();
 		m_oi = new OI();
-		//m_chooser.addDefault("Default Auto", new ExampleCommand());
-		// chooser.addObject("My Auto", new MyAutoCommand());
+		m_autonomousCommand = new Autonomous();
+		m_chooser.addDefault("Default Auto", new Autonomous());
+		//chooser.addObject("My Auto", new Autonomous());
 		SmartDashboard.putData("Auto mode", m_chooser);
 
 		
@@ -102,7 +104,7 @@ public class Robot extends TimedRobot {
 
 		// schedule the autonomous command (example)
 		if (m_autonomousCommand != null) {
-			m_autonomousCommand.start();
+			//m_autonomousCommand.start(); trying to eliminate rapid fire solenoid
 		}
 	}
 
@@ -112,8 +114,8 @@ public class Robot extends TimedRobot {
 	@Override
 	public void autonomousPeriodic() {
 		Scheduler.getInstance().run();
+		m_autonomousCommand.start(); //when you take this out, autonomous does not cycle
 	}
-
 	@Override
 	public void teleopInit() {
 		// This makes sure that the autonomous stops running when

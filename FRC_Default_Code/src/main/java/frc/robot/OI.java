@@ -50,14 +50,13 @@ public class OI<Joystick> {
 	public OI()
 	{
 		D1.whenPressed(new ShooterUp());
-		D2.whenPressed(new ShooterDown());	
+		D1.whenReleased(new ShooterDown());
+		D2.whenPressed(new BallIn());
+		D2.whenReleased(new BallOut());	
 		D3.whenPressed(new ArmUp());
-		D4.whenPressed(new ArmDown());	
+		D3.whenReleased(new ArmDown());	
 		D5.whenPressed(new ShiftUp());
-		D6.whenPressed(new ShiftDown());	
-		D7.whenPressed(new BallIn());
-		D8.whenPressed(new BallOut());	
-
+		D5.whenReleased(new ShiftDown());	
 
 	}
 	
