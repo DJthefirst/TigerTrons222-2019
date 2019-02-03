@@ -25,7 +25,7 @@ public interface AutonomusInterface {
  
 
      */
-    public abstract void doYourJobMotherFucker();
+    public abstract void doYourJob();
 
     /**
      * Run code once 1x the action finishes, usually for clean up

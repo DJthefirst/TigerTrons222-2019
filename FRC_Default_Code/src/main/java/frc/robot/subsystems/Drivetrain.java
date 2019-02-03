@@ -2,7 +2,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import frc.robot.RobotMap;
@@ -38,18 +38,20 @@ public Drivetrain()
 	leftSlave2Talon.follow(leftMasterTalon);
 	rightSlave1Talon.follow(rightMasterTalon);
 	rightSlave2Talon.follow(rightMasterTalon);
+
+
+	System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
+	System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
+	System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());
+
+	SmartDashboard.putNumber("Sensor Vel", leftSlave1Talon.getSelectedSensorVelocity());
+	SmartDashboard.putNumber("Sensor Pos:", leftSlave1Talon.getSelectedSensorPosition());
+	SmartDashboard.putNumber("Out %", leftSlave1Talon.getMotorOutputPercent());
 }
 
 public  void arcadeDrive (double moveSpeed, double rotateSpeed)
 {
 	differentialDrive.arcadeDrive(moveSpeed,rotateSpeed);
-}
-
-
-public void getencoder() {
-	System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
-	System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
-	System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());
 }
 
 public void initDefaultCommand() {
