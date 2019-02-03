@@ -30,23 +30,10 @@ public class Autonomous extends CommandGroup {
     
 
     addSequential(new BallOut());
-    Timer.delay(3);
     addSequential(new BallIn());
-    Timer.delay(3);
     addSequential(new BallOut());
-    Timer.delay(3);
     addSequential(new BallIn());
-    Timer.delay(3);
-    addSequential(new BallOut());
-    Timer.delay(3);
-    addSequential(new BallIn());
-    Timer.delay(3);
-    addSequential(new BallOut());
-    Timer.delay(3);
-    addSequential(new BallIn());
-    Timer.delay(3);
     addSequential(new ShooterUp());
-    Timer.delay(3);
     addSequential(new ShooterDown());
     // Add Commands here:
     // e.g. addSequential(new Command1());

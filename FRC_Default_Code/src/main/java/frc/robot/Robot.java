@@ -57,7 +57,6 @@ public class Robot extends TimedRobot {
 		m_oi = new OI();
 		m_autonomousCommand = new Autonomous();
 		m_chooser.addDefault("Default Auto", new Autonomous());
-		//chooser.addObject("My Auto", new Autonomous());
 		SmartDashboard.putData("Auto mode", m_chooser);
 
 		
