@@ -36,6 +36,8 @@ https://www.youtube.com/watch?v=B1DHUEUzqps
 https://www.youtube.com/watch?v=wW_djLkD1B8
 
 GRADLE
+
+Shuffleboard belongs in: C:\Users\<name>\Shuffleboard
 https://github.com/wpilibsuite/GradleRIO
 
 
