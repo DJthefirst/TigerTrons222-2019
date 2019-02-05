@@ -34,13 +34,14 @@ public class DriveLimeLight extends Command {
         double yy = ty.getDouble(0.0);
         double Are = ta.getDouble(0.0);
 
+        SmartDashboard.putNumber("LimelightX", xx);
+        SmartDashboard.putNumber("LimelightY", yy);
+        SmartDashboard.putNumber("LimelightArea", Are);
+
         System.out.println("x;"+ xx +" y;"+ yy +" area;"+ Are);
 
         xx = xx/20;
         Are = 5/Are;
-
-
-
 
 
         double moveSpeed = Are;
