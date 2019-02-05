@@ -11,6 +11,7 @@ import edu.wpi.first.networktables.NetworkTableInstance;
  */
 public class LimeLight_GetData extends Command {
 
+    public double x,y,area;
     public LimeLight_GetData() {
         requires(Robot.m_limelight);
     }
@@ -31,12 +32,12 @@ public class LimeLight_GetData extends Command {
         NetworkTableEntry ta = table.getEntry("ta");
 
         //read values periodically
-        double x = tx.getDouble(0.0);
-        double y = ty.getDouble(0.0);
+         x = tx.getDouble(0.0);
+         y = ty.getDouble(0.0);
         double area = ta.getDouble(0.0); 
 
 
-        System.out.println("x;"+ x +" y;"+ y +" area;"+ area);
+        //System.out.println("x;"+ x +" y;"+ y +" area;"+ area);
 
 
         SmartDashboard.putNumber("LimelightX", x);
@@ -60,5 +61,5 @@ public class LimeLight_GetData extends Command {
         end();
     }
 
-    
+
 }
