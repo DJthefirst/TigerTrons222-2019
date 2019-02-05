@@ -15,7 +15,7 @@ import frc.robot.commands.Autonomous;
 import frc.robot.subsystems.ArmPiston;
 import frc.robot.subsystems.BallPiston;
 import frc.robot.subsystems.Drivetrain;
-//import frc.robot.subsystems.Limelight;
+import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.Shift;
 import frc.robot.subsystems.Shooter;
 
@@ -28,7 +28,7 @@ import frc.robot.subsystems.Shooter;
  */
 public class Robot extends TimedRobot {
 	//public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
-//	public static Limelight m_limelight = null;
+	public static Limelight m_limelight = null;
 	public static Drivetrain m_drivetrain = null;
 	public static Shooter m_shooter = null;
 	public static ArmPiston m_armPiston = null;
@@ -49,7 +49,7 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 
 		//drivetrain
-		//m_limelight = new Limelight();
+		m_limelight = new Limelight();
 		m_drivetrain = new Drivetrain();
 		m_shooter = new Shooter();
 		m_armPiston = new ArmPiston();

@@ -9,16 +9,6 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 
 public class DriveLimeLight extends Command {
 
-    //LimeLight_GetData getValuesObj = new LimeLight_GetData();
-   // private double xx = Robot.m_drivetrain.getLeftTalon();
-   // private double yy = getValuesObj.y;
-   // private double Are = getValuesObj.area;
-
-    //double xx = 0; //SmartDashboard.getNumber("LimelightX", 0);
-    //double yy = 0; //SmartDashboard.getNumber("LimelightY", 0);
-   // double Are = 8; //SmartDashboard.getNumber("LimelightArea", 0);
-
-
     public DriveLimeLight()
     {
         requires(Robot.m_drivetrain);
@@ -40,8 +30,8 @@ public class DriveLimeLight extends Command {
         NetworkTableEntry ta = table.getEntry("ta");
 
         //read values periodically
-         xx = tx.getDouble(0.0);
-         yy = ty.getDouble(0.0);
+        double xx = tx.getDouble(0.0);
+        double yy = ty.getDouble(0.0);
         double Are = ta.getDouble(0.0);
 
         System.out.println("x;"+ xx +" y;"+ yy +" area;"+ Are);
