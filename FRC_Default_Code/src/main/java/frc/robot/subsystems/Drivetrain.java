@@ -43,6 +43,8 @@ public Drivetrain()
 	System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
 	System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
 	System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());
+	//maybe?
+	System.out.println(leftSlave1Talon.getSensorCollection().getQuadraturePosition());
 
 	SmartDashboard.putNumber("Sensor Vel", leftSlave1Talon.getSelectedSensorVelocity());
 	SmartDashboard.putNumber("Sensor Pos:", leftSlave1Talon.getSelectedSensorPosition());
@@ -58,5 +60,11 @@ public void initDefaultCommand() {
 	// Set the default command for a subsystem here.
 	setDefaultCommand(new DriveArcade()); 
 }
+
+public WPI_TalonSRX getLeftTalon() {
+	return leftSlave1Talon;
+}
+
+
 
 }

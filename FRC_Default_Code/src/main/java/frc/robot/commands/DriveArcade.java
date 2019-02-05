@@ -3,8 +3,12 @@ package frc.robot.commands;
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 import frc.robot.Robot;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 public class DriveArcade extends Command {
+
+    private WPI_TalonSRX leftSlave1Talon = Robot.m_drivetrain.getLeftTalon();
+
 
     public DriveArcade()
     {
@@ -24,6 +28,18 @@ public class DriveArcade extends Command {
         double moveSpeed = -Robot.m_oi.joystick.getRawAxis(RobotMap.DRIVER_CONTROLLER_MOVE_AXIS);
         double rotateSpeed = Robot.m_oi.joystick.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_AXIS);
 
+        System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
+        System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
+        System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());
+        //maybe?
+        //System.out.println(leftSlave1Talon.getSensorCollection().getQuadraturePosition());
+
+
+
+
+
+
+
       //optional
 	if (Math.abs(moveSpeed) < 0.10) {
 			// within 10% joystick, make it zero 
@@ -35,7 +51,7 @@ public class DriveArcade extends Command {
 		}
 		// print the joystick values to sign them, comment
 		 // out this line after checking the joystick directions. 
-		System.out.println("JoyY:" + moveSpeed + "  turn:" + rotateSpeed );
+		//System.out.println("JoyY:" + moveSpeed + "  turn:" + rotateSpeed );
     
 
 
