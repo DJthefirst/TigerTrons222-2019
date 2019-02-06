@@ -9,14 +9,14 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 
 public class DriveLimeLight extends Command {
 
-    LimeLight_GetData obj = new LimeLight_GetData();
-    private double x = obj.getLimeX();
-    private double y = obj.getLimeY();
-    private double area = obj.getLimeAre();
+   // LimeLight_GetData obj = new LimeLight_GetData();
+   // private double x = obj.getLimeX();
+   // private double y = obj.getLimeY();
+   // private double area = obj.getLimeAre();
    // private double x = Limelight.LimeLight_GetData.getLime();
 
 
-
+ 
     public DriveLimeLight()
     {
         requires(Robot.m_drivetrain);
@@ -32,28 +32,28 @@ public class DriveLimeLight extends Command {
     @Override 
     protected void execute()
     {
-        //NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
-        //NetworkTableEntry tx = table.getEntry("tx");
-       // NetworkTableEntry ty = table.getEntry("ty");
-       // NetworkTableEntry ta = table.getEntry("ta");
+        NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+        NetworkTableEntry tx = table.getEntry("tx");
+        NetworkTableEntry ty = table.getEntry("ty");
+        NetworkTableEntry ta = table.getEntry("ta");
 
         //read values periodically
-       // double xx = tx.getDouble(0.0);
-        //double yy = ty.getDouble(0.0);
-        //double Are = ta.getDouble(0.0);
+        double xx = tx.getDouble(0.0);
+        double yy = ty.getDouble(0.0);
+        double Are = ta.getDouble(0.0);
 
-        //SmartDashboard.putNumber("LimelightX", xx);
-        //SmartDashboard.putNumber("LimelightY", yy);
-        //SmartDashboard.putNumber("LimelightArea", Are);
+        SmartDashboard.putNumber("LimelightX", xx);
+        SmartDashboard.putNumber("LimelightY", yy);
+        SmartDashboard.putNumber("LimelightArea", Are);
 
-        System.out.println("x;"+ x +" y;"+ y +" area;"+ area);
+        System.out.println("x;"+ xx +" y;"+ yy +" area;"+ Are);
 
-        x = x/20;
-        area = 5/area;
+        xx = xx/20;
+        Are = 5/Are;
 
 
-        double moveSpeed = area;
-        double rotateSpeed = x;
+        double moveSpeed = Are;
+        double rotateSpeed = xx;
 
 
 

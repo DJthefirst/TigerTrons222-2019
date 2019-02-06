@@ -58,17 +58,17 @@ public class LimeLight_GetData extends Command {
     }
     
 
-    public double getLimeX() {
-        return x;   
-    }
+    // public double getLimeX() {
+    //     return x;   
+    // }
 
-    public double getLimeY() {
-        return y;    
-    }
+    // public double getLimeY() {
+    //     return y;    
+    // }
 
-    public double getLimeAre() {
-        return area;    
-    }
+    // public double getLimeAre() {
+    //     return area;    
+    // }
 
 
 }
