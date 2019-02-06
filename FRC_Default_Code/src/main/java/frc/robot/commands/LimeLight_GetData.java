@@ -32,13 +32,9 @@ public class LimeLight_GetData extends Command {
         NetworkTableEntry ta = table.getEntry("ta");
 
         //read values periodically
-         x = tx.getDouble(0.0);
-         y = ty.getDouble(0.0);
+        double x = tx.getDouble(0.0);
+        double y = ty.getDouble(0.0);
         double area = ta.getDouble(0.0); 
-
-
-        //System.out.println("x;"+ x +" y;"+ y +" area;"+ area);
-
 
         SmartDashboard.putNumber("LimelightX", x);
         SmartDashboard.putNumber("LimelightY", y);
@@ -59,6 +55,19 @@ public class LimeLight_GetData extends Command {
     protected void interrupted()
     {
         end();
+    }
+    
+
+    public double getLimeX() {
+        return x;   
+    }
+
+    public double getLimeY() {
+        return y;    
+    }
+
+    public double getLimeAre() {
+        return area;    
     }
 
 
