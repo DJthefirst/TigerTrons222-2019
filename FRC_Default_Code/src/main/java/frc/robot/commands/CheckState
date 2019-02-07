@@ -2,13 +2,15 @@ package frc.robot.commands;
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 import frc.robot.Robot;
+import java.util.ArrayList;
 
 public class CheckState extends Command {
 
-List <boolean> stateList = new ArrayList<>();
-
+//public List <boolean> stateList = new ArrayList<>();
+ // public List<List<String>> stateList = new ArrayList<List<String>>();
     public CheckState()
     {
+
        
     }
 
@@ -43,4 +45,16 @@ List <boolean> stateList = new ArrayList<>();
     {
         end();
     }
+
+
+boolean chechStateMethod()
+{
+
+}
+
+
+
+
+
+
 }
