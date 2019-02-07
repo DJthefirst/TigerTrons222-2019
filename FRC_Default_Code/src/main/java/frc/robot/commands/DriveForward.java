@@ -31,26 +31,22 @@ public class DriveForward extends Command {
         System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
         System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());  
         
-while(leftSlave1Talon.getSelectedSensorPosition()>-5000){ //negative is forward
+        while(leftSlave1Talon.getSelectedSensorPosition()>-10000){ //negative is forward
 
-        double moveSpeed = .5; //positive is forward
-        if (moveSpeed>1){moveSpeed=1;} //max speed
+            double moveSpeed = .65; //positive is forward
+            if (moveSpeed>1){moveSpeed=1;} //max speed
 
-      //optional
-	if (Math.abs(moveSpeed) < 0.10) {
-			// within 10% joystick, make it zero 
-			moveSpeed = 0;
-		}
-		//if (Math.abs(rotateSpeed) < 0.10) {
-			// within 10% joystick, make it zero 
-		//	rotateSpeed = 0;
-		//}
-		// print the joystick values to sign them, comment
-		 // out this line after checking the joystick directions. 
-	//	System.out.println("JoyY:" + moveSpeed + "  turn:" + rotateSpeed );
-         
+            //optional
+	        if (Math.abs(moveSpeed) < 0.10) {
+			    // within 10% joystick, make it zero 
+			    moveSpeed = 0;
+		    }
+            Robot.m_drivetrain.arcadeDrive(moveSpeed, 0);
 
-        Robot.m_drivetrain.arcadeDrive(moveSpeed, 0);
+            if(leftSlave1Talon.getSelectedSensorPosition()<-5000){
+                break;
+            }
+        
         }
     }
     
