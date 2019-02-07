@@ -33,8 +33,7 @@ public class DriveForward extends Command {
         
 while(leftSlave1Talon.getSelectedSensorPosition()>-5000){ //negative is forward
 
-        double moveSpeed = (leftSlave1Talon.getSelectedSensorPosition()+5000)/5000; //positive is forward
-
+        double moveSpeed = .5; //positive is forward
         if (moveSpeed>1){moveSpeed=1;} //max speed
 
       //optional
