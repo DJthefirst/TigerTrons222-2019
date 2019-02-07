@@ -48,7 +48,7 @@ public class Robot extends TimedRobot {
 
 	public void robotInit() {
 
-		//drivetrain
+		//subsystems
 		m_limelight = new Limelight();
 		m_drivetrain = new Drivetrain();
 		m_shooter = new Shooter();

@@ -2,9 +2,15 @@
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 import frc.robot.Robot;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
+/*This command drives drives forward until an encoder value is met.
+Created by Eric
+*/
 
 public class DriveForward extends Command {
 
+    private WPI_TalonSRX leftSlave1Talon = Robot.m_drivetrain.getLeftTalon();
     public DriveForward()
     {
         requires(Robot.m_drivetrain);
@@ -20,8 +26,16 @@ public class DriveForward extends Command {
     @Override 
     protected void execute()
     {
-        double moveSpeed = .7;
+        // Read and print encoder values
+        System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
+        System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
+        System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());  
         
+while(leftSlave1Talon.getSelectedSensorPosition()>-5000){ //negative is forward
+
+        double moveSpeed = (leftSlave1Talon.getSelectedSensorPosition()+5000)/5000; //positive is forward
+
+        if (moveSpeed>1){moveSpeed=1;} //max speed
 
       //optional
 	if (Math.abs(moveSpeed) < 0.10) {
@@ -38,7 +52,9 @@ public class DriveForward extends Command {
          
 
         Robot.m_drivetrain.arcadeDrive(moveSpeed, 0);
+        }
     }
+    
 
     @Override 
     protected boolean isFinished()
