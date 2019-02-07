@@ -16,6 +16,7 @@ import frc.robot.commands.ArmDown;
 import frc.robot.commands.ArmUp;
 import frc.robot.commands.BallIn;
 import frc.robot.commands.BallOut;
+import frc.robot.commands.DriveEncoder_Reset;
 import frc.robot.commands.ShiftDown;
 import frc.robot.commands.ShiftUp;
 import frc.robot.commands.ShooterDown;
@@ -60,6 +61,7 @@ public class OI<Joystick> {
 		D5.whenReleased(new ShiftDown());
 		D4.whileHeld(new DriveForward());	
 		D6.whileHeld(new DriveLimeLight());
+		D6.whenPressed(new DriveEncoder_Reset());
 	}
 	
 

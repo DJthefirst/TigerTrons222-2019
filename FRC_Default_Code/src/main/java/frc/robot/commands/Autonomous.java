@@ -7,13 +7,6 @@
 
 package frc.robot.commands;
 
-import java.util.concurrent.Delayed;
-
-import java.util.concurrent.Delayed;
-
-import java.util.concurrent.Delayed;
-
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.Robot;
 
@@ -29,12 +22,14 @@ public class Autonomous extends CommandGroup {
     requires(Robot.m_ballPiston);
     
 
-    addSequential(new BallOut());
-    addSequential(new BallIn());
-    addSequential(new BallOut());
-    addSequential(new BallIn());
-    addSequential(new ShooterUp());
-    addSequential(new ShooterDown());
+    // addSequential(new BallOut());
+    // addSequential(new BallIn());
+    // addSequential(new BallOut());
+    // addSequential(new BallIn());
+    // addSequential(new ShooterUp());
+    // addSequential(new ShooterDown());
+
+
     // Add Commands here:
     // e.g. addSequential(new Command1());
     // addSequential(new Command2());

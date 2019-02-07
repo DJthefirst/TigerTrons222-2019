@@ -2,8 +2,12 @@
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 import frc.robot.Robot;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 public class DriveForward extends Command {
+
+    private WPI_TalonSRX leftSlave1Talon = Robot.m_drivetrain.getLeftTalon();
+    double moveSpeed;
 
     public DriveForward()
     {
@@ -20,24 +24,17 @@ public class DriveForward extends Command {
     @Override 
     protected void execute()
     {
-        double moveSpeed = .7;
-        
 
-      //optional
-	if (Math.abs(moveSpeed) < 0.10) {
-			// within 10% joystick, make it zero 
-			moveSpeed = 0;
-		}
-		//if (Math.abs(rotateSpeed) < 0.10) {
-			// within 10% joystick, make it zero 
-		//	rotateSpeed = 0;
-		//}
-		// print the joystick values to sign them, comment
-		 // out this line after checking the joystick directions. 
-	//	System.out.println("JoyY:" + moveSpeed + "  turn:" + rotateSpeed );
-         
 
-        Robot.m_drivetrain.arcadeDrive(moveSpeed, 0);
+    if(leftSlave1Talon.getSelectedSensorPosition()<5000)
+    {
+        moveSpeed = 0.7; 
+    }
+    else{
+        moveSpeed = 0.0; 
+    }
+              
+    Robot.m_drivetrain.arcadeDrive(moveSpeed, 0);
     }
 
     @Override 
