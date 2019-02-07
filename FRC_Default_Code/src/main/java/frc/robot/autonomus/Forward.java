@@ -43,13 +43,7 @@ public class Forward implements AutonomusInterface {
             Drivetrain.leftMasterTalon=1;
             Drivetrain.rightMasterTalon=1;
             
-            //backward
-	WPI_TalonSRX leftMasterTalon = -1);
-    WPI_TalonSRX rightMasterTalon = -1);
-    
-            //turn
-    WPI_TalonSRX leftMasterTalon = -1;
-	WPI_TalonSRX rightMasterTalon = 1;
+  
 
 
 
