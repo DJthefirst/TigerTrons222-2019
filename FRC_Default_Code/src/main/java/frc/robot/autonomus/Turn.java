@@ -5,15 +5,7 @@ import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import frc.robot.Robot;
 import frc.robot.commands.DriveArcade;
-/**
- * DriveStraightAction drives the robot straight at a settable angle, distance,
- * and velocity. This action begins by setting the drive controller, and then
- * waits until the distance is reached.
- *
- * @see Action
- * @see Drive
- * @see Rotation2d
- */
+
 public class Turn implements AutonomusInterface {
 
     private double startingDistance;
