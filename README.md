@@ -53,3 +53,6 @@ https://www.youtube.com/watch?v=CMEYn026jv0
 
 file:///C:/Users/Andrzej/wpilib/java/current/javadoc/index.html
 
+_____________________________________________________________
+SHUFFLEBOARD
+https://wpilib.screenstepslive.com/s/currentCS/m/shuffleboard/l/831041-working-with-lists
