@@ -10,30 +10,39 @@ Created by Eric
 
 public class DriveForward extends Command {
 
+    double driveSpeed;
+    double driveDistance;
     private WPI_TalonSRX leftSlave1Talon = Robot.m_drivetrain.getLeftTalon();
-    public DriveForward()
+    
+    public DriveForward(double inches, double drivespeed)
     {
         requires(Robot.m_drivetrain);
+        driveDistance = inches;
+        driveSpeed = drivespeed;
     }
 
 
     @Override 
     protected void initialize()
     {
-
+        Robot.m_drivetrain.ResetEncoder(); 
     }
 
     @Override 
     protected void execute()
     {
+
+        driveDistance = driveDistance*1000;
+
         // Read and print encoder values
         System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
         System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
         System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());  
-        
-        while(leftSlave1Talon.getSelectedSensorPosition()>-10000){ //negative is forward
+        System.out.println("Dist: " + driveDistance);
 
-            double moveSpeed = .65; //positive is forward
+        while(leftSlave1Talon.getSelectedSensorPosition() > -driveDistance){ //negative is forward
+
+            double moveSpeed = driveSpeed; //positive is forward
             if (moveSpeed>1){moveSpeed=1;} //max speed
 
             //optional
@@ -43,9 +52,7 @@ public class DriveForward extends Command {
 		    }
             Robot.m_drivetrain.arcadeDrive(moveSpeed, 0);
 
-            if(leftSlave1Talon.getSelectedSensorPosition()<-5000){
-                break;
-            }
+            
         
         }
     }

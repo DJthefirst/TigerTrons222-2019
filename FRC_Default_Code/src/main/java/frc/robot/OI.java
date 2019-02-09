@@ -12,8 +12,8 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-import frc.robot.commands.ArmDown;
-import frc.robot.commands.ArmUp;
+import frc.robot.commands.ArmPneuDown;
+import frc.robot.commands.ArmPneuUp;
 import frc.robot.commands.BallIn;
 import frc.robot.commands.BallOut;
 import frc.robot.commands.DriveEncoder_Reset;
@@ -23,6 +23,7 @@ import frc.robot.commands.ShooterDown;
 import frc.robot.commands.ShooterUp;
 import frc.robot.commands.DriveForward;
 import frc.robot.commands.DriveLimeLight;
+import frc.robot.commands.ArmUp;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -55,13 +56,15 @@ public class OI<Joystick> {
 		D1.whenReleased(new ShooterDown());
 		D2.whenPressed(new BallIn());
 		D2.whenReleased(new BallOut());	
-		D3.whenPressed(new ArmUp());
-		D3.whenReleased(new ArmDown());	
+		D3.whenPressed(new ArmPneuUp());
+		D3.whenReleased(new ArmPneuDown());	
 		D5.whenPressed(new ShiftUp());
 		D5.whenReleased(new ShiftDown());
-		D4.whileHeld(new DriveForward());	
+		D4.whileHeld(new DriveForward(10,.6));	
 		D6.whileHeld(new DriveLimeLight());
 		D7.whenPressed(new DriveEncoder_Reset());
+		D7.whenPressed(new ArmUp(8,.4));//dist 0-12,speed
+		D8.whenPressed(new ArmUp(2,.4));
 	}
 	
 

@@ -28,9 +28,9 @@ public class DriveArcade extends Command {
         double moveSpeed = -Robot.m_oi.joystick.getRawAxis(RobotMap.DRIVER_CONTROLLER_MOVE_AXIS);
         double rotateSpeed = Robot.m_oi.joystick.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_AXIS);
 
-        System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
-        System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
-        System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());
+        //System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
+        //System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
+        //System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());
         //maybe?
         //System.out.println(leftSlave1Talon.getSensorCollection().getQuadraturePosition());
 

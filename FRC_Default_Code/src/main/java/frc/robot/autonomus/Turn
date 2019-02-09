@@ -13,8 +13,6 @@ public class Turn implements AutonomusInterface {
     private double mVelocity;
     private double mGyro;
     private double encoder;
-   Drivetrain dt = new Drivetrain();
-  DifferentialDrive df = dt.differentialDrive;
 
      public Turn(double distance, double velocity, double gyro) {
         mWantedDistance = distance;

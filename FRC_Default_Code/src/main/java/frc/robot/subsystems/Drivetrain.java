@@ -44,17 +44,23 @@ public Drivetrain()
 	System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
 	System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());
 	//maybe?
-	System.out.println(leftSlave1Talon.getSensorCollection().getQuadraturePosition());
+	//System.out.println(leftSlave1Talon.getSensorCollection().getQuadraturePosition());
 
-	SmartDashboard.putNumber("Sensor Vel", leftSlave1Talon.getSelectedSensorVelocity());
-	SmartDashboard.putNumber("Sensor Pos:", leftSlave1Talon.getSelectedSensorPosition());
-	SmartDashboard.putNumber("Out %", leftSlave1Talon.getMotorOutputPercent());
+	//SmartDashboard.putNumber("Sensor Vel", leftSlave1Talon.getSelectedSensorVelocity());
+	//SmartDashboard.putNumber("Sensor Pos:", leftSlave1Talon.getSelectedSensorPosition());
+	//SmartDashboard.putNumber("Out %", leftSlave1Talon.getMotorOutputPercent());
 }
 
 public  void arcadeDrive (double moveSpeed, double rotateSpeed)
 {
 	differentialDrive.arcadeDrive(moveSpeed,rotateSpeed);
 }
+
+public void ResetEncoder ()
+{
+leftSlave1Talon.setSelectedSensorPosition(0, 0, 0);
+}
+
 
 public void initDefaultCommand() {
 	// Set the default command for a subsystem here.

@@ -25,6 +25,8 @@ public class RobotMap {
 	public static final int DRIVETRAIN_LEFT_Master_TALON = 4;
 	public static final int DRIVETRAIN_LEFT_Slave1_TALON = 5;
 	public static final int DRIVETRAIN_LEFT_Slave2_TALON = 6;
+	public static final int ARM_MOTOR_Master_TALON = 7;
+	public static final int ARM_MOTOR_Slave_TALON = 8;
 	public static final int DRIVETRAIN_SPARK1 = 0;
 	public static final int DRIVETRAIN_SPARK2 = 1;
 
@@ -37,6 +39,7 @@ public class RobotMap {
 	public static final int OI_DRIVER_CONTROLLER = 0;
 
 				//may need axis 0,1
+	public static final int DRIVER_CONTROLLER_ARM_AXIS = 1;			
 	public static final int DRIVER_CONTROLLER_MOVE_AXIS = 5;
 	public static final int DRIVER_CONTROLLER_ROTATE_AXIS = 4;
 

@@ -6,11 +6,11 @@ import frc.robot.Robot;
 /**
  * Add your docs here.
  */
-public class ArmDown extends InstantCommand {
+public class ArmPneuDown extends InstantCommand {
 	/**
 	 * Add your docs here.
 	 */
-	public ArmDown() {
+	public ArmPneuDown() {
 		super();
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);

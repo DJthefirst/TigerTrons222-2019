@@ -1,65 +1,50 @@
 package frc.robot.commands;
+import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 import frc.robot.Robot;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-/*This command drives drives forward until an encoder value is met.
-Created by Eric
-*/
+public class ArmVertical extends Command {
 
-public class ArmUp extends Command {
-
-    double armSpeed;
-    double armDistance;
     private WPI_TalonSRX armMotorMaster = Robot.m_arm.getArmTalon();
-    
-    public ArmUp(double arminches, double armspeed)
+
+
+    public ArmVertical()
     {
         requires(Robot.m_arm);
-        armDistance = arminches;
-        armSpeed = armspeed;
     }
 
 
     @Override 
     protected void initialize()
     {
-       // Robot.m_arm.ResetArmEncoder(); 
+
     }
+
+    //public  void armDrive (double armPositon)
+    //{
+	//    double ArmPosition = armPositon;
+    //}
+
 
     @Override 
     protected void execute()
     {
-
-        armDistance = armDistance*100;
-
-        // Read and print encoder values
+        double armPosition = -Robot.m_oi.joystick.getRawAxis(RobotMap.DRIVER_CONTROLLER_ARM_AXIS);
+        Robot.m_arm.armDrive(armPosition);
+        
         System.out.println("Sensor Vel:" + armMotorMaster.getSelectedSensorVelocity());
         System.out.println("Sensor Pos:" + armMotorMaster.getSelectedSensorPosition());
-        System.out.println("Out %" + armMotorMaster.getMotorOutputPercent());  
-        // System.out.println("Dist: " + armDistance);
-        if (armDistance > armMotorMaster.getSelectedSensorPosition());
-        {
-            while(armMotorMaster.getSelectedSensorPosition() < armDistance)
-            { //negative is forward
-                Robot.m_arm.armDrive(armSpeed);
-                Robot.m_drivetrain.arcadeDrive(0, 0);
-            }
-            
-        
-        }
-        if(armDistance < armMotorMaster.getSelectedSensorPosition());
-        {
-            while(armMotorMaster.getSelectedSensorPosition() < armDistance)
-            { //negative is forward 
-                Robot.m_arm.armDrive(-armSpeed);
-                Robot.m_drivetrain.arcadeDrive(0, 0);
-            }
-            
-        
-        }
-    }
+        System.out.println("Out %" + armMotorMaster.getMotorOutputPercent());
+        //maybe?
+        //System.out.println(armMotorMaster.getSensorCollection().getQuadraturePosition());
     
+        SmartDashboard.putNumber("Sensor Vel", armMotorMaster.getSelectedSensorVelocity());
+        SmartDashboard.putNumber("Sensor Pos:", armMotorMaster.getSelectedSensorPosition());
+        SmartDashboard.putNumber("Out %", armMotorMaster.getMotorOutputPercent());
+
+    }
 
     @Override 
     protected boolean isFinished()

@@ -22,8 +22,8 @@ public class DriveEncoder_Reset extends InstantCommand {
     // Called just before this Command runs the first time
     protected void initialize() {
         //Robot.cascadeLift.resetEncoder();
-        leftSlave1Talon.setSelectedSensorPosition(0, 0, 0);
-
+        //leftSlave1Talon.setSelectedSensorPosition(0, 0, 0);
+        leftSlave1Talon.set(0);
         //maybe
         //leftSlave1Talon.getSensorCollection().setQuadraturePosition(0, 0);
     }

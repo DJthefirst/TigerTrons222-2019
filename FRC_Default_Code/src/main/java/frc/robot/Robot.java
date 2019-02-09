@@ -18,6 +18,7 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.Shift;
 import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.UpyDownyArmThing;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -34,6 +35,7 @@ public class Robot extends TimedRobot {
 	public static ArmPiston m_armPiston = null;
 	public static BallPiston m_ballPiston = null;
 	public static Shift m_shift = null;
+	public static UpyDownyArmThing m_arm = null;
 	public static OI m_oi;
 	public static Object commands;
 
@@ -55,6 +57,7 @@ public class Robot extends TimedRobot {
 		m_armPiston = new ArmPiston();
 		m_ballPiston = new BallPiston();
 		m_shift = new Shift();
+		m_arm = new UpyDownyArmThing();
 		m_oi = new OI();
 		m_autonomousCommand = new Autonomous();
 		m_chooser.addDefault("Default Auto", new Autonomous());
@@ -96,14 +99,14 @@ public class Robot extends TimedRobot {
 		m_autonomousCommand = m_chooser.getSelected();
 
 		
-		  String autoSelected = SmartDashboard.getString("Auto Selector","Default");
-		  switch(autoSelected) {
-			case "My Auto": autonomousCommand = new DriveArcade();
-				break; 
-				case "My Auto": autonomousCommand = new DriveLimeLight();
-				break; 
-			case "Default Auto": default:
-		  autonomousCommand = new ExampleCommand(); break; }
+		//   String autoSelected = SmartDashboard.getString("Auto Selector","Default");
+		//   switch(autoSelected) {
+		// 	case "My Auto": autonomousCommand = new DriveArcade();
+		// 		break; 
+		// 		case "My Auto": autonomousCommand = new DriveLimeLight();
+		// 		break; 
+		// 	case "Default Auto": default:
+		//   autonomousCommand = new ExampleCommand(); break; }
 		 
 
 		// schedule the autonomous command (example)
