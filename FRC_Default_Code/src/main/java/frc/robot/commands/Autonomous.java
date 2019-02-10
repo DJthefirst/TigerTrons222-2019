@@ -22,8 +22,8 @@ public class Autonomous extends CommandGroup {
     requires(Robot.m_ballPiston);
     
 
-    addSequential(new DriveForward(5,.6));
-    addSequential(new DriveForward(2,.8));
+    addSequential(new DriveArcade());
+    //addSequential(new DriveForward(2,.8));
     // addSequential(new BallOut());
     // addSequential(new BallIn());
     // addSequential(new BallOut());
