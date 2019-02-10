@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class ArmVertical extends Command {
 
     private WPI_TalonSRX armMotorMaster = Robot.m_arm.getArmTalon();
-
+    private static int loop = 0;
 
     public ArmVertical()
     {
@@ -22,10 +22,6 @@ public class ArmVertical extends Command {
 
     }
 
-    //public  void armDrive (double armPositon)
-    //{
-	//    double ArmPosition = armPositon;
-    //}
 
 
     @Override 
@@ -34,11 +30,13 @@ public class ArmVertical extends Command {
         double armPosition = -Robot.m_oi.joystick.getRawAxis(RobotMap.DRIVER_CONTROLLER_ARM_AXIS);
         Robot.m_arm.armDrive(armPosition);
         
+        if (++loop >= 20) {
+			loop = 0;
         System.out.println("Sensor Vel:" + armMotorMaster.getSelectedSensorVelocity());
         System.out.println("Sensor Pos:" + armMotorMaster.getSelectedSensorPosition());
         System.out.println("Out %" + armMotorMaster.getMotorOutputPercent());
-        //maybe?
-        //System.out.println(armMotorMaster.getSensorCollection().getQuadraturePosition());
+        }
+       
     
         SmartDashboard.putNumber("Sensor Vel", armMotorMaster.getSelectedSensorVelocity());
         SmartDashboard.putNumber("Sensor Pos:", armMotorMaster.getSelectedSensorPosition());

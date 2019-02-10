@@ -6,6 +6,11 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import frc.robot.RobotMap;
 import frc.robot.commands.ArmVertical;
+import frc.robot.Constants;
+import com.ctre.phoenix.motorcontrol.can.*;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.FeedbackDevice;
+import com.ctre.phoenix.motorcontrol.StatusFrameEnhanced;
 
 
 public class UpyDownyArmThing extends Subsystem {
@@ -16,8 +21,45 @@ public class UpyDownyArmThing extends Subsystem {
 
 public UpyDownyArmThing()
 {
+	
 	armMotorSlave.follow(armMotorMaster);
+			/* Factory default hardware to prevent unexpected behavior */
+			armMotorMaster.configFactoryDefault();
 
+			/* Configure Sensor Source for Pirmary PID */
+			armMotorMaster.configSelectedFeedbackSensor(FeedbackDevice.Analog, Constants.kPIDLoopIdx, Constants.kTimeoutMs);
+	
+			/**
+			 * Configure Talon SRX Output and Sesnor direction accordingly
+			 * Invert Motor to have green LEDs when driving Talon Forward / Requesting Postiive Output
+			 * Phase sensor to have positive increment when driving Talon Forward (Green LED)
+			 */
+			armMotorMaster.setSensorPhase(true);
+			armMotorMaster.setInverted(false);
+	
+			/* Set relevant frame periods to be at least as fast as periodic rate */
+			armMotorMaster.setStatusFramePeriod(StatusFrameEnhanced.Status_13_Base_PIDF0, 10, Constants.kTimeoutMs);
+			armMotorMaster.setStatusFramePeriod(StatusFrameEnhanced.Status_10_MotionMagic, 10, Constants.kTimeoutMs);
+	
+			/* Set the peak and nominal outputs */
+			armMotorMaster.configNominalOutputForward(0, Constants.kTimeoutMs);
+			armMotorMaster.configNominalOutputReverse(0, Constants.kTimeoutMs);
+			armMotorMaster.configPeakOutputForward(1, Constants.kTimeoutMs);
+			armMotorMaster.configPeakOutputReverse(-1, Constants.kTimeoutMs);
+	
+			/* Set Motion Magic gains in slot0 - see documentation */
+			armMotorMaster.selectProfileSlot(Constants.kSlotIdx, Constants.kPIDLoopIdx);
+			armMotorMaster.config_kF(Constants.kSlotIdx, Constants.kGains.kF, Constants.kTimeoutMs);
+			armMotorMaster.config_kP(Constants.kSlotIdx, Constants.kGains.kP, Constants.kTimeoutMs);
+			armMotorMaster.config_kI(Constants.kSlotIdx, Constants.kGains.kI, Constants.kTimeoutMs);
+			armMotorMaster.config_kD(Constants.kSlotIdx, Constants.kGains.kD, Constants.kTimeoutMs);
+	
+			/* Set acceleration and vcruise velocity - see documentation */
+			armMotorMaster.configMotionCruiseVelocity(15000, Constants.kTimeoutMs);
+			armMotorMaster.configMotionAcceleration(6000, Constants.kTimeoutMs);
+	
+			/* Zero the sensor */
+			armMotorMaster.setSelectedSensorPosition(0, Constants.kPIDLoopIdx, Constants.kTimeoutMs);
 }
 
 public  void armDrive (double armSpeed)

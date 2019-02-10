@@ -63,8 +63,8 @@ public class OI<Joystick> {
 		D4.whileHeld(new DriveForward(10,.6));	
 		D6.whileHeld(new DriveLimeLight());
 		D7.whenPressed(new DriveEncoder_Reset());
-		D7.whenPressed(new ArmUp(8,.4));//dist 0-12,speed
-		D8.whenPressed(new ArmUp(2,.4));
+		D7.whileHeld(new ArmUp(800));
+		D8.whileHeld(new ArmUp(0));
 	}
 	
 
