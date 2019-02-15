@@ -21,8 +21,8 @@ import frc.robot.commands.Shiftcmd;
 import frc.robot.commands.ShooterDown;
 import frc.robot.commands.ShooterUp;
 import frc.robot.commands.DriveForward;
+import frc.robot.commands.DriveGyro;
 import frc.robot.commands.DriveLimeLight;
-import frc.robot.commands.Gyro_GetData;
 import frc.robot.commands.LimeLight_Pipeline;
 import frc.robot.commands.ArmUp;
 
@@ -62,7 +62,7 @@ public class OI<Joystick> {
 		D5.whenPressed(new Shiftcmd());
 		//D4.whileHeld(new DriveForward(10,.6));	
 		//D6.whileHeld(new DriveLimeLight());
-		D6.whileHeld(new Gyro_GetData());
+		D6.whileHeld(new DriveGyro());
 		//D7.whenPressed(new DriveEncoder_Reset());
 		//D7.whileHeld(new ArmUp(800));
 		D8.whileHeld(new ArmUp(0));

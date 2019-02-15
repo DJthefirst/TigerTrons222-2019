@@ -14,11 +14,13 @@ public class DriveForward extends Command {
     double driveDistance;
     private WPI_TalonSRX leftSlave1Talon = Robot.m_drivetrain.getLeftTalon();
     
-    public DriveForward(double inches, double drivespeed)
+    public DriveForward(double inches, double drivespeed, double angle, double turnspeed)
     {
         requires(Robot.m_drivetrain);
         driveDistance = inches;
         driveSpeed = drivespeed;
+
+        
     }
 
 

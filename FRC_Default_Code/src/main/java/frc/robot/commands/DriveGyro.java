@@ -6,14 +6,14 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
 
-public class Gyro_GetData extends Command {
+public class DriveGyro extends Command {
 
     private AnalogGyro gyro = new AnalogGyro(RobotMap.ROBOT_GYRO);
     double Kp = .2;
     private static int loop = 0;
 
 
-    public Gyro_GetData()
+    public DriveGyro()
     {
         requires(Robot.m_drivetrain);
     }
