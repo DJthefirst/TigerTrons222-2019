@@ -17,14 +17,13 @@ import frc.robot.commands.ArmPneuUp;
 import frc.robot.commands.BallIn;
 import frc.robot.commands.BallOut;
 import frc.robot.commands.DriveEncoder_Reset;
-import frc.robot.commands.ShiftDown;
-import frc.robot.commands.ShiftUp;
+import frc.robot.commands.Shiftcmd;
 import frc.robot.commands.ShooterDown;
 import frc.robot.commands.ShooterUp;
 import frc.robot.commands.DriveForward;
 import frc.robot.commands.DriveLimeLight;
-import frc.robot.commands.LimeLight_Pipeline0;
-import frc.robot.commands.LimeLight_Pipeline1;
+import frc.robot.commands.Gyro_GetData;
+import frc.robot.commands.LimeLight_Pipeline;
 import frc.robot.commands.ArmUp;
 
 /**
@@ -60,15 +59,14 @@ public class OI<Joystick> {
 		D2.whenReleased(new BallOut());	
 		D3.whenPressed(new ArmPneuUp());
 		D3.whenReleased(new ArmPneuDown());	
-		D5.whenPressed(new ShiftUp());
-		D5.whenReleased(new ShiftDown());
+		D5.whenPressed(new Shiftcmd());
 		//D4.whileHeld(new DriveForward(10,.6));	
-		D6.whileHeld(new DriveLimeLight());
+		//D6.whileHeld(new DriveLimeLight());
+		D6.whileHeld(new Gyro_GetData());
 		//D7.whenPressed(new DriveEncoder_Reset());
 		//D7.whileHeld(new ArmUp(800));
-		//D8.whileHeld(new ArmUp(0));
-		D7.whenPressed(new LimeLight_Pipeline0());
-		D8.whenPressed(new LimeLight_Pipeline1());
+		D8.whileHeld(new ArmUp(0));
+		D7.whenPressed(new LimeLight_Pipeline());
 	}
 	
 

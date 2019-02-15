@@ -35,10 +35,10 @@ public class DriveForward extends Command {
         driveDistance = driveDistance*1000;
 
         // Read and print encoder values
-        System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
-        System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
-        System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());  
-        System.out.println("Dist: " + driveDistance);
+       // System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
+        //System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
+        //System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());  
+        //System.out.println("Dist: " + driveDistance);
 
         while(leftSlave1Talon.getSelectedSensorPosition() > -driveDistance){ //negative is forward
 

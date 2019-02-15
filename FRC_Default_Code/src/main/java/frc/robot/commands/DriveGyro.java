@@ -1,0 +1,52 @@
+
+package frc.robot.commands;
+
+import edu.wpi.first.wpilibj.AnalogGyro;
+import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
+import frc.robot.RobotMap;
+
+public class Gyro_GetData extends Command {
+
+    private AnalogGyro gyro = new AnalogGyro(RobotMap.ROBOT_GYRO);
+    double Kp = .2;
+    private static int loop = 0;
+
+
+    public Gyro_GetData()
+    {
+        requires(Robot.m_drivetrain);
+    }
+
+    @Override
+    protected void initialize() {
+       gyro.reset();
+    }           
+
+
+    protected void execute()
+    {
+        double angle = gyro.getAngle(); // get current heading
+
+
+        Robot.m_drivetrain.arcadeDrive(.6, angle*Kp); // drive towards heading 0
+        
+
+
+        if (++loop >= 10) {
+            loop = 0;
+        System.out.println("Gyro:" + gyro.getAngle());
+        }
+    }
+
+
+    @Override
+    protected boolean isFinished() {
+        return false;
+    }
+
+    @Override 
+    protected void end(){       
+        Robot.m_drivetrain.arcadeDrive(0,0);
+    }
+}

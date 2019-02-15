@@ -3,11 +3,8 @@ package frc.robot.commands;
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 import frc.robot.Robot;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 public class DriveArcade extends Command {
-
-    private WPI_TalonSRX leftSlave1Talon = Robot.m_drivetrain.getLeftTalon();
 
 
     public DriveArcade()

@@ -5,8 +5,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
 public class Shift extends Subsystem {
-	// Put methods for controlling this subsystem
-	// here. Call these from Commands.
+
 	DoubleSolenoid pitchSolenoid = null;
 
 	public Shift() {
@@ -26,4 +25,5 @@ public class Shift extends Subsystem {
 		// Set the default command for a subsystem here.
 		// setDefaultCommand(new MySpecialCommand());
 	}
+
 }

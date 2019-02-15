@@ -30,11 +30,11 @@ public class ArmVertical extends Command {
         double armPosition = -Robot.m_oi.joystick.getRawAxis(RobotMap.DRIVER_CONTROLLER_ARM_AXIS);
         Robot.m_arm.armDrive(armPosition);
         
-        if (++loop >= 20) {
+        if (++loop >= 40) {
 			loop = 0;
-        System.out.println("Sensor Vel:" + armMotorMaster.getSelectedSensorVelocity());
-        System.out.println("Sensor Pos:" + armMotorMaster.getSelectedSensorPosition());
-        System.out.println("Out %" + armMotorMaster.getMotorOutputPercent());
+       // System.out.println("Sensor Vel:" + armMotorMaster.getSelectedSensorVelocity());
+       // System.out.println("Sensor Pos:" + armMotorMaster.getSelectedSensorPosition());
+       // System.out.println("Out %" + armMotorMaster.getMotorOutputPercent());
         }
        
     

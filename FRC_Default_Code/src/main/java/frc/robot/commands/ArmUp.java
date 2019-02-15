@@ -47,9 +47,9 @@ public class ArmUp extends Command {
         armMotorMaster.set(ControlMode.MotionMagic, targetPos);
 
         // Read and print encoder values
-        System.out.println("Sensor Vel:" + armMotorMaster.getSelectedSensorVelocity());
-        System.out.println("Sensor Pos:" + armMotorMaster.getSelectedSensorPosition());
-        System.out.println("Out %" + armMotorMaster.getMotorOutputPercent());  
+       // System.out.println("Sensor Vel:" + armMotorMaster.getSelectedSensorVelocity());
+       // System.out.println("Sensor Pos:" + armMotorMaster.getSelectedSensorPosition());
+       // System.out.println("Out %" + armMotorMaster.getMotorOutputPercent());  
         // System.out.println("Dist: " + armDistance);          
     }
     

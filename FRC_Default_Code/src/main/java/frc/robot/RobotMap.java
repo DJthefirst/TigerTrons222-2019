@@ -35,6 +35,9 @@ public class RobotMap {
 	public static final int DRIVETRAIN_ENCODER_R = 1;
 	public static final int ARM_ENCODER_A = 2;
 
+				//Gyro
+	public static final int ROBOT_GYRO = 1;
+
 				//Joystick
 	public static final int OI_DRIVER_CONTROLLER = 0;
 
