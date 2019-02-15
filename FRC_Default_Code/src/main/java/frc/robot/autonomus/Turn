@@ -32,8 +32,8 @@ public class Turn implements AutonomusInterface {
         while(encoder<mWantedDistance)
         { 
               //turn
-    WPI_TalonSRX leftMasterTalon = -1;
-	WPI_TalonSRX rightMasterTalon = 1;
+     leftMasterTalon = -1;
+	 rightMasterTalon = 1;
 
         }
         

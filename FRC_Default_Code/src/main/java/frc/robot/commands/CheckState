@@ -8,6 +8,7 @@ public class CheckState extends Command {
 
 //public List <boolean> stateList = new ArrayList<>();
  // public List<List<String>> stateList = new ArrayList<List<String>>();
+ short 
     public CheckState()
     {
 
