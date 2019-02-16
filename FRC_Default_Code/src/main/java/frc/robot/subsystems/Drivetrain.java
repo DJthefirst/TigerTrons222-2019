@@ -58,7 +58,7 @@ public  void arcadeDrive (double moveSpeed, double rotateSpeed)
 
 public void ResetEncoder ()
 {
-leftSlave1Talon.setSelectedSensorPosition(0, 0, 0);
+	leftSlave1Talon.setSelectedSensorPosition(0, 0, 0);
 }
 
 

@@ -14,8 +14,10 @@ public class DriveForward extends Command {
     double driveDistance;
     double angle;
     double turnSpeed;
-    double Kp = .2;  //turn intensity
-
+    double Kp = .04;  //turn intensity
+    double moveSpeed = 0;
+    double loop = 0;
+    double turnAngle = 0;
     private WPI_TalonSRX leftSlave1Talon = Robot.m_drivetrain.getLeftTalon();
     private AnalogGyro gyro = new AnalogGyro(RobotMap.ROBOT_GYRO);
     
@@ -23,7 +25,7 @@ public class DriveForward extends Command {
     public DriveForward(double inches, double drivespeed, double turnangle, double turnspeed)
     {
         requires(Robot.m_drivetrain);
-        driveDistance = inches;
+        driveDistance = inches*1000;
         driveSpeed = drivespeed;
         angle = turnangle;
         turnSpeed = turnspeed;
@@ -40,27 +42,39 @@ public class DriveForward extends Command {
     @Override 
     protected void execute()
     {
-        driveDistance = driveDistance*(Settings.Encoder_RotationsPerInch);
+        turnAngle = 0;
+        moveSpeed = 0;
+        if(Math.abs(leftSlave1Talon.getSelectedSensorPosition()) < Math.abs(driveDistance)){ //negative is forward
+        
+            moveSpeed = driveSpeed; //positive is forward
+            turnAngle = -angle + gyro.getAngle();
+            turnAngle = turnAngle*Kp;
 
-        //double angle = gyro.getAngle();
-        while(Math.abs(leftSlave1Talon.getSelectedSensorPosition()) > Math.abs(driveDistance)){ //negative is forward
-
-            double moveSpeed = driveSpeed; //positive is forward
-            angle = angle - gyro.getAngle();
-            angle = angle*Kp;
+            if (++loop >= 10) {
+                loop = 0;
+                System.out.println("turnAngle: " + turnAngle +" |Gyro: "+ gyro.getAngle());
+                //System.out.println(turnAngle);
+            }
+           
+            
+            
+            }
 
             if (moveSpeed > 1){moveSpeed = 1;}
 	        if (Math.abs(moveSpeed) < 0.10) {
 			    moveSpeed = 0;
             }
-            if (turnSpeed > 1){turnSpeed = 1;}
-	        if (Math.abs(turnSpeed) < 0.10) {
-			    turnSpeed = 0;
-            }
-            if (angle > turnSpeed){angle = turnSpeed;}
+           // if (turnSpeed > 1){turnSpeed = 1;}
+	        //if (Math.abs(turnAngle) < 0.10) {
+			//    turnSpeed = 0;
+            //}
+            if (turnAngle > turnSpeed){turnAngle = turnSpeed;}
+            if (turnAngle < -turnSpeed){turnAngle = -turnSpeed;}
         
-            Robot.m_drivetrain.arcadeDrive(moveSpeed, angle);
-        }
+        Robot.m_drivetrain.arcadeDrive(moveSpeed, turnAngle);
+
+        //System.out.println(Math.abs(driveDistance));
+        //System.out.println(Math.abs(leftSlave1Talon.getSelectedSensorPosition()));
     }
     
 

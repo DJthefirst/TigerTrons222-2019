@@ -29,7 +29,7 @@ public class DriveGyro extends Command {
         double angle = gyro.getAngle(); // get current heading
 
 
-        Robot.m_drivetrain.arcadeDrive(.6, angle*Kp); // drive towards heading 0
+        Robot.m_drivetrain.arcadeDrive(.5, angle*Kp); // drive towards heading 0
         
 
 
