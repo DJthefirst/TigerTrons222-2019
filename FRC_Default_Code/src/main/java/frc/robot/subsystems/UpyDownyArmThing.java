@@ -49,10 +49,10 @@ public UpyDownyArmThing()
 	
 			/* Set Motion Magic gains in slot0 - see documentation */
 			armMotorMaster.selectProfileSlot(Constants.kSlotIdx, Constants.kPIDLoopIdx);
-			armMotorMaster.config_kF(Constants.kSlotIdx, Constants.kGains.kF, Constants.kTimeoutMs);
-			armMotorMaster.config_kP(Constants.kSlotIdx, Constants.kGains.kP, Constants.kTimeoutMs);
-			armMotorMaster.config_kI(Constants.kSlotIdx, Constants.kGains.kI, Constants.kTimeoutMs);
-			armMotorMaster.config_kD(Constants.kSlotIdx, Constants.kGains.kD, Constants.kTimeoutMs);
+			armMotorMaster.config_kF(Constants.kSlotIdx, Constants.ARM_kGains.kF, Constants.kTimeoutMs);
+			armMotorMaster.config_kP(Constants.kSlotIdx, Constants.ARM_kGains.kP, Constants.kTimeoutMs);
+			armMotorMaster.config_kI(Constants.kSlotIdx, Constants.ARM_kGains.kI, Constants.kTimeoutMs);
+			armMotorMaster.config_kD(Constants.kSlotIdx, Constants.ARM_kGains.kD, Constants.kTimeoutMs);
 	
 			/* Set acceleration and vcruise velocity - see documentation */
 			armMotorMaster.configMotionCruiseVelocity(15000, Constants.kTimeoutMs);

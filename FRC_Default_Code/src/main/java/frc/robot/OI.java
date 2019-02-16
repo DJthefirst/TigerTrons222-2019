@@ -60,7 +60,7 @@ public class OI<Joystick> {
 		D3.whenPressed(new ArmPneuUp());
 		D3.whenReleased(new ArmPneuDown());	
 		D5.whenPressed(new Shiftcmd());
-		//D4.whileHeld(new DriveForward(10,.6));	
+		D4.whileHeld(new DriveForward(10, .6, 20, .4));	//Distance, Speed, Angle, Speed
 		//D6.whileHeld(new DriveLimeLight());
 		D6.whileHeld(new DriveGyro());
 		//D7.whenPressed(new DriveEncoder_Reset());

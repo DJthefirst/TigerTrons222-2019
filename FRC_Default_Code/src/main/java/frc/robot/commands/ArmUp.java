@@ -2,15 +2,9 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 import frc.robot.Robot;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.Joystick;
-import java.util.concurrent.TimeUnit;		// Delay
 import frc.robot.RobotMap;
 
-import com.ctre.phoenix.motorcontrol.can.*;
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.FeedbackDevice;
-import com.ctre.phoenix.motorcontrol.StatusFrameEnhanced;
 /*This command drives drives forward until an encoder value is met.
 Created by Eric
 */
