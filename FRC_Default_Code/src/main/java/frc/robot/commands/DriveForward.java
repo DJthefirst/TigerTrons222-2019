@@ -2,60 +2,64 @@
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 import frc.robot.Robot;
+import edu.wpi.first.wpilibj.AnalogGyro;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import frc.robot.RobotMap;
+import frc.robot.Settings;
 
-/*This command drives drives forward until an encoder value is met.
-Created by Eric
-*/
 
 public class DriveForward extends Command {
 
     double driveSpeed;
     double driveDistance;
+    double angle;
+    double turnSpeed;
+    double Kp = .2;  //turn intensity
+
     private WPI_TalonSRX leftSlave1Talon = Robot.m_drivetrain.getLeftTalon();
+    private AnalogGyro gyro = new AnalogGyro(RobotMap.ROBOT_GYRO);
     
-    public DriveForward(double inches, double drivespeed, double angle, double turnspeed)
+
+    public DriveForward(double inches, double drivespeed, double turnangle, double turnspeed)
     {
         requires(Robot.m_drivetrain);
         driveDistance = inches;
         driveSpeed = drivespeed;
-
-        
+        angle = turnangle;
+        turnSpeed = turnspeed;
     }
 
 
     @Override 
     protected void initialize()
     {
-        Robot.m_drivetrain.ResetEncoder(); 
+        Robot.m_drivetrain.ResetEncoder();
+        gyro.reset();
     }
 
     @Override 
     protected void execute()
     {
+        driveDistance = driveDistance*(Settings.Encoder_RotationsPerInch);
 
-        driveDistance = driveDistance*1000;
-
-        // Read and print encoder values
-       // System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
-        //System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
-        //System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());  
-        //System.out.println("Dist: " + driveDistance);
-
-        while(leftSlave1Talon.getSelectedSensorPosition() > -driveDistance){ //negative is forward
+        //double angle = gyro.getAngle();
+        while(Math.abs(leftSlave1Talon.getSelectedSensorPosition()) > Math.abs(driveDistance)){ //negative is forward
 
             double moveSpeed = driveSpeed; //positive is forward
-            if (moveSpeed>1){moveSpeed=1;} //max speed
+            angle = angle - gyro.getAngle();
+            angle = angle*Kp;
 
-            //optional
+            if (moveSpeed > 1){moveSpeed = 1;}
 	        if (Math.abs(moveSpeed) < 0.10) {
-			    // within 10% joystick, make it zero 
 			    moveSpeed = 0;
-		    }
-            Robot.m_drivetrain.arcadeDrive(moveSpeed, 0);
-
-            
+            }
+            if (turnSpeed > 1){turnSpeed = 1;}
+	        if (Math.abs(turnSpeed) < 0.10) {
+			    turnSpeed = 0;
+            }
+            if (angle > turnSpeed){angle = turnSpeed;}
         
+            Robot.m_drivetrain.arcadeDrive(moveSpeed, angle);
         }
     }
     
