@@ -25,7 +25,7 @@ public class DriveForward extends Command {
     public DriveForward(double inches, double drivespeed, double turnangle, double turnspeed)
     {
         requires(Robot.m_drivetrain);
-        driveDistance = inches*1000;
+        driveDistance = inches*(Settings.Encoder_RotationsPerInch);
         driveSpeed = drivespeed;
         angle = turnangle;
         turnSpeed = turnspeed;

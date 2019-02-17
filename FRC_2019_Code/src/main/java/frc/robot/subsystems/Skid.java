@@ -13,7 +13,7 @@ public class Skid extends Subsystem {
 	DoubleSolenoid pitchSolenoid = null;
 
 	public Skid() {
-		pitchSolenoid = new DoubleSolenoid(RobotMap.ARM_PITCH_SOLENOID_DEPLOY, RobotMap.ARM_PITCH_SOLENOID_RETRACT);
+		pitchSolenoid = new DoubleSolenoid(RobotMap.SKID_SOLENOID_DEPLOY, RobotMap.SKID_SOLENOID_RETRACT);
 	}
 
 	public void pitchUp() {

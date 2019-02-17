@@ -13,7 +13,7 @@ public class Hatch extends Subsystem {
 	DoubleSolenoid pitchSolenoid = null;
 
 	public Hatch() {
-		pitchSolenoid = new DoubleSolenoid(RobotMap.ARM_PITCH_SOLENOID_DEPLOY, RobotMap.ARM_PITCH_SOLENOID_RETRACT);
+		pitchSolenoid = new DoubleSolenoid(RobotMap.HATCH_SOLENOID_DEPLOY, RobotMap.HATCH_SOLENOID_RETRACT);
 	}
 
 	public void pitchUp() {

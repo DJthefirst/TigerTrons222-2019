@@ -27,8 +27,9 @@ public class RobotMap {
 	public static final int DRIVETRAIN_LEFT_Slave2_SPARKMAX = 6;
 	public static final int ARM_MOTOR_Master_TALON = 7;
 	public static final int ARM_MOTOR_Slave_TALON = 8;
-	public static final int DRIVETRAIN_SPARK1 = 0;
-	public static final int DRIVETRAIN_SPARK2 = 1;
+	public static final int Climb_MOTOR_Master_TALON = 9;
+	public static final int Climb_MOTOR_Slave_TALON = 10;
+	public static final int Intake_MOTOR_TALON = 11;
 
 				//Encoders
 	public static final int DRIVETRAIN_ENCODER_L = 0;
@@ -56,12 +57,14 @@ public class RobotMap {
 	// public static int rangefinderModule = 1;
 	
 	//Solenoids
-	public static final int SHOOTER_PITCH_SOLENOID_DEPLOY = 4;
-	public static final int SHOOTER_PITCH_SOLENOID_RETRACT = 3;
-	public static final int ARM_PITCH_SOLENOID_DEPLOY = 2;
-	public static final int ARM_PITCH_SOLENOID_RETRACT = 5;
-	public static final int SHIFT_SOLENOID_DEPLOY = 7;
-	public static final int SHIFT_SOLENOID_RETRACT = 0;
-	public static final int BALLPISTON_SOLENOID_DEPLOY =1;
-	public static final int BALLPISTON_SOLENOID_RETRACT = 6;
+	public static final int SHIFT_SOLENOID_DEPLOY = 0;
+	public static final int SHIFT_SOLENOID_RETRACT = 1;
+	public static final int SKID_SOLENOID_DEPLOY = 2;
+	public static final int SKID_SOLENOID_RETRACT = 3;
+	public static final int BALLPISTON_SOLENOID_DEPLOY =4;
+	public static final int BALLPISTON_SOLENOID_RETRACT = 5;
+	public static final int HATCH_SOLENOID_DEPLOY = 6;
+	public static final int HATCH_SOLENOID_RETRACT = 7;
+
+
 }
