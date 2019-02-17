@@ -51,10 +51,10 @@ public class OI<Joystick> {
 //// CREATING BUTTONS
 	public OI()
 	{
-		D1.whenPressed(new HatchIn());
-		D1.whenReleased(new HatchOut());
-		D2.whenPressed(new BallIn());
-		D2.whenReleased(new BallOut());	
+		D1.whenPressed(new HatchOut());
+		D1.whenReleased(new HatchIn());
+		D2.whenPressed(new BallOut());
+		D2.whenReleased(new BallIn());	
 		D3.whenPressed(new SkidIn());
 		D3.whenReleased(new SkidOut());	
 		D5.whenPressed(new Shiftcmd());

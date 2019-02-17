@@ -32,7 +32,7 @@ public class ArmUp extends Command {
     @Override 
     protected void execute()
     {
-        double leftYstick = -Robot.m_oi.joystick.getRawAxis(RobotMap.DRIVER_CONTROLLER_ARM_AXIS);
+        double leftYstick = Robot.m_oi.joystick.getRawAxis(RobotMap.DRIVER_CONTROLLER_ARM_AXIS);
 		if (Math.abs(leftYstick) < 0.10) { leftYstick = 0;}
 
         //double motorOutput = armMotorMaster.getMotorOutputPercent();

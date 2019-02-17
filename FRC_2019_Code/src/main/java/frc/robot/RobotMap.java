@@ -25,9 +25,9 @@ public class RobotMap {
 	public static final int DRIVETRAIN_LEFT_Master_SPARKMAX = 4;
 	public static final int DRIVETRAIN_LEFT_Slave1_SPARKMAX = 5;
 	public static final int DRIVETRAIN_LEFT_Slave2_SPARKMAX = 6;
-	public static final int ARM_MOTOR_Master_TALON = 7;
-	public static final int ARM_MOTOR_Slave_TALON = 8;
-	public static final int Climb_MOTOR_Master_TALON = 9;
+	public static final int ARM_MOTOR_Master_TALON = 8;
+	public static final int ARM_MOTOR_Slave_TALON = 9;
+	public static final int Climb_MOTOR_Master_TALON = 7;
 	public static final int Climb_MOTOR_Slave_TALON = 10;
 	public static final int Intake_MOTOR_TALON = 11;
 
