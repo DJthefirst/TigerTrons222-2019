@@ -3,7 +3,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.AnalogGyro;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.revrobotics.CANEncoder;
 import frc.robot.RobotMap;
 import frc.robot.Settings;
 
@@ -18,7 +18,7 @@ public class DriveForward extends Command {
     double moveSpeed = 0;
     double loop = 0;
     double turnAngle = 0;
-    private WPI_TalonSRX leftSlave1Talon = Robot.m_drivetrain.getLeftTalon();
+    private CANEncoder driveEncoder = Robot.m_drivetrain.getLeftEncoder();
     private AnalogGyro gyro = new AnalogGyro(RobotMap.ROBOT_GYRO);
     
 
@@ -44,7 +44,7 @@ public class DriveForward extends Command {
     {
         turnAngle = 0;
         moveSpeed = 0;
-        if(Math.abs(leftSlave1Talon.getSelectedSensorPosition()) < Math.abs(driveDistance)){ //negative is forward
+		if(Math.abs(driveEncoder.getPosition()) < Math.abs(driveDistance)){ //negative is forward
         
             moveSpeed = driveSpeed; //positive is forward
             turnAngle = -angle + gyro.getAngle();
@@ -53,7 +53,7 @@ public class DriveForward extends Command {
             if (++loop >= 10) {
                 loop = 0;
                 System.out.println("turnAngle: " + turnAngle +" |Gyro: "+ gyro.getAngle());
-                //System.out.println(turnAngle);
+                System.out.println(driveEncoder.getPosition());
             }
            
             

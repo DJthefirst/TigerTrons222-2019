@@ -19,12 +19,12 @@ public class RobotMap {
 
 
 				//Talons
-	public static final int DRIVETRAIN_RIGHT_Master_TALON = 1;
-	public static final int DRIVETRAIN_RIGHT_Slave1_TALON = 2;
-	public static final int DRIVETRAIN_RIGHT_Slave2_TALON = 3;			
-	public static final int DRIVETRAIN_LEFT_Master_TALON = 4;
-	public static final int DRIVETRAIN_LEFT_Slave1_TALON = 5;
-	public static final int DRIVETRAIN_LEFT_Slave2_TALON = 6;
+	public static final int DRIVETRAIN_RIGHT_Master_SPARKMAX = 1;
+	public static final int DRIVETRAIN_RIGHT_Slave1_SPARKMAX = 2;
+	public static final int DRIVETRAIN_RIGHT_Slave2_SPARKMAX = 3;			
+	public static final int DRIVETRAIN_LEFT_Master_SPARKMAX = 4;
+	public static final int DRIVETRAIN_LEFT_Slave1_SPARKMAX = 5;
+	public static final int DRIVETRAIN_LEFT_Slave2_SPARKMAX = 6;
 	public static final int ARM_MOTOR_Master_TALON = 7;
 	public static final int ARM_MOTOR_Slave_TALON = 8;
 	public static final int DRIVETRAIN_SPARK1 = 0;

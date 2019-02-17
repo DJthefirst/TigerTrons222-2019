@@ -9,46 +9,37 @@ import frc.robot.RobotMap;
 import frc.robot.commands.DriveArcade;
 
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANEncoder;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 public class Drivetrain extends Subsystem {
 		
 	//motors 
-	WPI_TalonSRX leftMasterTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_Master_TALON);
-	WPI_TalonSRX rightMasterTalon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_RIGHT_Master_TALON);
+	CANSparkMax leftMasterSparkMax = new CANSparkMax(RobotMap.DRIVETRAIN_LEFT_Master_SPARKMAX,MotorType.kBrushless);
+	CANSparkMax rightMasterSparkMax = new CANSparkMax(RobotMap.DRIVETRAIN_RIGHT_Master_SPARKMAX,MotorType.kBrushless);
 	
 	
-	WPI_TalonSRX leftSlave1Talon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_Slave1_TALON);
-	WPI_TalonSRX leftSlave2Talon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_Slave2_TALON);
-	WPI_TalonSRX rightSlave1Talon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_RIGHT_Slave1_TALON);
-	WPI_TalonSRX rightSlave2Talon = new WPI_TalonSRX(RobotMap.DRIVETRAIN_RIGHT_Slave2_TALON);
-
+	CANSparkMax leftSlave1SparkMax = new CANSparkMax(RobotMap.DRIVETRAIN_LEFT_Slave1_SPARKMAX,MotorType.kBrushless);
+	CANSparkMax leftSlave2SparkMax = new CANSparkMax(RobotMap.DRIVETRAIN_LEFT_Slave2_SPARKMAX,MotorType.kBrushless);
+	CANSparkMax rightSlave1SparkMax = new CANSparkMax(RobotMap.DRIVETRAIN_RIGHT_Slave1_SPARKMAX,MotorType.kBrushless);
+	CANSparkMax rightSlave2SparkMax = new CANSparkMax(RobotMap.DRIVETRAIN_RIGHT_Slave2_SPARKMAX,MotorType.kBrushless);
+	CANEncoder driveEncoder;
 	//CANSparkMax Spark1 = new CANSparkMax(RobotMap.DRIVETRAIN_SPARK1,MotorType.kBrushless);
 	//CANSparkMax Spark2 = new CANSparkMax(RobotMap.DRIVETRAIN_SPARK2,MotorType.kBrushless);
 
 
 
-	DifferentialDrive differentialDrive = new DifferentialDrive(rightMasterTalon,leftMasterTalon); //needs fixing
+	DifferentialDrive differentialDrive = new DifferentialDrive(rightMasterSparkMax,leftMasterSparkMax); //needs fixing
 	//DifferentialDrive differentialDrive = new DifferentialDrive(Spark1,Spark2);
 
 	
 public Drivetrain()
 {
-	leftSlave1Talon.follow(leftMasterTalon);
-	leftSlave2Talon.follow(leftMasterTalon);
-	rightSlave1Talon.follow(rightMasterTalon);
-	rightSlave2Talon.follow(rightMasterTalon);
-
-
-	System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
-	System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
-	System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());
-	//maybe?
-	//System.out.println(leftSlave1Talon.getSensorCollection().getQuadraturePosition());
-
-	//SmartDashboard.putNumber("Sensor Vel", leftSlave1Talon.getSelectedSensorVelocity());
-	//SmartDashboard.putNumber("Sensor Pos:", leftSlave1Talon.getSelectedSensorPosition());
-	//SmartDashboard.putNumber("Out %", leftSlave1Talon.getMotorOutputPercent());
+	leftSlave1SparkMax.follow(leftMasterSparkMax);
+	leftSlave2SparkMax.follow(leftMasterSparkMax);
+	rightSlave1SparkMax.follow(rightMasterSparkMax);
+	rightSlave2SparkMax.follow(rightMasterSparkMax);
+	driveEncoder = leftMasterSparkMax.getEncoder();
 }
 
 public  void arcadeDrive (double moveSpeed, double rotateSpeed)
@@ -58,7 +49,7 @@ public  void arcadeDrive (double moveSpeed, double rotateSpeed)
 
 public void ResetEncoder ()
 {
-	leftSlave1Talon.setSelectedSensorPosition(0, 0, 0);
+	//leftSlave1Talon.setSelectedSensorPosition(0, 0, 0);
 }
 
 
@@ -67,8 +58,8 @@ public void initDefaultCommand() {
 	setDefaultCommand(new DriveArcade()); 
 }
 
-public WPI_TalonSRX getLeftTalon() {
-	return leftSlave1Talon;
+public CANEncoder getLeftEncoder() {
+	return driveEncoder;
 }
 
 
