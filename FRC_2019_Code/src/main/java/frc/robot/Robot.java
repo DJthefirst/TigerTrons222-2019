@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.Autonomous;
 import frc.robot.subsystems.Hatch;
+import frc.robot.subsystems.BallIntake;
 import frc.robot.subsystems.BallPiston;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Limelight;
@@ -33,6 +34,7 @@ public class Robot extends TimedRobot {
 	public static Drivetrain m_drivetrain = null;
 	public static Hatch m_hatch = null;
 	public static BallPiston m_ballPiston = null;
+	public static BallIntake m_BallIntake = null;
 	public static Shift m_shift = null;
 	public static Skid m_skid = null;
 	public static UpyDownyArmThing m_arm = null;
@@ -55,11 +57,14 @@ public class Robot extends TimedRobot {
 		m_drivetrain = new Drivetrain();
 		m_hatch = new Hatch();
 		m_skid = new Skid();
+		m_BallIntake = new BallIntake();
 		m_ballPiston = new BallPiston();
 		m_shift = new Shift();
 		m_arm = new UpyDownyArmThing();
 		m_oi = new OI();
 		m_autonomousCommand = new Autonomous();
+	
+
 		m_chooser.addDefault("Default Auto", new Autonomous());
 		SmartDashboard.putData("Auto mode", m_chooser);
 

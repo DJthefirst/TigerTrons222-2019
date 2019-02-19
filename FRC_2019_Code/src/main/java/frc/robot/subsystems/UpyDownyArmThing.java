@@ -22,7 +22,7 @@ public UpyDownyArmThing()
 	
 	armMotorSlave.follow(armMotorMaster);
 			/* Factory default hardware to prevent unexpected behavior */
-			armMotorMaster.configFactoryDefault();
+			//armMotorMaster.configFactoryDefault();
 
 			/* Configure Sensor Source for Pirmary PID */
 			armMotorMaster.configSelectedFeedbackSensor(FeedbackDevice.Analog, Constants.kPIDLoopIdx, Constants.kTimeoutMs);
@@ -32,8 +32,8 @@ public UpyDownyArmThing()
 			 * Invert Motor to have green LEDs when driving Talon Forward / Requesting Postiive Output
 			 * Phase sensor to have positive increment when driving Talon Forward (Green LED)
 			 */
-			armMotorMaster.setSensorPhase(true);
-			armMotorMaster.setInverted(false);
+			//armMotorMaster.setSensorPhase(true);
+			//armMotorMaster.setInverted(false);
 	
 			/* Set relevant frame periods to be at least as fast as periodic rate */
 			armMotorMaster.setStatusFramePeriod(StatusFrameEnhanced.Status_13_Base_PIDF0, 10, Constants.kTimeoutMs);
@@ -57,7 +57,7 @@ public UpyDownyArmThing()
 			armMotorMaster.configMotionAcceleration(6000, Constants.kTimeoutMs);
 	
 			/* Zero the sensor */
-			armMotorMaster.setSelectedSensorPosition(0, Constants.kPIDLoopIdx, Constants.kTimeoutMs);
+			//armMotorMaster.setSelectedSensorPosition(0, Constants.kPIDLoopIdx, Constants.kTimeoutMs);
 }
 
 public  void armDrive (double armSpeed)

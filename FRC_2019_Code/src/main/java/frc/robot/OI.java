@@ -58,7 +58,7 @@ public class OI<Joystick> {
 		D3.whenPressed(new SkidIn());
 		D3.whenReleased(new SkidOut());	
 		D5.whenPressed(new Shiftcmd());
-		D4.whileHeld(new DriveForward(40, 0.8, 25 ,.5));
+		D4.whileHeld(new DriveForward(40, 0.8, 25 ,.5));//arcing turn
 		//D3.whileHeld(new DriveForward(40, 0.8, 0 ,0));
 		//D2.whileHeld(new DriveForward(30, 0.8, 25 ,1));
 		
@@ -67,7 +67,7 @@ public class OI<Joystick> {
 		//D6.whileHeld(new DriveGyro());
 		//D7.whenPressed(new DriveEncoder_Reset());
 		//D7.whileHeld(new ArmUp(800));
-		D8.whileHeld(new ArmUp(0));
+		D8.whileHeld(new ArmUp(900));
 		D7.whenPressed(new LimeLight_Pipeline());
 	}
 	
