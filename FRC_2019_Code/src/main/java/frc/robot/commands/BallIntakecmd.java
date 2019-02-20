@@ -16,7 +16,7 @@ public class BallIntakecmd extends Command {
     @Override 
     protected void initialize()
     {
-
+        System.out.println("---Running BallIntake COMMAND---");
     }
 
     @Override 

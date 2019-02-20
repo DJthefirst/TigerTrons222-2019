@@ -31,4 +31,5 @@ public class Constants {
 	//original gains (0.2, 0.0, 0.0, 0.2, 0, 1.0); 
 	public static final Gains DRIVE_kGains = new Gains(0, 0.0, 0.0, 0.2, 0, 1.0);
 	public static final Gains TURN_kGains = new Gains(0, 0.0, 0.0, 0.2, 0, 1.0);
+	public static final double Turn_kGain = .04;
 }

@@ -22,6 +22,7 @@ public class BallOut extends InstantCommand {
 	// Called once when the command executes
 	@Override
 	protected void initialize() {
+		System.out.println("---Pitch Up---");
 		Robot.m_ballPiston.pitchUp();
 	}
 }

@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import frc.robot.RobotMap;
-import frc.robot.commands.ArmVertical;
+import frc.robot.commands.ArmJoy;
 import frc.robot.Constants;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.StatusFrameEnhanced;
@@ -74,7 +74,7 @@ armMotorMaster.setSelectedSensorPosition(0, 0, 0);
 
 public void initDefaultCommand() {
 	// Set the default command for a subsystem here.
-	setDefaultCommand(new ArmVertical()); 
+	setDefaultCommand(new ArmJoy()); 
 }
 
 public WPI_TalonSRX getArmTalon() {

@@ -16,7 +16,7 @@ public class DriveArcade extends Command {
     @Override 
     protected void initialize()
     {
-
+        
     }
 
     @Override 
@@ -42,7 +42,7 @@ public class DriveArcade extends Command {
 			// within 10% joystick, make it zero 
 			moveSpeed = 0;
 		}
-		if (Math.abs(rotateSpeed) < 0.10) {
+		if (Math.abs(rotateSpeed) < 0.15) {
 			// within 10% joystick, make it zero 
 			rotateSpeed = 0;
 		}

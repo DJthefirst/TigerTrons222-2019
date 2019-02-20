@@ -19,10 +19,9 @@ import frc.robot.commands.BallOut;
 import frc.robot.commands.Shiftcmd;
 import frc.robot.commands.SkidIn;
 import frc.robot.commands.SkidOut;
-import frc.robot.commands.DriveForward;
 //import frc.robot.commands.DriveLimeLight;
 import frc.robot.commands.LimeLight_Pipeline;
-import frc.robot.commands.ArmUp;
+import frc.robot.commands.Arm_Auto;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -71,24 +70,24 @@ public class OI<Joystick> {
 		D3.whenPressed(new SkidIn());
 		D3.whenReleased(new SkidOut());	
 		D5.whenPressed(new Shiftcmd());
-		D4.whileHeld(new DriveForward(40, 0.8, 25 ,.5)); //arcing turn
+		//D4.whileHeld(new DriveForward(40, 0.8, 25 ,.5)); //arcing turn
 		//D3.whileHeld(new DriveForward(40, 0.8, 0 ,0));
 		//D2.whileHeld(new DriveForward(30, 0.8, 25 ,1)); //Distance, Speed, Angle, Speed
 		//D6.whileHeld(new DriveLimeLight());
 		//D6.whileHeld(new DriveGyro());
 		//D7.whenPressed(new DriveEncoder_Reset());
 		//D7.whileHeld(new ArmUp(800));
-		D7.whenPressed(new LimeLight_Pipeline());
-		D8.whileHeld(new ArmUp(900));
+		//D7.whenPressed(new LimeLight_Pipeline());
+		//D8.whileHeld(new ArmUp(900));
 
 
 		//controller 2
 		//D11.whenPressed(new HatchOut());
 		//D11.whenReleased(new HatchIn());
-		D11.whileHeld(new ArmUp(785));
-		D12.whileHeld(new ArmUp(650));
-		D13.whileHeld(new ArmUp(755));
-		D14.whileHeld(new ArmUp(500));
+		D11.whileHeld(new Arm_Auto(785));
+		D12.whileHeld(new Arm_Auto(650));
+		D13.whileHeld(new Arm_Auto(755));
+		D14.whileHeld(new Arm_Auto(500));
 
 
 
