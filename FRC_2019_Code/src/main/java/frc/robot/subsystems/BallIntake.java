@@ -11,21 +11,20 @@ public class BallIntake extends Subsystem {
 	//motors 
 	WPI_TalonSRX armMotorIntakeMaster = new WPI_TalonSRX(RobotMap.Intake_MOTOR_TALON);
 
-public BallIntake()
-{
+	public BallIntake(){
 	
-}
+	}
 
-public  void BallDrive (double armIntakeSpeed)
-{
-	//armMotorMaster = armSpeed;
-	armMotorIntakeMaster.set(armIntakeSpeed);
-}
+	public  void BallDrive (double armIntakeSpeed)
+	{
 
-public void initDefaultCommand() {
-	// Set the default command for a subsystem here.
-	setDefaultCommand(new BallIntakecmd()); 
-}
+		//armMotorMaster = armSpeed;
+		armMotorIntakeMaster.set(armIntakeSpeed);
+	}
 
+	public void initDefaultCommand() {
+		// Set the default command for a subsystem here.
+		setDefaultCommand(new BallIntakecmd()); 
+	}
 }
 

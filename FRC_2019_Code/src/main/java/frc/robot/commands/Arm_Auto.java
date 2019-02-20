@@ -5,9 +5,6 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import frc.robot.RobotMap;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
-/*This command drives drives forward until an encoder value is met.
-Created by Eric
-*/
 
 public class Arm_Auto extends Command {
 
@@ -25,7 +22,7 @@ public class Arm_Auto extends Command {
     @Override 
     protected void initialize()
     {
-
+        System.out.println("---Running Arm Auto COMMAND---");
        // Robot.m_arm.ResetArmEncoder(); 
     }
 
@@ -55,13 +52,13 @@ public class Arm_Auto extends Command {
     }
 
 
-
     @Override 
     protected void end()
     {       
         Robot.m_arm.armDrive(0);
     }
 
+    
     @Override 
     protected void interrupted()
     {

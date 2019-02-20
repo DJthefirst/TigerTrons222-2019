@@ -8,14 +8,6 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
 public class DriveLimeLight extends Command {
-
-   // LimeLight_GetData obj = new LimeLight_GetData();
-   // private double x = obj.getLimeX();
-   // private double y = obj.getLimeY();
-   // private double area = obj.getLimeAre();
-   // private double x = Limelight.LimeLight_GetData.getLime();
-
-
  
     public DriveLimeLight()
     {
@@ -84,16 +76,9 @@ public class DriveLimeLight extends Command {
         }
         
         if (moveSpeed < -.7) {
-			// within 100% joystick, make it zero 
 			moveSpeed = -.7;
 		}
 
-
-
-
-		// print the joystick values to sign them, comment
-		 // out this line after checking the joystick directions. 
-         
 
         Robot.m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
     }

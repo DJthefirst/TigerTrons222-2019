@@ -6,15 +6,12 @@ import frc.robot.commands.LimeLight_GetData;
 public class Limelight extends Subsystem {
 		
 
-public Limelight()
-{
+    public Limelight()
+    {
 
-}
+    }
 
-
-
-public void initDefaultCommand() {
-setDefaultCommand(new LimeLight_GetData());    
-}
-
+    public void initDefaultCommand() {
+    setDefaultCommand(new LimeLight_GetData());    
+    }
 }

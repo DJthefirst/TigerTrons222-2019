@@ -16,8 +16,9 @@ public class BallIntakecmd extends Command {
     @Override 
     protected void initialize()
     {
-        System.out.println("---Running BallIntake COMMAND---");
+
     }
+
 
     @Override 
     protected void execute()
@@ -27,6 +28,7 @@ public class BallIntakecmd extends Command {
 
     }
 
+    
     @Override 
     protected boolean isFinished()
     {
@@ -34,11 +36,11 @@ public class BallIntakecmd extends Command {
     }
 
 
-
     @Override 
     protected void end(){       
         Robot.m_BallIntake.BallDrive(0);
     }
+
 
     @Override 
     protected void interrupted()

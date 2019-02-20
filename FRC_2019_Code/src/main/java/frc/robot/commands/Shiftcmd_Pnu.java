@@ -6,17 +6,17 @@ import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
-public class Shiftcmd extends InstantCommand {
+public class Shiftcmd_Pnu extends InstantCommand {
 
 	NetworkTableEntry shiftState;
 
-	public Shiftcmd() {
+	public Shiftcmd_Pnu() {
 		super();
  
 		requires(Robot.m_shift);
 	}
 
-	// Called once when the command executes
+
 	@Override
 	protected void initialize(){
 		NetworkTableInstance inst = NetworkTableInstance.getDefault();

@@ -23,27 +23,23 @@ public class ArmJoy extends Command {
     }
 
 
-
     @Override 
     protected void execute()
     {
         double armPosition = Robot.m_oi.Controller2.getRawAxis(RobotMap.DRIVER_CONTROLLER_ARM_AXIS)*.5;
         if (Math.abs(armPosition) < 0.10) { armPosition = 0;}
         Robot.m_arm.armDrive(armPosition);
-		
         
         if (++loop >= 40) {
 			loop = 0;
         System.out.println("Sensor Vel:" + armMotorMaster.getSelectedSensorVelocity());
         System.out.println("Sensor Pos:" + armMotorMaster.getSelectedSensorPosition());
-       // System.out.println("Out %" + armMotorMaster.getMotorOutputPercent());
+
         }
        
-    
         SmartDashboard.putNumber("Sensor Vel", armMotorMaster.getSelectedSensorVelocity());
         SmartDashboard.putNumber("Sensor Pos:", armMotorMaster.getSelectedSensorPosition());
         SmartDashboard.putNumber("Out %", armMotorMaster.getMotorOutputPercent());
-
     }
 
     @Override 
@@ -53,12 +49,12 @@ public class ArmJoy extends Command {
     }
 
 
-
     @Override 
     protected void end(){       
         Robot.m_arm.armDrive(0);
     }
 
+    
     @Override 
     protected void interrupted()
     {

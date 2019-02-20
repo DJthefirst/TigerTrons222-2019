@@ -8,8 +8,7 @@ import frc.robot.RobotMap;
  * Add your docs here.
  */
 public class Skid extends Subsystem {
-	// Put methods for controlling this subsystem
-	// here. Call these from Commands.
+
 	DoubleSolenoid pitchSolenoid = null;
 
 	public Skid() {

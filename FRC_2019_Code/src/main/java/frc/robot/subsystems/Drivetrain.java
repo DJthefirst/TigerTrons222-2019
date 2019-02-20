@@ -20,14 +20,8 @@ public class Drivetrain extends Subsystem {
 	CANSparkMax rightSlave1SparkMax = new CANSparkMax(RobotMap.DRIVETRAIN_RIGHT_Slave1_SPARKMAX,MotorType.kBrushless);
 	CANSparkMax rightSlave2SparkMax = new CANSparkMax(RobotMap.DRIVETRAIN_RIGHT_Slave2_SPARKMAX,MotorType.kBrushless);
 	CANEncoder driveEncoder;
-	//CANSparkMax Spark1 = new CANSparkMax(18,MotorType.kBrushless);
-	//CANSparkMax Spark2 = new CANSparkMax(RobotMap.DRIVETRAIN_SPARK2,MotorType.kBrushless);
 
-
-
-	DifferentialDrive differentialDrive = new DifferentialDrive(rightMasterSparkMax,leftMasterSparkMax); //needs fixing
-	//DifferentialDrive differentialDrive = new DifferentialDrive(Spark1,Spark2);
-
+	DifferentialDrive differentialDrive = new DifferentialDrive(rightMasterSparkMax,leftMasterSparkMax); 
 	
 public Drivetrain()
 {
@@ -38,19 +32,21 @@ public Drivetrain()
 	driveEncoder = leftSlave1SparkMax.getEncoder();
 }
 
-public  void arcadeDrive (double moveSpeed, double rotateSpeed)
+
+public void arcadeDrive (double moveSpeed, double rotateSpeed)
 {
 	differentialDrive.arcadeDrive(moveSpeed,-rotateSpeed);
 }
 
+
 public void ResetEncoder ()
 {
-	//leftSlave1Talon.setSelectedSensorPosition(0, 0, 0);
+
 }
 
 
-public void initDefaultCommand() {
-	// Set the default command for a subsystem here.
+public void initDefaultCommand() 
+{
 	setDefaultCommand(new DriveArcade()); 
 }
 

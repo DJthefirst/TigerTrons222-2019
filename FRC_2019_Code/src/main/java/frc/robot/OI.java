@@ -11,15 +11,14 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-
-import frc.robot.commands.HatchIn;
-import frc.robot.commands.HatchOut;
-import frc.robot.commands.BallIn;
-import frc.robot.commands.BallOut;
-import frc.robot.commands.Shiftcmd;
+import frc.robot.commands.HatchIn_Pnu;
+import frc.robot.commands.HatchOut_Pnu;
+import frc.robot.commands.BallIn_Pnu;
+import frc.robot.commands.BallOut_Pnu;
+import frc.robot.commands.Shiftcmd_Pnu;
 import frc.robot.commands.SkidIn;
 import frc.robot.commands.SkidOut;
-//import frc.robot.commands.DriveLimeLight;
+import frc.robot.commands.DriveLimeLight;
 import frc.robot.commands.LimeLight_Pipeline;
 import frc.robot.commands.Arm_Auto;
 
@@ -62,23 +61,22 @@ public class OI<Joystick> {
 //// CREATING BUTTONS
 	public OI()
 	{
-		//controller 1
-		D1.whenPressed(new HatchOut());
-		D1.whenReleased(new HatchIn());
-		D2.whenPressed(new BallOut());
-		D2.whenReleased(new BallIn());	
+		// controller 1
+		D1.whenPressed(new HatchOut_Pnu());
+		D1.whenReleased(new HatchIn_Pnu());
+		D2.whenPressed(new BallOut_Pnu());
+		D2.whenReleased(new BallIn_Pnu());	
 		D3.whenPressed(new SkidIn());
-		D3.whenReleased(new SkidOut());	
-		D5.whenPressed(new Shiftcmd());
-		//D4.whileHeld(new DriveForward(40, 0.8, 25 ,.5)); //arcing turn
-		//D3.whileHeld(new DriveForward(40, 0.8, 0 ,0));
-		//D2.whileHeld(new DriveForward(30, 0.8, 25 ,1)); //Distance, Speed, Angle, Speed
+		D3.whenReleased(new SkidOut());
+		D5.whenPressed(new Shiftcmd_Pnu());
+		//D8.whileHeld(new DriveForward(40, 0.8, 25 ,.5)); //arcing turn
+		//D8.whileHeld(new DriveForward(40, 0.8, 0 ,0));
+		//D8.whileHeld(new DriveForward(30, 0.8, 25 ,1)); //Distance, Speed, Angle, Speed
 		//D6.whileHeld(new DriveLimeLight());
 		//D6.whileHeld(new DriveGyro());
 		//D7.whenPressed(new DriveEncoder_Reset());
 		//D7.whileHeld(new ArmUp(800));
 		//D7.whenPressed(new LimeLight_Pipeline());
-		//D8.whileHeld(new ArmUp(900));
 
 
 		//controller 2

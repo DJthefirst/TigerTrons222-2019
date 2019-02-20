@@ -11,13 +11,10 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.Robot;
 
 public class Autonomous extends CommandGroup {
-  /**
-   * Add your docs here.
-   */
+
   public Autonomous() {
     super();
-		// Use requires() here to declare subsystem dependencies
-		// eg. requires(chassis);
+
     requires(Robot.m_ballPiston);
     
 
