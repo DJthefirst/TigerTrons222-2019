@@ -27,7 +27,7 @@ public class ArmVertical extends Command {
     @Override 
     protected void execute()
     {
-        double armPosition = Robot.m_oi.joystick.getRawAxis(RobotMap.DRIVER_CONTROLLER_ARM_AXIS)*.5;
+        double armPosition = Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ARM_AXIS)*.5;
         if (Math.abs(armPosition) < 0.10) { armPosition = 0;}
         Robot.m_arm.armDrive(armPosition);
 		

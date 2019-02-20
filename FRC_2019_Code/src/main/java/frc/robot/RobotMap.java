@@ -41,7 +41,8 @@ public class RobotMap {
 	public static final int ROBOT_GYRO = 1;
 
 				//Joystick
-	public static final int OI_DRIVER_CONTROLLER = 0;
+	public static final int OI_DRIVER_CONTROLLER1 = 0;
+	public static final int OI_DRIVER_CONTROLLER2 = 1;
 
 				//may need axis 0,1
 	public static final int DRIVER_CONTROLLER_ARM_AXIS = 1;			

@@ -32,18 +32,30 @@ import frc.robot.commands.ArmUp;
  */
 public class OI<Joystick> {
 
-	public XboxController joystick = new XboxController(RobotMap.OI_DRIVER_CONTROLLER);
+	public XboxController Controller = new XboxController(RobotMap.OI_DRIVER_CONTROLLER1);
+	public XboxController Controller2 = new XboxController(RobotMap.OI_DRIVER_CONTROLLER2);
 
-	Button D1 = new JoystickButton(joystick, 1);
-	Button D2 = new JoystickButton(joystick, 2);
-	Button D3 = new JoystickButton(joystick, 3);
-	Button D4 = new JoystickButton(joystick, 4);
-	Button D5 = new JoystickButton(joystick, 5);
-	Button D6 = new JoystickButton(joystick, 6);
-	Button D7 = new JoystickButton(joystick, 7);
-	Button D8 = new JoystickButton(joystick, 8);
-	Button D9 = new JoystickButton(joystick, 9);
-	Button D10 = new JoystickButton(joystick, 10);
+	Button D1 = new JoystickButton(Controller, 1);
+	Button D2 = new JoystickButton(Controller, 2);
+	Button D3 = new JoystickButton(Controller, 3);
+	Button D4 = new JoystickButton(Controller, 4);
+	Button D5 = new JoystickButton(Controller, 5);
+	Button D6 = new JoystickButton(Controller, 6);
+	Button D7 = new JoystickButton(Controller, 7);
+	Button D8 = new JoystickButton(Controller, 8);
+	Button D9 = new JoystickButton(Controller, 9);
+	Button D10 = new JoystickButton(Controller, 10);
+
+	Button D11 = new JoystickButton(Controller2, 1);
+	Button D12 = new JoystickButton(Controller2, 2);
+	Button D13 = new JoystickButton(Controller2, 3);
+	Button D14 = new JoystickButton(Controller2, 4);
+	Button D15 = new JoystickButton(Controller2, 5);
+	Button D16 = new JoystickButton(Controller2, 6);
+	Button D17 = new JoystickButton(Controller2, 7);
+	Button D18 = new JoystickButton(Controller2, 8);
+	Button D19 = new JoystickButton(Controller2, 9);
+	Button D20 = new JoystickButton(Controller2, 10);
 	
 	//public?
 //public Joystick driver = new Joystick(0);
@@ -51,6 +63,7 @@ public class OI<Joystick> {
 //// CREATING BUTTONS
 	public OI()
 	{
+		//controller 1
 		D1.whenPressed(new HatchOut());
 		D1.whenReleased(new HatchIn());
 		D2.whenPressed(new BallOut());
@@ -58,17 +71,46 @@ public class OI<Joystick> {
 		D3.whenPressed(new SkidIn());
 		D3.whenReleased(new SkidOut());	
 		D5.whenPressed(new Shiftcmd());
-		D4.whileHeld(new DriveForward(40, 0.8, 25 ,.5));//arcing turn
+		D4.whileHeld(new DriveForward(40, 0.8, 25 ,.5)); //arcing turn
 		//D3.whileHeld(new DriveForward(40, 0.8, 0 ,0));
-		//D2.whileHeld(new DriveForward(30, 0.8, 25 ,1));
-		
-		//Distance, Speed, Angle, Speed
+		//D2.whileHeld(new DriveForward(30, 0.8, 25 ,1)); //Distance, Speed, Angle, Speed
 		//D6.whileHeld(new DriveLimeLight());
 		//D6.whileHeld(new DriveGyro());
 		//D7.whenPressed(new DriveEncoder_Reset());
 		//D7.whileHeld(new ArmUp(800));
-		D8.whileHeld(new ArmUp(900));
 		D7.whenPressed(new LimeLight_Pipeline());
+		D8.whileHeld(new ArmUp(900));
+
+
+		//controller 2
+		//D11.whenPressed(new HatchOut());
+		//D11.whenReleased(new HatchIn());
+		D11.whileHeld(new ArmUp(785));
+		D12.whileHeld(new ArmUp(650));
+		D13.whileHeld(new ArmUp(755));
+		D14.whileHeld(new ArmUp(500));
+
+
+
+
+
+		//D12.whenPressed(new BallOut());
+		//D12.whenReleased(new BallIn());	
+		//D13.whenPressed(new SkidIn());
+		//D13.whenReleased(new SkidOut());	
+		//D15.whenPressed(new Shiftcmd());
+		//D14.whileHeld(new DriveForward(40, 0.8, 25 ,.5)); //arcing turn
+		//D3.whileHeld(new DriveForward(40, 0.8, 0 ,0));
+		//D2.whileHeld(new DriveForward(30, 0.8, 25 ,1)); //Distance, Speed, Angle, Speed
+		//D6.whileHeld(new DriveLimeLight());
+		//D6.whileHeld(new DriveGyro());
+		//D7.whenPressed(new DriveEncoder_Reset());
+		//D7.whileHeld(new ArmUp(800));
+		//D17.whenPressed(new LimeLight_Pipeline());
+		//D18.whileHeld(new ArmUp(900));
+
+
+
 	}
 	
 

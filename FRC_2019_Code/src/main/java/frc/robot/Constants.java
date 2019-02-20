@@ -26,9 +26,9 @@ public class Constants {
 	/**
 	 * Gains used in Motion Magic, to be adjusted accordingly
      * Gains(kp, ki, kd, kf, izone, peak output);
-     */
-	public static final Gains ARM_kGains = new Gains(2.0, 0.0, 0.0, 0.2, 0, 1.0); 
+     */ //p=12, 0.001, 5
+	public static final Gains ARM_kGains = new Gains(10, 0.001, 5, 0, 0, 1.0); 
 	//original gains (0.2, 0.0, 0.0, 0.2, 0, 1.0); 
-	public static final Gains DRIVE_kGains = new Gains(2.0, 0.0, 0.0, 0.2, 0, 1.0);
-	public static final Gains TURN_kGains = new Gains(2.0, 0.0, 0.0, 0.2, 0, 1.0);
+	public static final Gains DRIVE_kGains = new Gains(0, 0.0, 0.0, 0.2, 0, 1.0);
+	public static final Gains TURN_kGains = new Gains(0, 0.0, 0.0, 0.2, 0, 1.0);
 }
