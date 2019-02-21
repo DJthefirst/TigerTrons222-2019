@@ -23,7 +23,7 @@ public class BallIntakecmd extends Command {
     @Override 
     protected void execute()
     {
-        Robot.m_BallIntake.BallDrive(Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_Out)-Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_In));
+        Robot.m_BallIntake.BallDrive(Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_In)-Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_Out));
         //System.out.println("Intake: " + (Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_Out)));
 
     }

@@ -43,34 +43,33 @@ public class Drive_Auto extends Command {
     @Override 
     protected void execute()
     {
-        //turnAngle = 0;
-        //moveSpeed = 0;
-		
-        moveSpeed = driveSpeed; 
+        while (Math.abs(driveEncoder.getPosition()) > Math.abs(driveDistance)){
+            moveSpeed = driveSpeed; 
 
-        //turning
-        turnAngle = -angle + gyro.getAngle();
-        turnAngle = turnAngle*Kp;
+            //turning
+            turnAngle = -angle + gyro.getAngle();
+            turnAngle = turnAngle*Kp;
 
-        //set limits
-        if (moveSpeed > 1){moveSpeed = 1;}
-	    if (Math.abs(moveSpeed) < 0.10) {moveSpeed = 0;}
-        if (turnAngle > turnSpeed){turnAngle = turnSpeed;}
-        if (turnAngle < -turnSpeed){turnAngle = -turnSpeed;}
+            //set limits
+            if (moveSpeed > 1){moveSpeed = 1;}
+	        if (Math.abs(moveSpeed) < 0.10) {moveSpeed = 0;}
+            if (turnAngle > turnSpeed){turnAngle = turnSpeed;}
+            if (turnAngle < -turnSpeed){turnAngle = -turnSpeed;}
 
-        //stop once goal is reached
-        if(Math.abs(driveEncoder.getPosition()) > Math.abs(driveDistance)){ 
-            moveSpeed = 0;
+            //stop once goal is reached
+            //if(Math.abs(driveEncoder.getPosition()) > Math.abs(driveDistance)){ 
+            //    moveSpeed = 0;
+            //}
+
+            //dispalay values
+            if (++loop >= 10) {
+                loop = 0;
+                System.out.println("turnAngle: " + turnAngle +" |Gyro: "+ gyro.getAngle());
+                System.out.println(driveEncoder.getPosition());
+            }
+
+            Robot.m_drivetrain.arcadeDrive(moveSpeed, turnAngle);
         }
-
-        //dispalay values
-        if (++loop >= 10) {
-            loop = 0;
-            System.out.println("turnAngle: " + turnAngle +" |Gyro: "+ gyro.getAngle());
-            System.out.println(driveEncoder.getPosition());
-        }
-
-        Robot.m_drivetrain.arcadeDrive(moveSpeed, turnAngle);
     }
     
 

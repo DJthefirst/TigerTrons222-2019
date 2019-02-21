@@ -18,14 +18,10 @@ public class Autonomous extends CommandGroup {
     requires(Robot.m_ballPiston);
     
 
-    //addSequential(new DriveArcade());
-    //addSequential(new DriveForward(2,.8));
-    // addSequential(new BallOut());
-    // addSequential(new BallIn());
-    // addSequential(new BallOut());
-    // addSequential(new BallIn());
-    // addSequential(new ShooterUp());
-    // addSequential(new ShooterDown());
+    //addSequential(new Drive_Auto(1,0.5,0,0));  //Distance, Speed, Angle, Speed
+    //addSequential(new Drive_Auto(0,0,15,.6));  //Distance, Speed, Angle, Speed
+    //addSequential(new Drive_Auto(1,0.5,0,0));  //Distance, Speed, Angle, Speed
+    //addSequential(new HatchOut_Pnu());         //Hatch
 
 
     // Add Commands here:
