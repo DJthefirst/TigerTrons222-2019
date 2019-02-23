@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.HatchIn_Pnu;
 import frc.robot.commands.HatchOut_Pnu;
 import frc.robot.commands.BallIn_Pnu;
+import frc.robot.commands.BallIntakecmd_Btn;
 import frc.robot.commands.BallOut_Pnu;
 import frc.robot.commands.Shiftcmd_Pnu;
 import frc.robot.commands.SkidIn;
@@ -63,31 +64,41 @@ public class OI<Joystick> {
 	public OI()
 	{
 		// controller 1
-		D1.whenPressed(new HatchOut_Pnu());
-		D1.whenReleased(new HatchIn_Pnu());
-		D2.whenPressed(new BallOut_Pnu());
-		D2.whenReleased(new BallIn_Pnu());	
+		//D1.whenPressed(new HatchOut_Pnu());
+		//D1.whenReleased(new HatchIn_Pnu());
+		//D2.whenPressed(new BallOut_Pnu());
+		//D2.whenReleased(new BallIn_Pnu());	
+		//D2.whileHeld(new BallIntakecmd_Btn());
 		D3.whenPressed(new SkidIn());
 		D3.whenReleased(new SkidOut());
 		D5.whenPressed(new Shiftcmd_Pnu());
 		//D8.whileHeld(new DriveForward(40, 0.8, 25 ,.5)); //arcing turn
 		D8.whileHeld(new Drive_Auto(3, 0.6, 0 ,0));
+		D7.whenPressed(new LimeLight_Pipeline());
 		//D7.whileHeld(new Drive_Auto(0, 0.4, 10 ,.5));
 		//D8.whileHeld(new DriveForward(30, 0.8, 25 ,1)); //Distance, Speed, Angle, Speed
 		//D6.whileHeld(new DriveLimeLight());
 		//D6.whileHeld(new DriveGyro());
 		//D7.whenPressed(new DriveEncoder_Reset());
 		//D7.whileHeld(new ArmUp(800));
-		//D7.whenPressed(new LimeLight_Pipeline());
+		
 
 
 		//controller 2
 		//D11.whenPressed(new HatchOut());
 		//D11.whenReleased(new HatchIn());
 		D11.whileHeld(new Arm_Auto(785));
-		D12.whileHeld(new Arm_Auto(650));
+		D12.whileHeld(new Arm_Auto(635));
 		D13.whileHeld(new Arm_Auto(755));
-		D14.whileHeld(new Arm_Auto(500));
+		//D13.whileHeld(new Arm_Auto(670));
+		D14.whileHeld(new Arm_Auto(530));
+		//D14.whileHeld(new Arm_Auto(500));//Max!
+		D15.whenPressed(new HatchOut_Pnu());
+		D15.whenReleased(new HatchIn_Pnu());
+		D16.whenPressed(new BallOut_Pnu());
+		D16.whenReleased(new BallIn_Pnu());
+
+
 
 
 

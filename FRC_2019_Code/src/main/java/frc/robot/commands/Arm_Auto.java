@@ -29,12 +29,18 @@ public class Arm_Auto extends Command {
     @Override 
     protected void execute()
     {
-        double leftYstick = Robot.m_oi.Controller2.getRawAxis(RobotMap.DRIVER_CONTROLLER_ARM_AXIS)*.5;
+        double leftYstick = Robot.m_oi.Controller2.getRawAxis(RobotMap.DRIVER_CONTROLLER2_ARM_AXIS)*.5;
 		if (Math.abs(leftYstick) < 0.10) { leftYstick = 0;}
 
         //double motorOutput = armMotorMaster.getMotorOutputPercent();
-
+        
         double targetPos = armPosition;
+
+        //boolean Button = Robot.m_oi.Controller2.getRawButton(3);
+        
+        if (Robot.m_oi.Controller2.getRawAxis(RobotMap.DRIVER_CONTROLLER2_ARM_SHIFT) > .2){
+            targetPos=targetPos - 30;
+        }
         armMotorMaster.set(ControlMode.MotionMagic, targetPos);
 
         // Read and print encoder values

@@ -64,8 +64,8 @@ public class Drive_Auto extends Command {
             //dispalay values
             if (++loop >= 10) {
                 loop = 0;
-                System.out.println("turnAngle: " + turnAngle +" |Gyro: "+ gyro.getAngle());
-                System.out.println(driveEncoder.getPosition());
+                //System.out.println("turnAngle: " + turnAngle +" |Gyro: "+ gyro.getAngle());
+               // System.out.println(driveEncoder.getPosition());
             }
              if (Math.abs(driveEncoder.getPosition()) > Math.abs(driveDistance)){
                 break;

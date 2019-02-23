@@ -4,10 +4,10 @@ import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 import frc.robot.Robot;
 
-public class BallIntakecmd extends Command {
+public class BallIntakecmd_Btn extends Command {
 
 
-    public BallIntakecmd()
+    public BallIntakecmd_Btn()
     {
         requires(Robot.m_BallIntake);
     }
@@ -23,10 +23,8 @@ public class BallIntakecmd extends Command {
     @Override 
     protected void execute()
     {
-        Robot.m_BallIntake.BallDrive(Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_In)-Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_Out));
+        Robot.m_BallIntake.BallDrive(1);
         //System.out.println("Intake: " + (Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_Out)));
-
-        //lower while intakeing
     }
 
     

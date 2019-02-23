@@ -22,7 +22,7 @@ public class RobotMap {
 	public static final int ARM_MOTOR_Slave_TALON = 9;
 	public static final int Climb_MOTOR_Master_TALON = 7;
 	public static final int Climb_MOTOR_Slave_TALON = 10;
-	public static final int Intake_MOTOR_TALON = 11;
+	public static final int Intake_MOTOR_TALON = 12;
 	
 
 				//Encoders
@@ -38,12 +38,12 @@ public class RobotMap {
 	public static final int OI_DRIVER_CONTROLLER2 = 1;
 
 				//may need axis 0,1
-	public static final int DRIVER_CONTROLLER_ARM_AXIS = 1;			
-	public static final int DRIVER_CONTROLLER_MOVE_AXIS = 5;
+	public static final int DRIVER_CONTROLLER2_ARM_AXIS = 1;			
+	public static final int DRIVER_CONTROLLER_MOVE_AXIS = 1;
 	public static final int DRIVER_CONTROLLER_ROTATE_AXIS = 4;
 	public static final int DRIVER_CONTROLLER_ROTATE_INTAKE_In = 2;
 	public static final int DRIVER_CONTROLLER_ROTATE_INTAKE_Out = 3;
-
+	public static final int	DRIVER_CONTROLLER2_ARM_SHIFT = 3;
 	// public static int leftMotor = 1;
 	// public static int rightMotor = 2;
 
@@ -62,6 +62,5 @@ public class RobotMap {
 	public static final int BALLPISTON_SOLENOID_RETRACT = 5;
 	public static final int HATCH_SOLENOID_DEPLOY = 6;
 	public static final int HATCH_SOLENOID_RETRACT = 7;
-
 
 }

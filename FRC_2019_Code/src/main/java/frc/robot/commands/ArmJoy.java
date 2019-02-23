@@ -26,7 +26,7 @@ public class ArmJoy extends Command {
     @Override 
     protected void execute()
     {
-        double armPosition = Robot.m_oi.Controller2.getRawAxis(RobotMap.DRIVER_CONTROLLER_ARM_AXIS)*.5;
+        double armPosition = Robot.m_oi.Controller2.getRawAxis(RobotMap.DRIVER_CONTROLLER2_ARM_AXIS)*.5;
         if (Math.abs(armPosition) < 0.10) { armPosition = 0;}
         Robot.m_arm.armDrive(armPosition);
         

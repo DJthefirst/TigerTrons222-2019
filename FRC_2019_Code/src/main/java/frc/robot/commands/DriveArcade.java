@@ -30,18 +30,20 @@ public class DriveArcade extends Command {
         //System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
         //System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
         //System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());
-        System.out.println(driveEncoder.getPosition());
+       // System.out.println(moveSpeed);
 
-	if (Math.abs(moveSpeed) < 0.10) {
+	if (Math.abs(moveSpeed) < 0.20) {
 			// within 10% joystick, make it zero 
 			moveSpeed = 0;
 		}
-		if (Math.abs(rotateSpeed) < 0.15) {
+		if (Math.abs(rotateSpeed) < 0.25) {
 			// within 10% joystick, make it zero 
 			rotateSpeed = 0;
 		}
 
         Robot.m_drivetrain.arcadeDrive(moveSpeed,rotateSpeed);
+        System.out.println(moveSpeed);
+        System.out.println("rotate" + rotateSpeed);
     }
 
     @Override 
