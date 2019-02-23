@@ -43,7 +43,7 @@ public class Drive_Auto extends Command {
     @Override 
     protected void execute()
     {
-        while (Math.abs(driveEncoder.getPosition()) > Math.abs(driveDistance)){
+        while (Math.abs(driveEncoder.getPosition()) < Math.abs(driveDistance)){
             moveSpeed = driveSpeed; 
 
             //turning
@@ -67,7 +67,9 @@ public class Drive_Auto extends Command {
                 System.out.println("turnAngle: " + turnAngle +" |Gyro: "+ gyro.getAngle());
                 System.out.println(driveEncoder.getPosition());
             }
-
+             if (Math.abs(driveEncoder.getPosition()) > Math.abs(driveDistance)){
+                break;
+            }
             Robot.m_drivetrain.arcadeDrive(moveSpeed, turnAngle);
         }
     }

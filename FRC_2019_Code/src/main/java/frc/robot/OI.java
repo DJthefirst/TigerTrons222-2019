@@ -19,6 +19,7 @@ import frc.robot.commands.Shiftcmd_Pnu;
 import frc.robot.commands.SkidIn;
 import frc.robot.commands.SkidOut;
 import frc.robot.commands.DriveLimeLight;
+import frc.robot.commands.Drive_Auto;
 import frc.robot.commands.LimeLight_Pipeline;
 import frc.robot.commands.Arm_Auto;
 
@@ -70,7 +71,8 @@ public class OI<Joystick> {
 		D3.whenReleased(new SkidOut());
 		D5.whenPressed(new Shiftcmd_Pnu());
 		//D8.whileHeld(new DriveForward(40, 0.8, 25 ,.5)); //arcing turn
-		//D8.whileHeld(new DriveForward(40, 0.8, 0 ,0));
+		D8.whileHeld(new Drive_Auto(3, 0.6, 0 ,0));
+		//D7.whileHeld(new Drive_Auto(0, 0.4, 10 ,.5));
 		//D8.whileHeld(new DriveForward(30, 0.8, 25 ,1)); //Distance, Speed, Angle, Speed
 		//D6.whileHeld(new DriveLimeLight());
 		//D6.whileHeld(new DriveGyro());

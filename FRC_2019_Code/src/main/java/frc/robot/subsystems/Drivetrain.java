@@ -41,7 +41,7 @@ public void arcadeDrive (double moveSpeed, double rotateSpeed)
 
 public void ResetEncoder ()
 {
-
+	driveEncoder.setPosition(0);
 }
 
 

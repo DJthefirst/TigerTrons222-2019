@@ -3,9 +3,11 @@ package frc.robot.commands;
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 import frc.robot.Robot;
+import com.revrobotics.CANEncoder;
 
 public class DriveArcade extends Command {
 
+    private CANEncoder driveEncoder = Robot.m_drivetrain.getLeftEncoder();
 
     public DriveArcade()
     {
@@ -28,7 +30,7 @@ public class DriveArcade extends Command {
         //System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
         //System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());
         //System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());
-
+        System.out.println(driveEncoder.getPosition());
 
 	if (Math.abs(moveSpeed) < 0.10) {
 			// within 10% joystick, make it zero 
