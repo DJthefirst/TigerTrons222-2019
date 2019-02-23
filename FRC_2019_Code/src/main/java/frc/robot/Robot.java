@@ -102,15 +102,17 @@ public class Robot extends TimedRobot {
 		m_autonomousCommand = m_chooser.getSelected();
 
 		
-		//   String autoSelected = SmartDashboard.getString("Auto Selector","Default");
-		//   switch(autoSelected) {
-		// 	case "My Auto": autonomousCommand = new DriveArcade();
-		// 		break; 
-		// 		case "My Auto": autonomousCommand = new DriveLimeLight();
-		// 		break; 
-		// 	case "Default Auto": default:
-		//   autonomousCommand = new ExampleCommand(); break; }
-		 
+		//    String autoSelected = SmartDashboard.getString("Auto Selector","Default");
+		//    switch(autoSelected) {
+		//  	case "My Auto": autonomousCommand = new Autonomous();
+		//  		break; 
+		//  	case "Autonomus2": autonomousCommand = new Autonomous2();
+		// 		 break; 
+		// 	 case "Autonomus3": autonomousCommand = new Autonomous3();
+		//  		break; 	 
+		//  default:
+		//  		autonomousCommand = new Autonomous();
+		//  break;}
 
 		// schedule the autonomous command (example)
 		if (m_autonomousCommand != null) {
