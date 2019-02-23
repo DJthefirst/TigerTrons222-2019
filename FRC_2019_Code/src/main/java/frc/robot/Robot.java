@@ -6,6 +6,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.Autonomous;
+import frc.robot.commands.Autonomous2;
+import frc.robot.commands.Autonomous3;
 import frc.robot.subsystems.Hatch;
 import frc.robot.subsystems.BallIntake;
 import frc.robot.subsystems.BallPiston;
@@ -61,8 +63,10 @@ public class Robot extends TimedRobot {
 
 		m_chooser.addDefault("Default Auto", new Autonomous());
 		SmartDashboard.putData("Auto mode", m_chooser);
-
-		
+		m_chooser.addOption("Autonomus 1", new Autonomous2());
+		SmartDashboard.putData("Auto mode", m_chooser);
+		m_chooser.addOption("Autonomus 2", new Autonomous3());
+		SmartDashboard.putData("Auto mode", m_chooser);
 
 
 	}
