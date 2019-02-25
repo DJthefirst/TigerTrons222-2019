@@ -1,14 +1,16 @@
 package frc.robot.commands;
-import edu.wpi.first.wpilibj.command.Command;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
-import frc.robot.Robot;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import frc.robot.RobotMap;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
+import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
+import frc.robot.RobotMap;
+import frc.robot.Settings;
 
 public class Arm_Auto extends Command {
 
-    //double armSpeed;
+    // double armSpeed;
     double armPosition;
     private WPI_TalonSRX armMotorMaster = Robot.m_arm.getArmTalon();
     
@@ -39,7 +41,7 @@ public class Arm_Auto extends Command {
         //boolean Button = Robot.m_oi.Controller2.getRawButton(3);
         
         if (Robot.m_oi.Controller2.getRawAxis(RobotMap.DRIVER_CONTROLLER2_ARM_SHIFT) > .2){
-            targetPos=targetPos - 30;
+            targetPos = targetPos - (Settings.HatchToBall);
         }
         armMotorMaster.set(ControlMode.MotionMagic, targetPos);
 

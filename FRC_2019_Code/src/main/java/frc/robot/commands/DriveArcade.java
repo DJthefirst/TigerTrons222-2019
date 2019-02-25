@@ -32,11 +32,11 @@ public class DriveArcade extends Command {
         //System.out.println("Out %" + leftSlave1Talon.getMotorOutputPercent());
        // System.out.println(moveSpeed);
 
-	if (Math.abs(moveSpeed) < 0.20) {
+	    if (Math.abs(moveSpeed) < 0.10) {
 			// within 10% joystick, make it zero 
-			moveSpeed = 0;
+		moveSpeed = 0;
 		}
-		if (Math.abs(rotateSpeed) < 0.25) {
+		if (Math.abs(rotateSpeed) < 0.13) {
 			// within 10% joystick, make it zero 
 			rotateSpeed = 0;
 		}

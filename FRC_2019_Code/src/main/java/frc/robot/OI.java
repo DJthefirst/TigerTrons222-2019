@@ -77,7 +77,7 @@ public class OI<Joystick> {
 		D7.whenPressed(new LimeLight_Pipeline());
 		//D7.whileHeld(new Drive_Auto(0, 0.4, 10 ,.5));
 		//D8.whileHeld(new DriveForward(30, 0.8, 25 ,1)); //Distance, Speed, Angle, Speed
-		//D6.whileHeld(new DriveLimeLight());
+		D6.whileHeld(new DriveLimeLight());
 		//D6.whileHeld(new DriveGyro());
 		//D7.whenPressed(new DriveEncoder_Reset());
 		//D7.whileHeld(new ArmUp(800));
@@ -87,11 +87,11 @@ public class OI<Joystick> {
 		//controller 2
 		//D11.whenPressed(new HatchOut());
 		//D11.whenReleased(new HatchIn());
-		D11.whileHeld(new Arm_Auto(785));
-		D12.whileHeld(new Arm_Auto(635));
+		D11.whileHeld(new Arm_Auto(778));
+		D12.whileHeld(new Arm_Auto(658));
 		D13.whileHeld(new Arm_Auto(755));
 		//D13.whileHeld(new Arm_Auto(670));
-		D14.whileHeld(new Arm_Auto(530));
+		D14.whileHeld(new Arm_Auto(535));
 		//D14.whileHeld(new Arm_Auto(500));//Max!
 		D15.whenPressed(new HatchOut_Pnu());
 		D15.whenReleased(new HatchIn_Pnu());

@@ -25,7 +25,7 @@ public class Drive_Auto extends Command {
     public Drive_Auto(double inches, double drivespeed, double turnangle, double turnspeed)
     {
         requires(Robot.m_drivetrain);
-        driveDistance = inches*(Settings.Encoder_RotationsPerInch);
+        driveDistance = inches*(Settings.HatchToBall);
         driveSpeed = drivespeed;
         angle = turnangle;
         turnSpeed = turnspeed;
