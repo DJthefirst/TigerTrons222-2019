@@ -27,7 +27,6 @@ public class UpyDownyArmThing extends Subsystem {
 		/* Set relevant frame periods to be at least as fast as periodic rate */
 		armMotorMaster.setStatusFramePeriod(StatusFrameEnhanced.Status_13_Base_PIDF0, 10, Constants.kTimeoutMs);
 		armMotorMaster.setStatusFramePeriod(StatusFrameEnhanced.Status_10_MotionMagic, 10, Constants.kTimeoutMs);
-		
 		/* Set the peak and nominal outputs */
 		armMotorMaster.configNominalOutputForward(0, Constants.kTimeoutMs);
 		armMotorMaster.configNominalOutputReverse(0, Constants.kTimeoutMs);

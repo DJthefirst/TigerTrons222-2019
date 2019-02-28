@@ -2,6 +2,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.Robot;
+import frc.robot.Settings;
 
 public class Autonomous extends CommandGroup {
 
@@ -11,16 +12,16 @@ public class Autonomous extends CommandGroup {
     requires(Robot.m_ballPiston);
     
     addParallel(new HatchIn_Pnu());
-    addSequential(new Arm_Auto(658));
+    //addSequential(new Arm_Auto(Settings.Arm_Hat_Pos));
     addSequential(new Drive_Auto(1.5,0.4,0,0));
 
     //addSequential(new Drive_Auto(1,0.6,0,0));
 
     
-    addSequential(new Arm_Auto(658));
+    //addSequential(new Arm_Auto(Settings.Arm_Mid_Pos));
 
     addParallel(new HatchOut_Pnu());
-    addSequential(new Drive_Auto(-1,-0.6,0,0));
+    addSequential(new Drive_Auto(1,0.6,0,0));
 
 
 

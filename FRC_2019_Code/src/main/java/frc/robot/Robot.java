@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.Autonomous;
 import frc.robot.commands.Autonomous2;
+import frc.robot.commands.Autonomous_Sand;
 import frc.robot.commands.Autonomous1;
 import frc.robot.subsystems.Hatch;
 import frc.robot.subsystems.BallIntake;
@@ -62,6 +63,8 @@ public class Robot extends TimedRobot {
 	
 
 		m_chooser.addDefault("Default Auto", new Autonomous());
+		SmartDashboard.putData("Auto mode", m_chooser);
+		m_chooser.addOption("Sand Storm", new Autonomous_Sand());
 		SmartDashboard.putData("Auto mode", m_chooser);
 		m_chooser.addOption("Autonomus 1", new Autonomous1());
 		SmartDashboard.putData("Auto mode", m_chooser);

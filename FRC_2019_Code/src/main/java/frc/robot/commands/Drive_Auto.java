@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.AnalogGyro;
 import com.revrobotics.CANEncoder;
-import frc.robot.RobotMap;
 import frc.robot.Settings;
 import frc.robot.Constants;
 

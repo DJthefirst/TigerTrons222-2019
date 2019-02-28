@@ -24,6 +24,7 @@ import frc.robot.commands.Drive_Auto;
 import frc.robot.commands.LimeLight_Pipeline;
 import frc.robot.commands.Arm_Auto;
 import frc.robot.commands.Autonomous;
+import frc.robot.Settings;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -89,11 +90,10 @@ public class OI<Joystick> {
 		//controller 2
 		//D11.whenPressed(new HatchOut());
 		//D11.whenReleased(new HatchIn());
-		D11.whileHeld(new Arm_Auto(778));
-		D12.whileHeld(new Arm_Auto(658));
-		D13.whileHeld(new Arm_Auto(755));
-		//D13.whileHeld(new Arm_Auto(670));
-		D14.whileHeld(new Arm_Auto(535));
+		D11.whileHeld(new Arm_Auto(Settings.Arm_Bot_Pos));
+		D12.whileHeld(new Arm_Auto(Settings.Arm_Mid_Pos));
+		D13.whileHeld(new Arm_Auto(Settings.Arm_Hat_Pos));
+		D14.whileHeld(new Arm_Auto(Settings.Arm_Top_Pos));
 		//D14.whileHeld(new Arm_Auto(500));//Max!
 		D15.whenPressed(new HatchOut_Pnu());
 		D15.whenReleased(new HatchIn_Pnu());
