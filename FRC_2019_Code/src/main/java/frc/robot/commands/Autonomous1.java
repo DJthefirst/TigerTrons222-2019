@@ -10,9 +10,9 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.Robot;
 
-public class Autonomous3 extends CommandGroup {
+public class Autonomous1 extends CommandGroup {
 
-  public Autonomous3() {
+  public Autonomous1() {
     super();
 
     requires(Robot.m_ballPiston);

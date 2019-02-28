@@ -16,4 +16,10 @@ public class HatchIn_Pnu extends InstantCommand {
 	protected void initialize() {
 		Robot.m_hatch.pitchDown();
 	}
+
+    @Override 
+    protected boolean isFinished()
+    {
+        return true;
+    }
 }

@@ -9,6 +9,7 @@ import frc.robot.commands.DriveArcade;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANEncoder;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import edu.wpi.first.wpilibj.AnalogGyro;
 
 public class Drivetrain extends Subsystem {
 		
@@ -22,7 +23,7 @@ public class Drivetrain extends Subsystem {
 	CANEncoder driveEncoder;
 
 	DifferentialDrive differentialDrive = new DifferentialDrive(rightMasterSparkMax,leftMasterSparkMax); 
-	
+	private AnalogGyro gyro = new AnalogGyro(RobotMap.ROBOT_GYRO);
 public Drivetrain()
 {
 	leftSlave1SparkMax.follow(leftMasterSparkMax);
@@ -50,8 +51,15 @@ public void initDefaultCommand()
 	setDefaultCommand(new DriveArcade()); 
 }
 
-public CANEncoder getLeftEncoder() {
+public CANEncoder getDriveEncoder() {
 	return driveEncoder;
+
+}
+
+
+public AnalogGyro getDriveGyro() {
+	
+	return gyro;
 }
 
 

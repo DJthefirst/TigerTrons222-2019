@@ -18,8 +18,9 @@ public class Drive_Auto extends Command {
     double moveSpeed = 0;
     double loop = 0;
     double turnAngle = 0;
-    private CANEncoder driveEncoder = Robot.m_drivetrain.getLeftEncoder();
-    private AnalogGyro gyro = new AnalogGyro(RobotMap.ROBOT_GYRO);
+    boolean finished = false;
+    private CANEncoder driveEncoder = Robot.m_drivetrain.getDriveEncoder();
+    private AnalogGyro gyro = Robot.m_drivetrain.getDriveGyro();
     
 
     public Drive_Auto(double inches, double drivespeed, double turnangle, double turnspeed)
@@ -38,39 +39,44 @@ public class Drive_Auto extends Command {
         Robot.m_drivetrain.ResetEncoder();
         gyro.reset();
         System.out.println("---Running Drive Auto COMMAND---");
+        finished = false;
     }
 
     @Override 
     protected void execute()
     {
-        while (Math.abs(driveEncoder.getPosition()) < Math.abs(driveDistance)){
-            moveSpeed = driveSpeed; 
+        
+         moveSpeed = driveSpeed; 
 
-            //turning
-            turnAngle = -angle + gyro.getAngle();
-            turnAngle = turnAngle*Kp;
+         //turning
+        turnAngle = -angle + gyro.getAngle();
+        turnAngle = turnAngle*Kp;
 
-            //set limits
-            if (moveSpeed > 1){moveSpeed = 1;}
-	        if (Math.abs(moveSpeed) < 0.10) {moveSpeed = 0;}
-            if (turnAngle > turnSpeed){turnAngle = turnSpeed;}
-            if (turnAngle < -turnSpeed){turnAngle = -turnSpeed;}
+        //set limits
+        if (moveSpeed > 1){moveSpeed = 1;}
+	    if (Math.abs(moveSpeed) < 0.10) {moveSpeed = 0;}
+        if (turnAngle > turnSpeed){turnAngle = turnSpeed;}
+        if (turnAngle < -turnSpeed){turnAngle = -turnSpeed;}
 
-            //stop once goal is reached
-            //if(Math.abs(driveEncoder.getPosition()) > Math.abs(driveDistance)){ 
-            //    moveSpeed = 0;
-            //}
+        //stop once goal is reached
+        //if(Math.abs(driveEncoder.getPosition()) > Math.abs(driveDistance)){ 
+        //    moveSpeed = 0;
+        //}
 
-            //dispalay values
-            if (++loop >= 10) {
-                loop = 0;
-                //System.out.println("turnAngle: " + turnAngle +" |Gyro: "+ gyro.getAngle());
-               // System.out.println(driveEncoder.getPosition());
-            }
-             if (Math.abs(driveEncoder.getPosition()) > Math.abs(driveDistance)){
-                break;
-            }
-            Robot.m_drivetrain.arcadeDrive(moveSpeed, turnAngle);
+        //dispalay values
+        if (++loop >= 10) {
+            loop = 0;
+            //System.out.println("turnAngle: " + turnAngle +" |Gyro: "+ gyro.getAngle());
+            // System.out.println(driveEncoder.getPosition());
+        }
+        if (Math.abs(driveEncoder.getPosition()) > Math.abs(driveDistance)){
+            end();
+               // break;
+        }
+        Robot.m_drivetrain.arcadeDrive(moveSpeed, turnAngle);
+
+        if (Math.abs(driveEncoder.getPosition()) > Math.abs(driveDistance)){
+            finished = true;
         }
     }
     
@@ -78,7 +84,7 @@ public class Drive_Auto extends Command {
     @Override 
     protected boolean isFinished()
     {
-        return false;
+        return finished;
     }
 
 

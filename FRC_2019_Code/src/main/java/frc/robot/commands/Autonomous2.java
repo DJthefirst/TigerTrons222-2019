@@ -22,7 +22,7 @@ public class Autonomous2 extends CommandGroup {
     //addSequential(new Drive_Auto(0,0,15,.6));  //Distance, Speed, Angle, Speed
     //addSequential(new Drive_Auto(1,0.5,0,0));  //Distance, Speed, Angle, Speed
     //addSequential(new HatchOut_Pnu());         //Hatch
-
+    addSequential(new HatchIn_Pnu());
 
     // Add Commands here:
     // e.g. addSequential(new Command1());

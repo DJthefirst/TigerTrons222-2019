@@ -3,11 +3,8 @@ package frc.robot.commands;
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 import frc.robot.Robot;
-import com.revrobotics.CANEncoder;
 
 public class DriveArcade extends Command {
-
-    private CANEncoder driveEncoder = Robot.m_drivetrain.getLeftEncoder();
 
     public DriveArcade()
     {
@@ -42,8 +39,8 @@ public class DriveArcade extends Command {
 		}
 
         Robot.m_drivetrain.arcadeDrive(moveSpeed,rotateSpeed);
-        System.out.println(moveSpeed);
-        System.out.println("rotate" + rotateSpeed);
+        //System.out.println(moveSpeed);
+        //System.out.println("rotate" + rotateSpeed);
     }
 
     @Override 
