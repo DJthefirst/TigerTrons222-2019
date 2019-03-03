@@ -12,14 +12,12 @@ public class BallIntake extends Subsystem {
 	//motors 
 	int timeoutMs = 300;
 	WPI_TalonSRX armMotorIntakeMaster = new WPI_TalonSRX(RobotMap.Intake_MOTOR_TALON);
-	//armMotorIntakeMaster.configContinuousCurrentLimit(5, 100);
-	//armMotorIntakeMaster.configPeakCurrentLimit(35, 10); /* 35 A */
-	//armMotorIntakeMaster.configPeakCurrentDuration(200, 10); /* 200ms */
-	//armMotorIntakeMaster.configContinuousCurrentLimit(30, 10); /* 30
+
 
 	public BallIntake(){
 		armMotorIntakeMaster.configContinuousCurrentLimit(Settings.IntakeCon_Amp, timeoutMs);
 		armMotorIntakeMaster.configPeakCurrentLimit(Settings.IntakeMax_Amp, timeoutMs);
+		armMotorIntakeMaster.configPeakCurrentDuration(Settings.IntakeTime_Amp);
 		armMotorIntakeMaster.enableCurrentLimit(true); 
 		
 	}

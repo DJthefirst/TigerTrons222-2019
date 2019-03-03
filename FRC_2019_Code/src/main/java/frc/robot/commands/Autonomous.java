@@ -13,7 +13,7 @@ public class Autonomous extends CommandGroup {
     
     addParallel(new HatchIn_Pnu());
     //addSequential(new Arm_Auto(Settings.Arm_Hat_Pos));
-    addSequential(new Drive_Auto(1.5,0.4,0,0));
+    addSequential(new Drive_Auto(1.5,.4,0,0));
 
     //addSequential(new Drive_Auto(1,0.6,0,0));
 
@@ -21,7 +21,7 @@ public class Autonomous extends CommandGroup {
     //addSequential(new Arm_Auto(Settings.Arm_Mid_Pos));
 
     addParallel(new HatchOut_Pnu());
-    addSequential(new Drive_Auto(1,0.6,0,0));
+    addSequential(new Drive_Auto(1,-0.6,0,0));
 
 
 

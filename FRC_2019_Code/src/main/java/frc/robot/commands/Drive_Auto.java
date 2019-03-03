@@ -74,8 +74,16 @@ public class Drive_Auto extends Command {
         }
         Robot.m_drivetrain.arcadeDrive(moveSpeed, turnAngle);
 
+
+
         if (Math.abs(driveEncoder.getPosition()) > Math.abs(driveDistance)){
             finished = true;
+        }
+        //else if(Math.abs(gyro.getAngle()) > Math.abs(angle)) {
+        //    finished = true;
+        // }
+        else{
+            finished = false;
         }
     }
     
