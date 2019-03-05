@@ -2,7 +2,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.Robot;
-import frc.robot.Settings;
+//import frc.robot.Settings;
 
 public class Autonomous extends CommandGroup {
 
