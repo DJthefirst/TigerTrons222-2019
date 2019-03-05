@@ -18,6 +18,8 @@ import frc.robot.subsystems.Shift;
 import frc.robot.subsystems.Skid;
 import frc.robot.subsystems.UpyDownyArmThing;
 
+import edu.wpi.first.networktables.NetworkTableInstance;
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -137,6 +139,7 @@ public class Robot extends TimedRobot {
 		// teleop starts running. If you want the autonomous to
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
+		System.out.println(NetworkTableInstance.getDefault().getTable("limelight").getEntry("pipeline").getDouble(0));
 		if (m_autonomousCommand != null) {
 			m_autonomousCommand.cancel();
 		}
