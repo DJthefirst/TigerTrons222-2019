@@ -16,8 +16,9 @@ import frc.robot.commands.HatchOut_Pnu;
 import frc.robot.commands.BallIn_Pnu;
 //import frc.robot.commands.BallIntakecmd_Btn;
 import frc.robot.commands.BallOut_Pnu;
-import frc.robot.commands.SkidIn;
-import frc.robot.commands.SkidOut;
+import frc.robot.commands.SkidIn_Pnu;
+import frc.robot.commands.SkidOut_Pnu;
+import frc.robot.commands.Skidcmd_Pnu;
 import frc.robot.commands.DriveLimeLight;
 //import frc.robot.commands.Drive_Auto;
 import frc.robot.commands.LimeLight_Pipeline;
@@ -72,12 +73,12 @@ public class OI<Joystick> {
 		//D2.whenPressed(new BallOut_Pnu());
 		//D2.whenReleased(new BallIn_Pnu());	
 		//D2.whileHeld(new BallIntakecmd_Btn());
-		D3.whenPressed(new SkidIn());
-		D3.whenReleased(new SkidOut());
+		D3.whenPressed(new SkidOut_Pnu());
+		D3.whenReleased(new SkidIn_Pnu());
 		D5.whenPressed(new ShiftIn_Pnu());
 		D5.whenReleased(new ShiftOut_Pnu());
 		//D8.whileHeld(new DriveForward(40, 0.8, 25 ,.5)); //arcing turn
-		D8.whenPressed(new Autonomous());
+		D8.whenPressed(new Skidcmd_Pnu());
 		//D7.whileHeld(new Autonomous());
 		D7.whenPressed(new LimeLight_Pipeline());
 		//D7.whileHeld(new Drive_Auto(0, 0.4, 10 ,.5));

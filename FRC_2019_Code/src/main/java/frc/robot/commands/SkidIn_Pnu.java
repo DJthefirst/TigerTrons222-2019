@@ -4,9 +4,9 @@ import edu.wpi.first.wpilibj.command.InstantCommand;
 import frc.robot.Robot;
 
 
-public class SkidIn extends InstantCommand {
+public class SkidIn_Pnu extends InstantCommand {
 
-	public SkidIn() {
+	public SkidIn_Pnu() {
 		super();
  
 		requires(Robot.m_skid);
