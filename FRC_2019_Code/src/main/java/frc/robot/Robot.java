@@ -73,7 +73,7 @@ public class Robot extends TimedRobot {
 		m_chooser.addOption("Autonomus 2", new Autonomous2());
 		SmartDashboard.putData("Auto mode", m_chooser);
 
-
+		NetworkTableInstance.getDefault().getTable("limelight").getEntry("pipeline").setNumber(1);
 	}
 
 	/**

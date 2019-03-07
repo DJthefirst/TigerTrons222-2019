@@ -69,7 +69,7 @@ public class OI<Joystick> {
 	{
 		// controller 1
 		//D1.whenPressed(new HatchOut_Pnu());
-		//D1.whenReleased(new HatchIn_Pnu());
+		//D1.whenReleased(new HatchIn_Pnu());;\
 		//D2.whenPressed(new BallOut_Pnu());
 		//D2.whenReleased(new BallIn_Pnu());	
 		//D2.whileHeld(new BallIntakecmd_Btn());
