@@ -73,8 +73,8 @@ public class OI<Joystick> {
 		//D2.whenPressed(new BallOut_Pnu());
 		//D2.whenReleased(new BallIn_Pnu());	
 		//D2.whileHeld(new BallIntakecmd_Btn());
-		D3.whenPressed(new SkidOut_Pnu());
-		D3.whenReleased(new SkidIn_Pnu());
+		D9.whenPressed(new SkidOut_Pnu());
+		D9.whenReleased(new SkidIn_Pnu());
 		D5.whenPressed(new ShiftIn_Pnu());
 		D5.whenReleased(new ShiftOut_Pnu());
 		//D8.whileHeld(new DriveForward(40, 0.8, 25 ,.5)); //arcing turn
