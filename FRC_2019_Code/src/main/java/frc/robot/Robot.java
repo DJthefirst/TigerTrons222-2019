@@ -83,7 +83,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void disabledInit() {
-
+		NetworkTableInstance.getDefault().getTable("limelight").getEntry("pipeline").setNumber(1);
 	}
 
 	@Override

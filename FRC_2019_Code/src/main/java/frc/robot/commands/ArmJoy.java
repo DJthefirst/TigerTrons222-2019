@@ -32,8 +32,6 @@ public class ArmJoy extends Command {
         
         if (++loop >= 40) {
 			loop = 0;
-        //System.out.println("Sensor Vel:" + armMotorMaster.getSelectedSensorVelocity());
-        // System.out.println("Sensor Pos:" + armMotorMaster.getSelectedSensorPosition());
 
         }
        

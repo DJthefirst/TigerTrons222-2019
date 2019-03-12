@@ -7,16 +7,7 @@ public class Autonomous_Sand extends CommandGroup {
 
   public Autonomous_Sand() {
     super();
-
-    
-   
   }
-
-  //@Override 
- //protected boolean isFinished()
-  //{
-  //  return true;
-  //}
 
   @Override 
   protected void end(){       

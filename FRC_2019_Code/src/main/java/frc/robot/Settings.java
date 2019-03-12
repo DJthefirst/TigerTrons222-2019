@@ -4,10 +4,11 @@ package frc.robot;
 
 public class Settings {
 
+    //Values
     public static final int Encoder_RotationsPerInch = 15;
     public static final double HatchToBall = 28;
     public static final boolean Test_Drive = false;
-    public static final double LimeLight_Drive_Speed = .7; //add
+    public static final double LimeLight_Drive_Speed = .7;
 
     //Arm Positions
     public static final double Arm_ABS_Top_Pos = 467;
@@ -16,8 +17,6 @@ public class Settings {
     public static final double Arm_Bot_Pos = 760;
     public static final double Arm_Hat_Pos = 737;
     public static final double Arm_ABS_Bot_Pos = 778; //DO Not Use
-
-    //748 -7
 
     //Intake current limit
     public static final int IntakeMax_Amp = 15;
