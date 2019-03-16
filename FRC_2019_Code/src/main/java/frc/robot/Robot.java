@@ -64,7 +64,7 @@ public class Robot extends TimedRobot {
 		m_autonomousCommand = new Autonomous();
 	
 
-		m_chooser.addDefault("Default Auto", new Autonomous());
+		m_chooser.addDefault("Default Auto", new Autonomous_Sand());
 		SmartDashboard.putData("Auto mode", m_chooser);
 		m_chooser.addOption("Sand Storm", new Autonomous_Sand());
 		SmartDashboard.putData("Auto mode", m_chooser);

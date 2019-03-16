@@ -11,7 +11,7 @@ public class Settings {
     public static final double LimeLight_Drive_Speed = .7;
 
     //Arm Positions
-    public static final double Arm_ABS_Top_Pos = 467;
+    public static final double Arm_ABS_Top_Pos = 462;
     public static final double Arm_Top_Pos = 517;
     public static final double Arm_Mid_Pos = 640;    
     public static final double Arm_Bot_Pos = 760;
