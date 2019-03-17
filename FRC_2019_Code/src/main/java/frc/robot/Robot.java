@@ -42,7 +42,7 @@ public class Robot extends TimedRobot {
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
-
+	SendableChooser<Command> m_cameraMode = new SendableChooser<>();
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
@@ -72,6 +72,16 @@ public class Robot extends TimedRobot {
 		SmartDashboard.putData("Auto mode", m_chooser);
 		m_chooser.addOption("Autonomus 2", new Autonomous2());
 		SmartDashboard.putData("Auto mode", m_chooser);
+		
+		//THINK ABOUT IT
+		//m_cameraMode.addDefault("Default Camera", new #());
+		//SmartDashboard.putData("Camera", m_cameraMode);
+		//m_chooser.addOption("Sand Storm", new DrivePipeline());
+		//SmartDashboard.putData("Camera", m_cameraMode);
+		//m_chooser.addOption("Limelight", new Autonomous1());
+		//SmartDashboard.putData("Camera", m_cameraMode);
+	
+		
 
 		NetworkTableInstance.getDefault().getTable("limelight").getEntry("pipeline").setNumber(1);
 	}
