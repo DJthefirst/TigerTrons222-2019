@@ -1,10 +1,16 @@
 
 package frc.robot.commands;
 import frc.robot.RobotMap;
-import edu.wpi.first.wpilibj.command.Command;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+
+import com.revrobotics.CANEncoder;
+import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
 public class DriveArcade extends Command {
+
+    private CANEncoder driveEncoderLeft = Robot.m_drivetrain.getDriveEncoderLeft();
+    private CANEncoder driveEncoderRight = Robot.m_drivetrain.getDriveEncoderRight();
 
     public DriveArcade()
     {
@@ -15,7 +21,7 @@ public class DriveArcade extends Command {
     @Override 
     protected void initialize()
     {
-        
+        Robot.m_drivetrain.ResetEncoder();
     }
 
     @Override 
@@ -23,6 +29,9 @@ public class DriveArcade extends Command {
     {
         double moveSpeed = -Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_MOVE_AXIS);
         double rotateSpeed = Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_AXIS);
+
+        SmartDashboard.putNumber("Left Encoder", driveEncoderLeft.getPosition());
+        SmartDashboard.putNumber("RIght Encoder",driveEncoderRight.getPosition());
 
         //System.out.println("Sensor Vel:" + leftSlave1Talon.getSelectedSensorVelocity());
         //System.out.println("Sensor Pos:" + leftSlave1Talon.getSelectedSensorPosition());

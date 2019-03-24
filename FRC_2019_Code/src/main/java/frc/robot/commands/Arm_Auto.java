@@ -10,15 +10,15 @@ import frc.robot.Settings;
 
 public class Arm_Auto extends Command {
 
-    double armPosition;
+    double targetPos;
+    int armState;
     private WPI_TalonSRX armMotorMaster = Robot.m_arm.getArmTalon();
     
-    public Arm_Auto(double arminches)
+    public Arm_Auto(int ArmState)
     {
         requires(Robot.m_arm);
-        armPosition = arminches;
+        armState = ArmState;
     }
-
 
     @Override 
     protected void initialize()
@@ -29,14 +29,39 @@ public class Arm_Auto extends Command {
     @Override 
     protected void execute()
     {
-        double leftYstick = Robot.m_oi.Controller2.getRawAxis(RobotMap.DRIVER_CONTROLLER2_ARM_AXIS)*.5;
-		if (Math.abs(leftYstick) < 0.10) { leftYstick = 0;}
 
-        double targetPos = armPosition;
-        
         if (Robot.m_oi.Controller2.getRawAxis(RobotMap.DRIVER_CONTROLLER2_ARM_SHIFT) > .2){
-            targetPos = targetPos - (Settings.HatchToBall);
+            armState =+ 1;
         }
+
+        switch (armState)
+        {
+        case 0:
+            targetPos = (Settings.Ball_Top_Pos);
+            break;
+        case 1:
+            targetPos = (Settings.Hatch_Top_Pos);
+            break;
+        case 2:
+            targetPos = (Settings.Ball_Mid_Pos);
+            break;
+        case 3:
+            targetPos = (Settings.Hatch_Mid_Pos);
+            break;
+        case 4:
+            targetPos = (Settings.Ball_Hab_Pos);
+            break;
+        case 5:
+            targetPos = (Settings.Hatch_Hab_Pos);
+            break;
+        case 6:
+            targetPos = (Settings.Ball_Bot_Pos);
+            break;
+        case 7:
+            targetPos = (Settings.Hatch_Bot_Pos);
+            break;
+        }
+
         armMotorMaster.set(ControlMode.MotionMagic, targetPos);
 
 

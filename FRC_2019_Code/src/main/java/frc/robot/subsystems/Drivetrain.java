@@ -20,9 +20,13 @@ public class Drivetrain extends Subsystem {
 	CANSparkMax leftSlave2SparkMax = new CANSparkMax(RobotMap.DRIVETRAIN_LEFT_Slave2_SPARKMAX,MotorType.kBrushless);
 	CANSparkMax rightSlave1SparkMax = new CANSparkMax(RobotMap.DRIVETRAIN_RIGHT_Slave1_SPARKMAX,MotorType.kBrushless);
 	CANSparkMax rightSlave2SparkMax = new CANSparkMax(RobotMap.DRIVETRAIN_RIGHT_Slave2_SPARKMAX,MotorType.kBrushless);
-	CANEncoder driveEncoder;
+	CANEncoder driveEncoderLeft;
+	CANEncoder driveEncoderRight;
 
 	DifferentialDrive differentialDrive = new DifferentialDrive(rightMasterSparkMax,leftMasterSparkMax); 
+
+	
+
 	private AnalogGyro gyro = new AnalogGyro(RobotMap.ROBOT_GYRO);
 public Drivetrain()
 {
@@ -30,7 +34,8 @@ public Drivetrain()
 	leftSlave2SparkMax.follow(leftMasterSparkMax);
 	rightSlave1SparkMax.follow(rightMasterSparkMax);
 	rightSlave2SparkMax.follow(rightMasterSparkMax);
-	driveEncoder = leftSlave1SparkMax.getEncoder();
+	driveEncoderLeft = leftSlave1SparkMax.getEncoder();
+	driveEncoderRight = rightSlave1SparkMax.getEncoder();
 }
 
 
@@ -39,10 +44,16 @@ public void arcadeDrive (double moveSpeed, double rotateSpeed)
 	differentialDrive.arcadeDrive(moveSpeed,-rotateSpeed);
 }
 
+public void PathDrive (double leftSpeed, double rightSpeed)
+{
+	differentialDrive.tankDrive(leftSpeed,rightSpeed);
+}
+
 
 public void ResetEncoder ()
 {
-	driveEncoder.setPosition(0);
+	driveEncoderLeft.setPosition(0);
+	driveEncoderRight.setPosition(0);
 }
 
 
@@ -51,16 +62,16 @@ public void initDefaultCommand()
 	setDefaultCommand(new DriveArcade()); 
 }
 
-public CANEncoder getDriveEncoder() {
-	return driveEncoder;
+public CANEncoder getDriveEncoderLeft() {
+	return driveEncoderLeft;}
 
-}
-
+public CANEncoder getDriveEncoderRight() {
+	return driveEncoderRight;}
 
 public AnalogGyro getDriveGyro() {
-	
 	return gyro;
 }
+
 
 
 

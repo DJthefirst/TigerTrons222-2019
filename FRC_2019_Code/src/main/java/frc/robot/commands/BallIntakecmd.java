@@ -5,6 +5,7 @@ import frc.robot.Robot;
 
 public class BallIntakecmd extends Command {
 
+    double ballSpeed;
 
     public BallIntakecmd()
     {
@@ -22,15 +23,21 @@ public class BallIntakecmd extends Command {
     @Override 
     protected void execute()
     {
-        Robot.m_BallIntake.BallDrive(Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_In)-Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_Out));
+        
+            
+        ballSpeed = Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_In)-Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_Out);
         //System.out.println("Intake: " + (Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_Out)));
+       
         if(Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_In)-Robot.m_oi.Controller.getRawAxis(RobotMap.DRIVER_CONTROLLER_ROTATE_INTAKE_Out) < 0 ){
             Robot.m_BallIntake.CurrntLimitFalse(); 
+
+            ballSpeed = -0.75;
         }
         else{
             Robot.m_BallIntake.CurrntLimitTrue();  
         }
         //lower while intakeing
+        Robot.m_BallIntake.BallDrive(ballSpeed);
     }
 
     

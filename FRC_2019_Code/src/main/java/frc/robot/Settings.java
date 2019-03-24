@@ -11,11 +11,15 @@ public class Settings {
     public static final double LimeLight_Drive_Speed = .7;
 
     //Arm Positions
-    public static final double Arm_ABS_Top_Pos = 462;
-    public static final double Arm_Top_Pos = 517;
-    public static final double Arm_Mid_Pos = 640;    
-    public static final double Arm_Bot_Pos = 760;
-    public static final double Arm_Hat_Pos = 737;
+    public static final double Arm_ABS_Top_Pos = 462; //Do Not Use
+    public static final double Ball_Top_Pos = 490;
+    public static final double Ball_Mid_Pos = 640;    
+    public static final double Ball_Hab_Pos = 760;
+    public static final double Ball_Bot_Pos = 737;
+    public static final double Hatch_Top_Pos = 462;
+    public static final double Hatch_Mid_Pos = 612;    
+    public static final double Hatch_Hab_Pos = 732;
+    public static final double Hatch_Bot_Pos = 709;
     public static final double Arm_ABS_Bot_Pos = 778; //DO Not Use
 
     //Intake current limit

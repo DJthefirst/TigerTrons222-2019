@@ -3,12 +3,20 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
+import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
 public class DriveLimeLight extends Command {
  
+    double P = 1;
+    double I = 0;
+    double D = 1;
+    double integral, previous_error, setpoint = 0;
+    double xx;
+    double yy;
+
     public DriveLimeLight()
     {
         requires(Robot.m_drivetrain);
@@ -30,22 +38,14 @@ public class DriveLimeLight extends Command {
         NetworkTableEntry ta = table.getEntry("ta");
 
         //read values periodically
-        double xx = tx.getDouble(0.0);
-        double yy = ty.getDouble(0.0);
-        double Are = ta.getDouble(0.0);
+        xx = tx.getDouble(0.0);
+        yy = ty.getDouble(0.0);
 
         SmartDashboard.putNumber("LimelightX", xx);
         SmartDashboard.putNumber("LimelightY", yy);
-        SmartDashboard.putNumber("LimelightArea", Are);
 
-        System.out.println("x;"+ xx +" y;"+ yy +" area;"+ Are);
-
-        xx = xx/20;
-        Are = 5/Are;
-
-
-        double moveSpeed = Are;
-        double rotateSpeed = xx;
+        double moveSpeed = ((Math.pow(78,(0.092*(yy/1.78+8))))+43)/40;
+        double rotateSpeed = PID();
 
 
 
@@ -80,8 +80,17 @@ public class DriveLimeLight extends Command {
 		}
 
 
-        Robot.m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
+        Robot.m_drivetrain.arcadeDrive(0, rotateSpeed);
     }
+
+    public double PID(){
+        double error = 0 - xx; // Error = Target - Actual
+        integral = integral + (error*.02); // Integral is increased by the error*time (which is .02 seconds using normal IterativeRobot)
+        double derivative = (error - previous_error) / .02;
+        double turnspeed = P*error + I*integral + D*derivative;
+        return -turnspeed;
+    }
+
 
     @Override 
     protected boolean isFinished()

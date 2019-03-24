@@ -22,7 +22,7 @@ public class BallOut_Pnu extends Command {
 	protected void initialize() {
 		System.out.println("---Pitch Up---");
 
-		if(armMotorMaster.getSelectedSensorPosition() > (Settings.Arm_Bot_Pos - 10))
+		if(armMotorMaster.getSelectedSensorPosition() > (Settings.Ball_Bot_Pos - 10))
 		{
 			Robot.m_ballPiston.pitchUp();
 		}

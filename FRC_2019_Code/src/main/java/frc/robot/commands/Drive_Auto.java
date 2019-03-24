@@ -18,7 +18,7 @@ public class Drive_Auto extends Command {
     double loop = 0;
     double turnAngle = 0;
     boolean finished = false;
-    private CANEncoder driveEncoder = Robot.m_drivetrain.getDriveEncoder();
+    private CANEncoder driveEncoder = Robot.m_drivetrain.getDriveEncoderLeft();
     private AnalogGyro gyro = Robot.m_drivetrain.getDriveGyro();
     
 

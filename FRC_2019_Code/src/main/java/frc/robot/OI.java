@@ -55,19 +55,21 @@ public class OI<Joystick> {
 	public OI()
 	{
 		// controller 1
+
 		D5.whenPressed(new ShiftIn_Pnu());						//Left Button
 		D5.whenReleased(new ShiftOut_Pnu());					
 		D6.whileHeld(new DriveLimeLight());						//Right Button
-		D7.whenPressed(new LimeLight_Pipeline());				//Back
-		D8.whenPressed(new Skidcmd_Pnu());						//Menu
+		D7.whenPressed(new LimeLight_Pipeline());
+		D8.whenPressed(new Skidcmd_Pnu());							//Back
+							//Menu
 		D9.whenPressed(new SkidOut_Pnu());						//Left Stick
 		D9.whenReleased(new SkidIn_Pnu());
 
 		//controller 2
-		D11.whileHeld(new Arm_Auto(Settings.Arm_Bot_Pos));		//A
-		D12.whileHeld(new Arm_Auto(Settings.Arm_Mid_Pos));		//B
-		D13.whileHeld(new Arm_Auto(Settings.Arm_Hat_Pos));		//X
-		D14.whileHeld(new Arm_Auto(Settings.Arm_Top_Pos));		//Y
+		D11.whileHeld(new Arm_Auto(0));		//A
+		D12.whileHeld(new Arm_Auto(2));		//B
+		D13.whileHeld(new Arm_Auto(4));		//X
+		D14.whileHeld(new Arm_Auto(6));		//Y
 		D15.whenPressed(new HatchOut_Pnu());					//Left Button
 		D15.whenReleased(new HatchIn_Pnu());					
 		D16.whenPressed(new BallOut_Pnu());						//Right Button

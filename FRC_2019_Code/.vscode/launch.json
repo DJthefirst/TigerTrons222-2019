@@ -4,18 +4,52 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Tank",
+      "request": "launch",
+      "mainClass": "frc.robot.commands.Tank",
+      "projectName": "FRC_2019_Code"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - thing",
+      "request": "launch",
+      "mainClass": "frc.robot.commands.thing",
+      "projectName": "FRC_2019_Code"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - that",
+      "request": "launch",
+      "mainClass": "frc.robot.commands.that",
+      "projectName": "FRC_2019_Code"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - MultiplyMatrices",
+      "request": "launch",
+      "mainClass": "frc.robot.commands.MultiplyMatrices",
+      "projectName": "FRC_2019_Code"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - DriveLimeLight_2",
+      "request": "launch",
+      "mainClass": "frc.robot.commands.DriveLimeLight_2",
+      "projectName": "FRC_2019_Code"
+    },
     {
       "type": "wpilib",
       "name": "WPILib Desktop Debug",
       "request": "launch",
-      "desktop": true,
+      "desktop": true
     },
     {
       "type": "wpilib",
       "name": "WPILib roboRIO Debug",
       "request": "launch",
-      "desktop": false,
+      "desktop": false
     }
   ]
 }
