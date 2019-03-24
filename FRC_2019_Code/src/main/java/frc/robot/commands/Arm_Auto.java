@@ -32,8 +32,10 @@ public class Arm_Auto extends Command {
     {
 
         if (Robot.m_oi.Controller2.getRawAxis(RobotMap.DRIVER_CONTROLLER2_ARM_SHIFT) > .2){
-            arm_state = armState + 1;
-            
+            arm_state = armState + 1;   
+        }
+        else{
+            arm_state = armState;
         }
 
         switch (arm_state)
