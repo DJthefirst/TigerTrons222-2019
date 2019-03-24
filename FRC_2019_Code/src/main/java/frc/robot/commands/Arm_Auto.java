@@ -12,6 +12,7 @@ public class Arm_Auto extends Command {
 
     double targetPos;
     int armState;
+    int arm_state;
     private WPI_TalonSRX armMotorMaster = Robot.m_arm.getArmTalon();
     
     public Arm_Auto(int ArmState)
@@ -31,10 +32,11 @@ public class Arm_Auto extends Command {
     {
 
         if (Robot.m_oi.Controller2.getRawAxis(RobotMap.DRIVER_CONTROLLER2_ARM_SHIFT) > .2){
-            armState =+ 1;
+            arm_state = armState + 1;
+            
         }
 
-        switch (armState)
+        switch (arm_state)
         {
         case 0:
             targetPos = (Settings.Ball_Top_Pos);

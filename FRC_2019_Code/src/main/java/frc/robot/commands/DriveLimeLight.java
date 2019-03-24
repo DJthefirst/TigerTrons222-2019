@@ -1,5 +1,7 @@
 
 package frc.robot.commands;
+
+import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
@@ -10,9 +12,9 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 
 public class DriveLimeLight extends Command {
  
-    double P = 1;
+    double P = .05;
     double I = 0;
-    double D = 1;
+    double D = .01;
     double integral, previous_error, setpoint = 0;
     double xx;
     double yy;
@@ -21,7 +23,6 @@ public class DriveLimeLight extends Command {
     {
         requires(Robot.m_drivetrain);
     }
-
 
     @Override 
     protected void initialize()
@@ -47,44 +48,20 @@ public class DriveLimeLight extends Command {
         double moveSpeed = ((Math.pow(78,(0.092*(yy/1.78+8))))+43)/40;
         double rotateSpeed = PID();
 
-
-
-
       //optional
-	if (Math.abs(moveSpeed) < 0.90) {
-			// within 10% joystick, make it zero 
-			moveSpeed = 0;
-		}
-		if (Math.abs(rotateSpeed) < 0.10) {
-			// within 10% joystick, make it zero 
-			rotateSpeed = 0;
-        }
-        
-        if (rotateSpeed > 1) {
-			// within 100% joystick, make it zero 
-			rotateSpeed = 1;
-        }
-        
-        if (rotateSpeed < -1) {
-			// within 100% joystick, make it zero 
-			rotateSpeed = -1;
-        }
-        
-        if (moveSpeed > .7) {
-			// within 100% joystick, make it zero 
-			moveSpeed = .7;
-        }
-        
-        if (moveSpeed < -.7) {
-			moveSpeed = -.7;
-		}
+	    if (Math.abs(moveSpeed) < 0.90) {moveSpeed = 0;}
+		if (Math.abs(rotateSpeed) < 0.10) {rotateSpeed = 0;}
+        if (rotateSpeed > 1)    {rotateSpeed = 1;}
+        if (rotateSpeed < -1)   {rotateSpeed = -1;}
+        if (moveSpeed > .7)     {moveSpeed = .7;}
+        if (moveSpeed < -.7)    {moveSpeed = -.7;}
 
 
         Robot.m_drivetrain.arcadeDrive(0, rotateSpeed);
     }
 
     public double PID(){
-        double error = 0 - xx; // Error = Target - Actual
+        double error = xx; // Error = Target - Actual
         integral = integral + (error*.02); // Integral is increased by the error*time (which is .02 seconds using normal IterativeRobot)
         double derivative = (error - previous_error) / .02;
         double turnspeed = P*error + I*integral + D*derivative;
