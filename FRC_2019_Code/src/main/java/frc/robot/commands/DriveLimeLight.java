@@ -12,9 +12,9 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 
 public class DriveLimeLight extends Command {
  
-    double P = .05;
-    double I = 0;
-    double D = .01;
+    double P = .3;
+    double I = 0.3;//.25
+    double D = 0.01;
     double integral, previous_error, setpoint = 0;
     double xx;
     double yy;
@@ -61,9 +61,10 @@ public class DriveLimeLight extends Command {
     }
 
     public double PID(){
-        double error = xx; // Error = Target - Actual
+        double error = 0 - xx/10; // Error = Target - Actual
         integral = integral + (error*.02); // Integral is increased by the error*time (which is .02 seconds using normal IterativeRobot)
-        double derivative = (error - previous_error) / .02;
+        double derivative = (error - previous_error);
+        previous_error = error;
         double turnspeed = P*error + I*integral + D*derivative;
         return -turnspeed;
     }

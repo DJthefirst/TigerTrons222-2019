@@ -66,10 +66,10 @@ public class OI<Joystick> {
 		D9.whenReleased(new SkidIn_Pnu());
 
 		//controller 2
-		D11.whileHeld(new Arm_Auto(0));		//A
+		D11.whileHeld(new Arm_Auto(4));		//A
 		D12.whileHeld(new Arm_Auto(2));		//B
-		D13.whileHeld(new Arm_Auto(4));		//X
-		D14.whileHeld(new Arm_Auto(6));		//Y
+		D13.whileHeld(new Arm_Auto(6));		//X
+		D14.whileHeld(new Arm_Auto(0));		//Y
 		D15.whenPressed(new HatchOut_Pnu());					//Left Button
 		D15.whenReleased(new HatchIn_Pnu());					
 		D16.whenPressed(new BallOut_Pnu());						//Right Button
