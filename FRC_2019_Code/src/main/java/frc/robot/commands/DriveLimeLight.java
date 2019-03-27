@@ -12,12 +12,18 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 
 public class DriveLimeLight extends Command {
  
-    double P = .3;
-    double I = 0.3;//.25
+    double P = .03;
+    double I = 0.03;//.25
     double D = 0.01;
     double integral, previous_error, setpoint = 0;
+
     double xx;
     double yy;
+
+    double prevError;
+    double period;
+    double totalError;
+
 
     public DriveLimeLight()
     {
@@ -27,7 +33,9 @@ public class DriveLimeLight extends Command {
     @Override 
     protected void initialize()
     {
-
+        double prevError = 0;
+        double period = .2;
+        double totalError = 0; 
     }
 
     @Override 
@@ -61,12 +69,24 @@ public class DriveLimeLight extends Command {
     }
 
     public double PID(){
-        double error = 0 - xx/10; // Error = Target - Actual
-        integral = integral + (error*.02); // Integral is increased by the error*time (which is .02 seconds using normal IterativeRobot)
-        double derivative = (error - previous_error);
-        previous_error = error;
-        double turnspeed = P*error + I*integral + D*derivative;
-        return -turnspeed;
+    
+        //double turnspeed = (P* (xx-(eK-1) + (Ts/I*eK) + ((D/Ts)*(eK-(2*(eK-1))+eK-2))));
+        //Ts=Ts+1;
+        //return turnspeed;
+
+       double error = setpoint - xx;
+       totalError = totalError + error * period;
+       double output = P * error + I * totalError + D * (error - prevError) / period;
+       prevError = error;
+       return output;
+
+
+        // double error = 0 - xx/10; // Error = Target - Actual
+        //integral = integral + (error*.02); // Integral is increased by the error*time (which is .02 seconds using normal IterativeRobot)
+        // double derivative = (error - previous_error);
+        // previous_error = error;
+        // double turnspeed = P*error + I*integral + D*derivative;
+        //return -turnspeed;
     }
 
 

@@ -8,6 +8,7 @@ import frc.robot.commands.HatchIn_Pnu;
 import frc.robot.commands.HatchOut_Pnu;
 import frc.robot.commands.BallIn_Pnu;
 import frc.robot.commands.BallOut_Pnu;
+import frc.robot.commands.Climbcmd;
 import frc.robot.commands.SkidIn_Pnu;
 import frc.robot.commands.SkidOut_Pnu;
 import frc.robot.commands.Skidcmd_Pnu;
@@ -64,6 +65,7 @@ public class OI<Joystick> {
 							//Menu
 		D9.whenPressed(new SkidOut_Pnu());						//Left Stick
 		D9.whenReleased(new SkidIn_Pnu());
+		D10.whileHeld(new Climbcmd(-1));
 
 		//controller 2
 		D11.whileHeld(new Arm_Auto(4));		//A

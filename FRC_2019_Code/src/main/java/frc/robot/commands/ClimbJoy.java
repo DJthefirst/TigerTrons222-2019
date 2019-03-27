@@ -27,7 +27,7 @@ public class ClimbJoy extends Command {
 @Override 
 protected void execute()
 {
-    double climbPosition = Robot.m_oi.Controller2.getRawAxis(RobotMap.DRIVER_CONTROLLER2_CLIMB_AXIS)*.5;
+    double climbPosition = -Robot.m_oi.Controller2.getRawAxis(RobotMap.DRIVER_CONTROLLER2_CLIMB_AXIS);
     if (Math.abs(climbPosition) < 0.10) { climbPosition = 0;}
     Robot.m_climb.climbDrive(climbPosition);
    
