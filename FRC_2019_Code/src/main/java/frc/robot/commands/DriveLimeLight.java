@@ -1,43 +1,22 @@
 
 package frc.robot.commands;
-
-import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
-import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
 public class DriveLimeLight extends Command {
- 
-    double P = .03;
-    double I = 0.03;//.25
-    double D = 0.01;
-    double integral, previous_error, setpoint = 0;
-
-    double xx;
-    double yy;
-
-    double prevError;
-    double period;
-    double totalError;
-
 
     public DriveLimeLight()
     {
         requires(Robot.m_drivetrain);
     }
-
     @Override 
     protected void initialize()
     {
-        double prevError = 0;
-        double period = .2;
-        double totalError = 0; 
     }
-
     @Override 
     protected void execute()
     {
@@ -47,62 +26,65 @@ public class DriveLimeLight extends Command {
         NetworkTableEntry ta = table.getEntry("ta");
 
         //read values periodically
-        xx = tx.getDouble(0.0);
-        yy = ty.getDouble(0.0);
+        double xx = tx.getDouble(0.0);
+        double yy = ty.getDouble(0.0);
+        double Are = ta.getDouble(0.0);
 
         SmartDashboard.putNumber("LimelightX", xx);
         SmartDashboard.putNumber("LimelightY", yy);
+        SmartDashboard.putNumber("LimelightArea", Are);
 
-        double moveSpeed = ((Math.pow(78,(0.092*(yy/1.78+8))))+43)/40;
-        double rotateSpeed = PID();
+        System.out.println("x;"+ xx +" y;"+ yy +" area;"+ Are);
+
+        xx = xx/20;
+        Are = 5/Are;
+
+
+        double moveSpeed = Are;
+        double rotateSpeed = xx;
 
       //optional
-	    if (Math.abs(moveSpeed) < 0.90) {moveSpeed = 0;}
-		if (Math.abs(rotateSpeed) < 0.10) {rotateSpeed = 0;}
-        if (rotateSpeed > 1)    {rotateSpeed = 1;}
-        if (rotateSpeed < -1)   {rotateSpeed = -1;}
-        if (moveSpeed > .7)     {moveSpeed = .7;}
-        if (moveSpeed < -.7)    {moveSpeed = -.7;}
+	if (Math.abs(moveSpeed) < 0.90) {
+			// within 10% joystick, make it zero 
+			moveSpeed = 0;
+		}
+		if (Math.abs(rotateSpeed) < 0.10) {
+			// within 10% joystick, make it zero 
+			rotateSpeed = 0;
+        }
+        
+        if (rotateSpeed > 1) {
+			// within 100% joystick, make it zero 
+			rotateSpeed = 1;
+        }
+        
+        if (rotateSpeed < -1) {
+			// within 100% joystick, make it zero 
+			rotateSpeed = -1;
+        }
+        
+        if (moveSpeed > .7) {
+			// within 100% joystick, make it zero 
+			moveSpeed = .7;
+        }
+        
+        if (moveSpeed < -.7) {
+			moveSpeed = -.7;
+		}
 
 
-        Robot.m_drivetrain.arcadeDrive(0, rotateSpeed);
+        Robot.m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
     }
-
-    public double PID(){
-    
-        //double turnspeed = (P* (xx-(eK-1) + (Ts/I*eK) + ((D/Ts)*(eK-(2*(eK-1))+eK-2))));
-        //Ts=Ts+1;
-        //return turnspeed;
-
-       double error = setpoint - xx;
-       totalError = totalError + error * period;
-       double output = P * error + I * totalError + D * (error - prevError) / period;
-       prevError = error;
-       return output;
-
-
-        // double error = 0 - xx/10; // Error = Target - Actual
-        //integral = integral + (error*.02); // Integral is increased by the error*time (which is .02 seconds using normal IterativeRobot)
-        // double derivative = (error - previous_error);
-        // previous_error = error;
-        // double turnspeed = P*error + I*integral + D*derivative;
-        //return -turnspeed;
-    }
-
 
     @Override 
     protected boolean isFinished()
     {
         return false;
     }
-
-
-
     @Override 
     protected void end(){       
         Robot.m_drivetrain.arcadeDrive(0,0);
     }
-
     @Override 
     protected void interrupted()
     {

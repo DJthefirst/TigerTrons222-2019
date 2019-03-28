@@ -12,7 +12,6 @@ import frc.robot.commands.Autonomous1;
 import frc.robot.subsystems.Hatch;
 import frc.robot.subsystems.BallIntake;
 import frc.robot.subsystems.BallPiston;
-import frc.robot.subsystems.Climb;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.Shift;
@@ -31,7 +30,6 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 public class Robot extends TimedRobot {
 	//public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 	public static Limelight m_limelight = null;
-	public static Climb m_climb = null;
 	public static Drivetrain m_drivetrain = null;
 	public static Hatch m_hatch = null;
 	public static BallPiston m_ballPiston = null;
@@ -61,7 +59,6 @@ public class Robot extends TimedRobot {
 		m_BallIntake = new BallIntake();
 		m_ballPiston = new BallPiston();
 		m_shift = new Shift();
-		m_climb =new Climb();
 		m_arm = new UpyDownyArmThing();
 		m_oi = new OI();
 		m_autonomousCommand = new Autonomous();
