@@ -5,12 +5,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import frc.robot.RobotMap;
-import frc.robot.commands.ArmJoy;
 import frc.robot.commands.ClimbJoy;
-import frc.robot.Constants;
-import com.ctre.phoenix.motorcontrol.FeedbackDevice;
-import com.ctre.phoenix.motorcontrol.StatusFrameEnhanced;
-
 
 public class Climb extends Subsystem {
 		
