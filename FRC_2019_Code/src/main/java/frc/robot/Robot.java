@@ -1,5 +1,6 @@
 package frc.robot;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -94,6 +95,11 @@ public class Robot extends TimedRobot {
 	@Override
 	public void disabledInit() {
 		NetworkTableInstance.getDefault().getTable("limelight").getEntry("pipeline").setNumber(1);
+		//new DoubleSolenoid(RobotMap.SHIFT_SOLENOID_DEPLOY,RobotMap.SHIFT_SOLENOID_RETRACT).set(DoubleSolenoid.Value.kForward);
+		//new DoubleSolenoid(RobotMap.SKID_SOLENOID_DEPLOY,RobotMap.SHIFT_SOLENOID_RETRACT).set(DoubleSolenoid.Value.kForward);
+		//new DoubleSolenoid(RobotMap.BALLPISTON_SOLENOID_DEPLOY,RobotMap.SHIFT_SOLENOID_RETRACT).set(DoubleSolenoid.Value.kForward);
+		//new DoubleSolenoid(RobotMap.HATCH_SOLENOID_DEPLOY,RobotMap.SHIFT_SOLENOID_RETRACT).set(DoubleSolenoid.Value.kForward);
+
 	}
 
 	@Override
@@ -116,6 +122,12 @@ public class Robot extends TimedRobot {
 	public void autonomousInit() {
 		m_autonomousCommand = m_chooser.getSelected();
 		NetworkTableInstance.getDefault().getTable("limelight").getEntry("pipeline").setNumber(1);
+
+		//new DoubleSolenoid(RobotMap.SHIFT_SOLENOID_DEPLOY,RobotMap.SHIFT_SOLENOID_RETRACT).set(DoubleSolenoid.Value.kForward);
+		//new DoubleSolenoid(RobotMap.SKID_SOLENOID_DEPLOY,RobotMap.SHIFT_SOLENOID_RETRACT).set(DoubleSolenoid.Value.kForward);
+		//new DoubleSolenoid(RobotMap.BALLPISTON_SOLENOID_DEPLOY,RobotMap.SHIFT_SOLENOID_RETRACT).set(DoubleSolenoid.Value.kForward);
+		//new DoubleSolenoid(RobotMap.HATCH_SOLENOID_DEPLOY,RobotMap.SHIFT_SOLENOID_RETRACT).set(DoubleSolenoid.Value.kForward);
+
 
 		
 		//    String autoSelected = SmartDashboard.getString("Auto Selector","Default");
