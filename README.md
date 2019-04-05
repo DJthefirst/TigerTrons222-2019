@@ -8,18 +8,18 @@ https://git-scm.com/
 install
 https://nodejs.org/en/
 
-###tutorial
+### tutorial
 https://www.youtube.com/watch?v=9cMWR-EGFuY&t=11s
 
 
-###Example Code:
+### Example Code:
 https://github.com/team6637/Robot2018/blob/master/Robot2018/src/org/usfirst/frc/team6637/robot/OI.java
 CAN-https://github.com/CrossTheRoadElec/Phoenix-Examples-Languages/tree/master/Java
 PDF-https://github.com/FRCTeam3255/FRC-Java-Tutorial/blob/master/FRC%20Programming%20Tutorial%20VSC.pdf
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 _____________________________________________________
-Full Tutoriall PDF:
+### Full Tutoriall PDF:
 http://team5282.org/images/FRC_Java_Programming.pdf
 
 Gradle Seting up project:
