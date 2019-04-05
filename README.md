@@ -1,6 +1,6 @@
 # TigerTrons222-2019
 
-Team Code Page for TigerTrons Team 222
+## Team Code Page for TigerTrons Team 222
 
 Settup Github for VScode:
 install latest source release
@@ -8,11 +8,11 @@ https://git-scm.com/
 install
 https://nodejs.org/en/
 
-tutorial
+###tutorial
 https://www.youtube.com/watch?v=9cMWR-EGFuY&t=11s
 
 
-Example Code:
+###Example Code:
 https://github.com/team6637/Robot2018/blob/master/Robot2018/src/org/usfirst/frc/team6637/robot/OI.java
 CAN-https://github.com/CrossTheRoadElec/Phoenix-Examples-Languages/tree/master/Java
 PDF-https://github.com/FRCTeam3255/FRC-Java-Tutorial/blob/master/FRC%20Programming%20Tutorial%20VSC.pdf
@@ -57,5 +57,5 @@ file:///C:/Users/Andrzej/wpilib/java/current/javadoc/index.html
 
 ________________________________________________________________
 
-Ultimate Smartdashboard:
+### Ultimate Smartdashboard:
 https://frcdashboard.github.io/
