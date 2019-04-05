@@ -8,7 +8,7 @@ https://git-scm.com/
 install
 https://nodejs.org/en/
 
-### tutorial
+### Tutorial
 https://www.youtube.com/watch?v=9cMWR-EGFuY&t=11s
 
 
@@ -29,11 +29,12 @@ https://www.youtube.com/watch?v=wW_djLkD1B8
 
 
 
-###### Dashboard Stuff ######
+## Dashboard Stuff ##
+
 Shuffleboard belongs in: C:\Users\<name>\Shuffleboard
 https://github.com/wpilibsuite/GradleRIO
 
-# Shuffleboard
+### Shuffleboard ###
 https://wpilib.screenstepslive.com/s/currentCS/m/shuffleboard/l/831041-working-with-lists
 
 
