@@ -17,6 +17,7 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.Shift;
 import frc.robot.subsystems.Skid;
+import frc.robot.subsystems.Spike;
 import frc.robot.subsystems.UpyDownyArmThing;
 
 import edu.wpi.first.networktables.NetworkTableInstance;
@@ -40,6 +41,7 @@ public class Robot extends TimedRobot {
 	public static UpyDownyArmThing m_arm = null;
 	public static OI m_oi;
 	public static Object commands;
+	public static Spike m_spike;
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -57,12 +59,14 @@ public class Robot extends TimedRobot {
 		m_drivetrain = new Drivetrain();
 		m_hatch = new Hatch();
 		m_skid = new Skid();
+		m_spike = new Spike();
 		m_BallIntake = new BallIntake();
 		m_ballPiston = new BallPiston();
 		m_shift = new Shift();
 		m_arm = new UpyDownyArmThing();
 		m_oi = new OI();
 		m_autonomousCommand = new Autonomous();
+		
 	
 
 		m_chooser.addDefault("Default Auto", new Autonomous_Sand());
@@ -162,7 +166,7 @@ public class Robot extends TimedRobot {
 		// teleop starts running. If you want the autonomous to
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
-		NetworkTableInstance.getDefault().getTable("limelight").getEntry("pipeline").setNumber(0);
+		//NetworkTableInstance.getDefault().getTable("limelight").getEntry("pipeline").setNumber(0);
 
 		if (m_autonomousCommand != null) {
 			m_autonomousCommand.cancel();

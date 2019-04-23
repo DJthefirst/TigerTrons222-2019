@@ -11,6 +11,8 @@ import frc.robot.commands.BallOut_Pnu;
 import frc.robot.commands.SkidIn_Pnu;
 import frc.robot.commands.SkidOut_Pnu;
 import frc.robot.commands.Skidcmd_Pnu;
+import frc.robot.commands.Spike_off;
+import frc.robot.commands.Spike_on;
 import frc.robot.commands.DriveLimeLight;
 import frc.robot.commands.LimeLight_Pipeline;
 import frc.robot.commands.ShiftIn_Pnu;
@@ -53,10 +55,12 @@ public class OI<Joystick> {
 	public OI()
 	{
 		// controller 1
-
+		D1.whileHeld(new DriveLimeLight());	
 		D5.whenPressed(new ShiftIn_Pnu());						//Left Button
 		D5.whenReleased(new ShiftOut_Pnu());					
-		D6.whileHeld(new DriveLimeLight());						//Right Button
+		D6.whenPressed(new HatchOut_Pnu());						  
+		//Right Button
+		D6.whenReleased(new HatchIn_Pnu());
 		D7.whenPressed(new LimeLight_Pipeline());
 		D8.whenPressed(new Skidcmd_Pnu());							//Back
 							//Menu
@@ -68,8 +72,8 @@ public class OI<Joystick> {
 		D12.whileHeld(new Arm_Auto(2));		//B 
 		D13.whileHeld(new Arm_Auto(4));		//X 6
 		D14.whileHeld(new Arm_Auto(0));		//Y
-		D15.whenPressed(new HatchOut_Pnu());					//Left Button
-		D15.whenReleased(new HatchIn_Pnu());					
+		D15.whenPressed(new Spike_on());					//Left Button
+		D15.whenReleased(new Spike_off());					
 		D16.whenPressed(new BallOut_Pnu());						//Right Button
 		D16.whenReleased(new BallIn_Pnu());
 	}

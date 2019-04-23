@@ -19,7 +19,10 @@ public class RobotMap {
 	public static final int Climb_MOTOR_Master_TALON = 7;
 	public static final int Climb_MOTOR_Slave_TALON = 10;
 	public static final int Intake_MOTOR_TALON = 12;
-	
+
+	//Spikes
+	public static final int SPIKE0 = 0;
+
 	//Encoders
 	public static final int DRIVETRAIN_ENCODER_L = 0;
 	public static final int DRIVETRAIN_ENCODER_R = 1;
