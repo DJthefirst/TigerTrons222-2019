@@ -41,28 +41,28 @@ public class Arm_Auto extends Command {
         switch (arm_state)
         {
         case 0:
-            targetPos = (Settings.Ball_Top_Pos);
-            break;
-        case 1:
             targetPos = (Settings.Hatch_Top_Pos);
             break;
-        case 2:
-            targetPos = (Settings.Ball_Mid_Pos);
+        case 1:
+            targetPos = (Settings.Ball_Top_Pos);
             break;
-        case 3:
+        case 2:
             targetPos = (Settings.Hatch_Mid_Pos);
             break;
-        case 4:
-            targetPos = (Settings.Ball_Hab_Pos);
+        case 3:
+            targetPos = (Settings.Ball_Mid_Pos);
             break;
-        case 5:
+        case 4:
             targetPos = (Settings.Hatch_Hab_Pos);
             break;
+        case 5:
+            targetPos = (Settings.Ball_Hab_Pos);
+            break;
         case 6:
-            targetPos = (Settings.Ball_Bot_Pos);
+            targetPos = (Settings.Hatch_Bot_Pos);
             break;
         case 7:
-            targetPos = (Settings.Hatch_Bot_Pos);
+            targetPos = (Settings.Ball_Bot_Pos);
             break;
         }
 
